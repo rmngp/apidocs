@@ -31,7 +31,8 @@ to retrieve information in the JSON format on various artworks, artists, and
 related pictures in our database.
 
 This documentation should help you discover our API, and includes some examples
-using the Ruby programming language, on the right-most pane.
+using the Ruby programming language, on the right-most pane. You can also
+explore the API live here: [http://doc.dev.rmn.af83.com/console/][console]
 
 
 ## Authentication
@@ -52,7 +53,7 @@ curl -H "ApiKey: secret" \
 > Make sure to replace `secret` with your API key.
 
 RMN-GP uses API keys to allow access to the API. You can register on our
-[partners site](http://dev.rmn.af83.com/partners) to request one.
+[partners' site][partners] to request one.
 
 RMN-GP expects the API key to be included in all API requests to the server in a
 HTTP header that looks like the following:
@@ -121,3 +122,7 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too many resources! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily off-line for maintenance. Please try again later.
+
+
+[console]: http://doc.dev.rmn.af83.com/console/
+[partners]: http://dev.rmn.af83.com/partners
