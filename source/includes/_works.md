@@ -18,26 +18,26 @@ curl -H "ApiKey: secret" \
 
 ```json
 {
-  "hits": {
-    "total": 8,
-    "hits": [
-      {
-        "_source": {
-          "id": 6,
-          "collection": "Peintures",
-          "title": "Artowrk title",
-          "description": "Artwork description"
-        }
-      },
-      {
-        "_source": {
-          "collection": "Peintures",
-          "title": "Artwork title",
-          "description": "Artwork description"
-        }
-      }
-    ]
-  }
+    "hits": {
+        "total": 42,
+            "hits": [
+            {
+                "_source": {
+                    "id": 6,
+                    "collection": "Peintures",
+                    "title": "Artowrk title",
+                    "description": "Artwork description"
+                }
+            },
+            {
+                "_source": {
+                    "collection": "Peintures",
+                    "title": "Artwork title",
+                    "description": "Artwork description"
+                }
+            }
+        ]
+    }
 }
 ```
 
@@ -51,8 +51,8 @@ This endpoint retrieves all artworks.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-q | "" | If set, results are filtered to match this String
-page | 1 | Paginate through results
+q         | ""      | If set, results are filtered to match this String
+page      | 1       | Paginate through results
 
 <aside class="success">
 Remember — don't forget to use your API key!
