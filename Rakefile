@@ -6,7 +6,7 @@ namespace :deploy do
   desc "Deploy to dev environment"
   task dev: [:build] do
     puts "Deploying to development environment..."
-    `rsync -avz build/ rmn@doc.dev.rmn.af83.com:apidocs`
+    `rsync -avz build/ rmn@api.dev.rmn.af83.com:apidocs`
   end
 
   desc "Deploy to production environment"
