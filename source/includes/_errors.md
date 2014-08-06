@@ -2,7 +2,7 @@
 
 <aside class="notice">Update this part with the relevant error codes from our API.</aside>
 
-The Kittn API uses the following error codes:
+The RMN-GP API uses the following error codes:
 
 
 Error Code | Meaning
@@ -15,6 +15,6 @@ Error Code | Meaning
 406 | Not Acceptable -- You requested a format that isn't json
 410 | Gone -- The requested resource has been removed from our servers
 418 | I'm a teapot
-429 | Too Many Requests -- You're requesting too many resources! Slown down!
+429 | Too Many Requests -- You're requesting too many resources! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+503 | Service Unavailable -- We're temporarily off-line for maintenance. Please try again later.
