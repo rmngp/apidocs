@@ -32,11 +32,11 @@ Deploying
 After pushing your changes to Git, to deploy them to the *dev* environment, run:
 
 ```shell
-bundle exec cap dev deploy
+bundle exec rake deploy:dev
 ```
 
 If you are ready to deploy to the production environment:
 
 ```shell
-bundle exec cap production deploy
+bundle exec rake deploy:production
 ```
