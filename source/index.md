@@ -7,7 +7,7 @@ language_tabs:
 
 toc_footers:
   - <a href='http://dev.rmn.af83.com/'>Sign Up for a Partner Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='http://github.com/tripit/slate'>Doc powered by Slate</a>
 
 includes:
   - works
