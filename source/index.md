@@ -7,6 +7,7 @@ language_tabs:
 
 toc_footers:
   - <a href='http://dev.rmn.af83.com/'>Sign Up for a Partner Key</a>
+  - <a href='http://doc.dev.rmn.af83.com/console/'>Javascript console</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -32,7 +33,7 @@ related pictures in our database.
 
 This documentation should help you discover our API, and includes some examples
 using the Ruby programming language, on the right-most pane. You can also
-explore the API live here: [http://doc.dev.rmn.af83.com/console/][console]
+explore the API live using our [Javascript console][console].
 
 
 ## Authentication
