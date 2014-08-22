@@ -1,6 +1,6 @@
 # Sources
 
-FIXME: define here what *are* sources in our case!
+Sources are the museeum where the works come from : you can also find the copyright in that part
 
 ## Get All Sources
 
@@ -62,3 +62,9 @@ Parameter | Default | Description
 --------- | ------- | -----------
 q         | ""      | If set, results are filtered to match this String
 page      | 1       | Paginate through results
+
+For more specific research see [Search](/?shell#search)
+
+<aside class="success">
+Remember — don't forget to use your API key!
+</aside>
