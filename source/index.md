@@ -26,6 +26,8 @@ includes:
   - picture_notes
   - packagings
   - printers
+  - users
+  - selections
 
 search: true
 ---
