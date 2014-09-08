@@ -1,62 +1,30 @@
-# Picture_notes
+## Picture Notes
 
-FixMe
+Picture notes are informations on how were made pictures.
 
-## Get All Picture_notes
+Examples:
+
+- tirage de l'auteur
+- photographie de plateau
+- tirage d'époque
+- tirage sous contrôle de l'auteur
+
+### Get All Picture_notes
 
 ```ruby
 require 'open-uri'
 
-open("http://api.dev.rmn.af83.com/v1/picture_notes", 'ApiKey' => 'secret')
+open("http://api.dev.rmn.af83.com/v1/thesaurus/picture_notes", 'ApiKey' => 'secret')
 ```
 
 
 ```shell
 curl -H "ApiKey: secret" \
-     "http://api.dev.rmn.af83.com/v1/picture_notes"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-"hits": {
-    "total": 1,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "rmn-dev-picturenotes",
-        "_type": "picture_note",
-        "_id": "1",
-        "_score": 1,
-        "_source": {
-          "name": "contretype",
-          "comment": "",
-          "detail": "Obtenu à partir d'une épreuve photographique re-photographiée. Sa matrice n'est pas le négatif original.\r\n",
-          "id": 1,
-          "created_at": "2014-08-14T10:16:37.100Z",
-          "updated_at": "2014-08-14T10:16:37.253Z"
-        }
-      }
-    ]
-  }
-
+     "http://api.dev.rmn.af83.com/v1/thesaurus/picture_notes"
 ```
 
 This endpoint retrieves all know collections.
 
-### HTTP Request
+#### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/picture_notes`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-q         | ""      | If set, results are filtered to match this String
-page      | 1       | Paginate through results
-
-For more specific research see [Search](/?shell#search)
-
-<aside class="success">
-Remember — don't forget to use your API key!
-</aside>
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/picture_notes`

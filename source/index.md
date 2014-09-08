@@ -12,20 +12,21 @@ toc_footers:
 
 includes:
   - works
-  - sources
-  - photographers
-  - locations
-  - keywords
   - authors
-  - periods
-  - techniques
-  - geographies
-  - styles
-  - schools
+  - thesaurus
   - collections
-  - picture_notes
+  - geographies
+  - keywords
+  - locations
   - packagings
+  - periods
+  - photographers
+  - picture_notes
   - printers
+  - schools
+  - sources
+  - styles
+  - techniques
   - users
   - selections
 
@@ -72,6 +73,7 @@ HTTP header that looks like the following:
 <aside class="notice">
 You must replace `secret` with your personal API key.
 </aside>
+
 ## Errors
 
 <aside class="notice">Update this part with the relevant error codes from our API.</aside>

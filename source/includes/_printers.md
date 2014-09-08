@@ -1,43 +1,30 @@
-# Printers
+## Printers
 
-FixMe
+Printers of the many images available through the API.
 
-## Get All Printers
+Examples:
+
+- Igor Bahkt
+- Roger Vulliez
+- Jules Steinmetz
+- Hervé Huedry
+
+### Get All Printers
 
 ```ruby
 require 'open-uri'
 
-open("http://api.dev.rmn.af83.com/v1/printers", 'ApiKey' => 'secret')
+open("http://api.dev.rmn.af83.com/v1/thesaurus/printers", 'ApiKey' => 'secret')
 ```
 
 
 ```shell
 curl -H "ApiKey: secret" \
-     "http://api.dev.rmn.af83.com/v1/printers"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-Fixme
-
+     "http://api.dev.rmn.af83.com/v1/thesaurus/printers"
 ```
 
 This endpoint retrieves all know printers.
 
-### HTTP Request
+#### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/printers`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-q         | ""      | If set, results are filtered to match this String
-page      | 1       | Paginate through results
-
-For more specific research see [Search](/?shell#search)
-
-<aside class="success">
-Remember — don't forget to use your API key!
-</aside>
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/printers`

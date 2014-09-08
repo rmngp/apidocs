@@ -1,30 +1,30 @@
-# Styles
+## Styles
 
-Style is the 
+Styles of the many works available through the API.
 
-## Get All Styles
+Examples:
+
+- surréalisme
+- art informel
+- art abstrait
+- art géométrique après 1945
+
+### Get All Styles
 
 ```ruby
 require 'open-uri'
 
-open("http://api.dev.rmn.af83.com/v1/styles", 'ApiKey' => 'secret')
+open("http://api.dev.rmn.af83.com/v1/thesaurus/styles", 'ApiKey' => 'secret')
 ```
 
 
 ```shell
 curl -H "ApiKey: secret" \
-     "http://api.dev.rmn.af83.com/v1/styles"
+     "http://api.dev.rmn.af83.com/v1/thesaurus/styles"
 ```
 
-> The above command returns JSON structured like this:
+This endpoint retrieves all know collections.
 
-```
+#### HTTP Request
 
-FixMe
-```
-
-For more specific research see [Search](/?shell#search)
-
-<aside class="success">
-Remember — don't forget to use your API key!
-</aside>
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/collections`

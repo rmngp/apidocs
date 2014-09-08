@@ -1,44 +1,30 @@
-# Packagings
+## Packagings
 
-FixMe
+Packagings are how work's images are exposed.
 
-## Get All Packagings
+Examples:
+
+- contrecollé sur carton
+- recadrage et restauration des couleurs après numérisation
+- sous plexiglas
+- montage sur châssis en bois
+
+### Get All Packagings
 
 ```ruby
 require 'open-uri'
 
-open("http://api.dev.rmn.af83.com/v1/packagings", 'ApiKey' => 'secret')
+open("http://api.dev.rmn.af83.com/v1/thesaurus/packagings", 'ApiKey' => 'secret')
 ```
 
 
 ```shell
 curl -H "ApiKey: secret" \
-     "http://api.dev.rmn.af83.com/v1/packagings"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-Fixme
-
+     "http://api.dev.rmn.af83.com/v1/thesaurus/packagings"
 ```
 
 This endpoint retrieves all know packagings.
 
-### HTTP Request
+#### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/packagings`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-q         | ""      | If set, results are filtered to match this String
-page      | 1       | Paginate through results
-
-
-For more specific research see [Search](/?shell#search)
-
-<aside class="success">
-Remember — don't forget to use your API key!
-</aside>
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/packagings`
