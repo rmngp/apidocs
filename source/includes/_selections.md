@@ -15,28 +15,32 @@ updated automatically.</aside>
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/users/:user_id/selections`
+`GET http://api.dev.rmn.af83.com/v1/selections`
 
 ### Query Parameters
 
 Parameter   | Default | Description
 ----------- | ------- | ------------
+user_id     | ""      | Which user's selections should we show?
 include_ids | 0       | Include selected works IDs in the response
 
 ### HTTP Response
 
 On success, the server replies with a `200` HTTP status code, and returns a
-list of a user's selections in JSON.
+list of the user's selections in JSON.
 
 ```ruby
 require 'net/http'
 
-Net::HTTP.new('api.dev.rmn.af83.com').get('/v1/users/1/selections', {'ApiKey' => 'secret'})
+Net::HTTP.new('api.dev.rmn.af83.com').get('/v1/selections', {
+    'user_id' => 1,
+    'ApiKey'  => 'secret',
+})
 # => #<Net::HTTPOK 200 OK  readbody=true>
 ```
 
 ```shell
-curl -H'ApiKey: secret' 'http://api.dev.rmn.af83.com/v1/users/1/selections'
+curl -H'ApiKey: secret' 'http://api.dev.rmn.af83.com/v1/selections?user_id=1'
 ```
 
 > On success, the above command should yield a JSON array, structured as
@@ -97,6 +101,7 @@ curl -H'ApiKey: secret' 'http://api.dev.rmn.af83.com/v1/users/1/selections'
 Parameter | Default | Description
 --------- | ------- | ------------
 name      | ""      | Selections's name (mandatory)
+user_id   | ""      | Selections's owner (mandatory)
 
 
 ### HTTP Response
@@ -112,14 +117,15 @@ require 'net/http'
 params = {
   api_key: 'secret',
   name:    'example',
+  user_id: 1,
 }
-Net::HTTP.post_form 'http://api.dev.rmn.af83.com/v1/users/1/selections', params
+Net::HTTP.post_form 'http://api.dev.rmn.af83.com/v1/selections', params
 # => #<Net::HTTPCreated 201 Created readbody=true>
 ```
 
 ```shell
 curl -H'ApiKey: secret' \
-  'http://api.dev.rmn.af83.com/v1/users/1/selections' -XPOST -d'name=example'
+  'http://api.dev.rmn.af83.com/v1/selections' -XPOST -d'name=example&user_id=1'
 ```
 
 > On success, the above command should yield a JSON object, structured as
@@ -140,7 +146,7 @@ curl -H'ApiKey: secret' \
 
 ### HTTP Request
 
-`DELETE http://api.dev.rmn.af83.com/v1/users/:user_id/selections/:id`
+`DELETE http://api.dev.rmn.af83.com/v1/selections/:id`
 
 ### HTTP Response
 
@@ -150,13 +156,13 @@ successfully destroyed.
 ```ruby
 require 'net/http'
 
-Net::HTTP.new('api.dev.rmn.af83.com').delete('/v1/users/1/selections/1', {'ApiKey' => 'secret'})
+Net::HTTP.new('api.dev.rmn.af83.com').delete('/v1/selections/1', {'ApiKey' => 'secret'})
 # => #<Net::HTTPOK 200 OK  readbody=true>
 ```
 
 ```shell
 curl -H'ApiKey: secret' \
-     'http://api.dev.rmn.af83.com/v1/users/1/selections/1' -XDELETE
+     'http://api.dev.rmn.af83.com/v1/selections/1' -XDELETE
 ```
 
 > On success, the above command results in a `200` HTTP code, and returns the 
@@ -177,7 +183,7 @@ curl -H'ApiKey: secret' \
 
 ### HTTP Request
 
-`POST http://api.dev.rmn.af83.com/v1/users/:user_id/selections/:id/works`
+`POST http://api.dev.rmn.af83.com/v1/selections/:id/works`
 
 ### Parameters
 
@@ -203,13 +209,13 @@ params = {
   work_id: 42,
   order:   1,
 }
-Net::HTTP.post_form 'http://api.dev.rmn.af83.com/v1/users/1/selections/1/works', params
+Net::HTTP.post_form 'http://api.dev.rmn.af83.com/v1/selections/1/works', params
 # => #<Net::HTTPCreated 201 Created readbody=true>
 ```
 
 ```shell
 curl -H'ApiKey: secret' \
-  'http://api.dev.rmn.af83.com/v1/users/1/selections/1/works' \
+  'http://api.dev.rmn.af83.com/v1/selections/1/works' \
   -XPOST -d'work_id=42&order=1'
 ```
 
@@ -231,27 +237,27 @@ curl -H'ApiKey: secret' \
 
 ### HTTP Request
 
-`DELETE http://api.dev.rmn.af83.com/v1/users/:user_id/selections/:selection_id/works/:id`
+`DELETE http://api.dev.rmn.af83.com/v1/selections/:selection_id/works/:id`
 
 ### HTTP Response
 
 The server *should* reply with a `200` HTTP status code, when the work is
 successfully removed from the selection.
 
-If you try to delete from a selection folder that does not exist, from a user
-that does not exist, or a work that is not part of the user's selection, then
-the server replies with a `404` HTTP error code.
+If you try to delete from a selection folder that does not exist, or a work
+that is not part of the selection, then the server replies with a `404` HTTP
+error code.
 
 ```ruby
 require 'net/http'
 
-Net::HTTP.new('api.dev.rmn.af83.com').delete('/v1/users/1/selections/1/works/42', {'ApiKey' => 'secret'})
+Net::HTTP.new('api.dev.rmn.af83.com').delete('/v1/selections/1/works/42', {'ApiKey' => 'secret'})
 # => #<Net::HTTPOK 200 OK  readbody=true>
 ```
 
 ```shell
 curl -H'ApiKey: secret' \
-     'http://api.dev.rmn.af83.com/v1/users/1/selections/1/works/42' -XDELETE
+     'http://api.dev.rmn.af83.com/v1/selections/1/works/42' -XDELETE
 ```
 
 > On success, the above command results in a `200` HTTP code, and returns the 
