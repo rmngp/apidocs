@@ -16,37 +16,8 @@ curl -H "ApiKey: secret" \
 
 > The above command returns JSON structured like this:
 
-```json
-{
-    "hits": {
-        "total": 42,
-            "hits": [
-            {
-                "_source": {
-                    "id": 3,
-                    "code": "RMN",
-                    "copyright": "Photo (C) RMN-Grand Palais",
-                    "disabled": false,
-                    "name": "RMN",
-                    "created_at": "2014-08-06T14:45:30.218Z",
-                    "updated_at": "2014-08-06T14:45:30.245Z"
-                }
-            },
-            {
-                "_source": {
-                    "id": 4,
-                    "code": "RMNO",
-                    "copyright": "Photo (C) RMN-Grand Palais (musée d'Orsay)",
-                    "disabled": false,
-                    "name": "RMN (musée d'Orsay)",
-                    "created_at": "2014-08-06T14:47:16.613Z",
-                    "updated_at": "2014-08-06T14:47:16.670Z"
-                }
-            }
-        ]
-    }
-}
-```
+<pre class="live_requests" data-path="/v1/thesaurus/sources">
+</pre>
 
 Thesaurus consists of several types of resources that are searchable in the same way.
 
