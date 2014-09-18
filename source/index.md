@@ -3,7 +3,6 @@ title: RMN-GP API Reference
 
 language_tabs:
   - shell
-  - ruby
 
 toc_footers:
   - <a href='http://dev.rmn.af83.com/'>Sign Up for a Partner Key</a>
@@ -48,12 +47,6 @@ explore the API live using our [Javascript console][console].
 ## Authentication
 
 > To authorize, you will need to include the key in HTTP request headers:
-
-```ruby
-require 'open-uri'
-
-open("http://api_endpoint_here", 'ApiKey' => 'secret')
-```
 
 ```shell
 curl -H "ApiKey: secret" \
@@ -114,12 +107,6 @@ Invalid page numbers merely results in an empty results list.
 
 > To change page, simply pass a `page` parameter to your request URL.
 
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com/v1/works?page=2", 'ApiKey' => 'secret')
-```
-
 ```shell
 curl -H "ApiKey: secret" \
      "http://api.dev.rmn.af83.com/v1/works?page=2"
@@ -147,13 +134,6 @@ When you want to search for a work somme spécial work, you can use full text wi
 `"joconde"`
 
  in the q parameter
-
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde", 'ApiKey' => 'secret')
-```
-
 
 ```shell
 curl -H "ApiKey: secret" \
@@ -556,13 +536,6 @@ You can also use the operand OR
 For exemple you can use
 
  `"joconde OR collection=estampes" `
-
-
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde%20AND%20techniques%3Ddessin", 'ApiKey' => 'secret')
-```
 
 
 ```shell

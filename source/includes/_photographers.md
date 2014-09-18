@@ -11,12 +11,6 @@ Examples:
 - René-Gabriel Ojéda
 - Jean-Gilles Berizzi
 
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com/v1/thesaurus/photographers", 'ApiKey' => 'secret')
-```
-
 
 ```shell
 curl -H "ApiKey: secret" \

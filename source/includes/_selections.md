@@ -29,16 +29,6 @@ include_ids | 0       | Include selected works IDs in the response
 On success, the server replies with a `200` HTTP status code, and returns a
 list of the user's selections in JSON.
 
-```ruby
-require 'net/http'
-
-Net::HTTP.new('api.dev.rmn.af83.com').get('/v1/selections', {
-    'user_id' => 1,
-    'ApiKey'  => 'secret',
-})
-# => #<Net::HTTPOK 200 OK  readbody=true>
-```
-
 ```shell
 curl -H'ApiKey: secret' 'http://api.dev.rmn.af83.com/v1/selections?user_id=1'
 ```
@@ -110,19 +100,6 @@ Upon successful creation, the server replies with a `201` HTTP status code, and
 returns the newly created selection in JSON format. Any other status code
 indicate a failure to create the selection.
 
-```ruby
-require 'uri'
-require 'net/http'
-
-params = {
-  api_key: 'secret',
-  name:    'example',
-  user_id: 1,
-}
-Net::HTTP.post_form 'http://api.dev.rmn.af83.com/v1/selections', params
-# => #<Net::HTTPCreated 201 Created readbody=true>
-```
-
 ```shell
 curl -H'ApiKey: secret' \
   'http://api.dev.rmn.af83.com/v1/selections' -XPOST -d'name=example&user_id=1'
@@ -152,13 +129,6 @@ curl -H'ApiKey: secret' \
 
 The server *should* reply with a `200` HTTP status code, when the selection is
 successfully destroyed.
-
-```ruby
-require 'net/http'
-
-Net::HTTP.new('api.dev.rmn.af83.com').delete('/v1/selections/1', {'ApiKey' => 'secret'})
-# => #<Net::HTTPOK 200 OK  readbody=true>
-```
 
 ```shell
 curl -H'ApiKey: secret' \
@@ -200,19 +170,6 @@ returns a JSON object with the selected work ID, and its version number.
 
 Any other status code indicate a failure to create the selection.
 
-```ruby
-require 'uri'
-require 'net/http'
-
-params = {
-  api_key: 'secret',
-  work_id: 42,
-  order:   1,
-}
-Net::HTTP.post_form 'http://api.dev.rmn.af83.com/v1/selections/1/works', params
-# => #<Net::HTTPCreated 201 Created readbody=true>
-```
-
 ```shell
 curl -H'ApiKey: secret' \
   'http://api.dev.rmn.af83.com/v1/selections/1/works' \
@@ -247,13 +204,6 @@ successfully removed from the selection.
 If you try to delete from a selection folder that does not exist, or a work
 that is not part of the selection, then the server replies with a `404` HTTP
 error code.
-
-```ruby
-require 'net/http'
-
-Net::HTTP.new('api.dev.rmn.af83.com').delete('/v1/selections/1/works/42', {'ApiKey' => 'secret'})
-# => #<Net::HTTPOK 200 OK  readbody=true>
-```
 
 ```shell
 curl -H'ApiKey: secret' \

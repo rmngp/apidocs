@@ -4,12 +4,6 @@ Authors is the list of the authors that are listed in the API
 
 ## Get All Authors
 
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com/v1/authors", 'ApiKey' => 'secret')
-```
-
 
 ```shell
 curl -H "ApiKey: secret" \

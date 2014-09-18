@@ -2,13 +2,6 @@
 
 ## Get All Works
 
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com/v1/works", 'ApiKey' => 'secret')
-```
-
-
 ```shell
 curl -H "ApiKey: secret" \
      "http://api.dev.rmn.af83.com/v1/works"

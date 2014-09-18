@@ -11,13 +11,6 @@ Examples:
 
 ### Get All Schools
 
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com/v1/thesaurus/schools", 'ApiKey' => 'secret')
-```
-
-
 ```shell
 curl -H "ApiKey: secret" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/schools"

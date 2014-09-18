@@ -11,13 +11,6 @@ Examples:
 
 ### Get All Styles
 
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com/v1/thesaurus/styles", 'ApiKey' => 'secret')
-```
-
-
 ```shell
 curl -H "ApiKey: secret" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/styles"

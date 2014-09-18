@@ -28,20 +28,6 @@ failure to create the user.
 <aside class="notice">Note that user accounts created by a partner can *not* be used to access the
 API, as they lack an API key to start with.</aside>
 
-```ruby
-require 'uri'
-require 'net/http'
-
-params = {
-  api_key:  'secret',
-  name:     'User name',
-  email:    'user@example.com',
-  password: 'password',
-}
-Net::HTTP.post_form URI('http://api.dev.rmn.af83.com/v1/users'), params
-# => #<Net::HTTPCreated 201 Created readbody=true>
-```
-
 ```shell
 curl -H'ApiKey: secret' \
      'http://api.dev.rmn.af83.com/v1/users' -XPOST \
@@ -91,13 +77,6 @@ successfully destroyed.
    different API key, the server replies with a `404` HTTP error code.
  - If your request contains errors, the server replies with a `400` HTTP error
    code.
-
-```ruby
-require 'net/http'
-
-Net::HTTP.new('api.dev.rmn.af83.com').delete('/v1/users/1', {'ApiKey' => 'secret'})
-# => #<Net::HTTPOK 200 OK  readbody=true>
-```
 
 ```shell
 curl -H'ApiKey: secret' \

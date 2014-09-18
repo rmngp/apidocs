@@ -11,12 +11,6 @@ Examples:
 
 ### Get All Packagings
 
-```ruby
-require 'open-uri'
-
-open("http://api.dev.rmn.af83.com/v1/thesaurus/packagings", 'ApiKey' => 'secret')
-```
-
 
 ```shell
 curl -H "ApiKey: secret" \
