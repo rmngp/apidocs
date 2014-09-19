@@ -2,8 +2,8 @@ RMN-GP API docs
 ===============
 
 This repository contains the documentation to use RMN-GP's API. It should be
-available in HTML form at http://dev.rmn.af83.com/, but if you need to update
-the docs, read on.
+available in HTML form at http://doc.dev.rmn.af83.com/, but if you need to
+update the docs, read on.
 
 Getting Started
 ---------------
@@ -13,7 +13,8 @@ Getting Started
 You're going to need:
 
  - **Ruby, version 1.9.3 or newer**
- - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
+ - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't
+   work, just run `gem install bundler` in a terminal.
 
 ### Getting Set Up
 
