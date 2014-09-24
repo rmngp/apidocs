@@ -11,8 +11,8 @@ namespace :deploy do
 
   desc "Deploy to preprod environment"
   task preprod: [:build] do
-    puts "I don't know how to do that!"
-    # FIXME `rsync -avz build/ rmn@test-server:apidocs`
+    puts "Deploying to preprod environment..."
+    `rsync -avz build/ rmngpuser@preprod.rmn.fr:/home/vsftpd/rmngpuser/htdocs/API/apidocs`
   end
 
   desc "Deploy to production environment"
