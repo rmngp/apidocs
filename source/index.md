@@ -806,3 +806,48 @@ curl -H "ApiKey: secret" \
 
 [console]: http://doc.dev.rmn.af83.com/console/
 [partners]: http://dev.rmn.af83.com/partners
+
+
+##  Filtering facets
+
+On works, authors and selections endpoints, facets are availables.
+
+To filter on a facet, just add a `facets[facet_name]=facet_value` params to the
+query string.
+
+> For example, we have the following facet returned by the works endpoint:
+
+```json
+    "sources": {
+      "buckets": [
+        {
+          "key": "INHA",
+          "doc_count": 5977,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=INHA"
+        },
+        {
+          "key": "BPK",
+          "doc_count": 2,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=BPK"
+        },
+        {
+          "key": "NATIONAL GALLERY OF LONDON",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=NATIONAL+GALLERY+OF+LONDON"
+        },
+        {
+          "key": "RMN",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=RMN"
+        },
+        {
+          "key": "RMN (musée du Louvre)",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
+        }
+      ]
+    }
+```
+
+> To filter works on the «RMN» source, add this params to
+the query string: `facets[sources]=RMN`
