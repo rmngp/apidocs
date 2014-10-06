@@ -6,7 +6,7 @@ language_tabs:
 
 toc_footers:
   - <a href='http://dev.rmn.af83.com/'>Sign Up for a Partner Key</a>
-  - <a href='http://doc.dev.rmn.af83.com/console/'>Javascript console</a>
+  - <a href='/console/'>Javascript console</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -287,5 +287,5 @@ facet pagination.
 `facets[sources]=RMN`
 
 
-[console]: http://doc.dev.rmn.af83.com/console/
+[console]: /console/
 [partners]: http://dev.rmn.af83.com/partners
