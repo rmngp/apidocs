@@ -43,6 +43,34 @@ This documentation should help you discover our API, and includes some examples
 using the Ruby programming language, on the right-most pane. You can also
 explore the API live using our [Javascript console][console].
 
+## Versionning
+
+All Api calls must specify the API version to use. This version identifier
+ensures that API will not introduce major changes for the given version.
+
+You can get the last API version by requesting the root API endpoint:
+`http://api.rmn.dev/`
+
+Then prefix all paths with this version number, for example:
+`http://api.rmn.dev/v1/api_endpoint_here`.
+
+```shell
+curl -H "ApiKey: secret" \
+     "http://api.dev.rmn.af83.com"
+```
+
+```json
+{
+  "versions": [
+    {
+      "status": "current",
+      "links": [{ "href": "http://api.rmn.dev/v1/swagger_doc", "templated": false, "rel": "swagger" }],
+      "description": "Current version of the api",
+      "value": "v1"
+    }
+  ]
+}
+```
 
 ## Authentication
 
