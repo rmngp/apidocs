@@ -1,6 +1,6 @@
 ## Sources
 
-Sources are the museeum where the works come from : you can also find the copyright in that part.
+Sources are the museum where the works come from : you can also find the copyright in that part.
 
 Examples:
 

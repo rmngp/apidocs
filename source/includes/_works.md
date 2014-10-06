@@ -1,5 +1,50 @@
 # Works
 
+## Definition
+
+### Attributes
+
+* `id`: unique identifier
+* `popularity`: popularity based on associated images sales
+* `title`: title in several languages
+* `detail`: detail in several languages
+* `date`: date of creation, structured like this:
+  * `display`: Text representation, example: 15th century, renaissance, …
+  * `estimated_day`: Estimated date
+  * `estimation_spread`: Precision of the estimated date
+* `copyright`: copyright details
+* `height`: Height in mm
+* `width`: Width in mm
+* `depth`: Depth in mm
+* `diameter`: Diameter in mm
+* `images`: Images availables for this work, structured like this:
+  * `identifier`: RMN identifier
+  * `path`: Url
+  * `photographer`: Photographer who has taken this picture
+  * `source`: Source of this image, can be museum, institution, etc…
+
+### Associations
+
+* `source`: Museum or institution where this work commes from. See [Thesaurus/Sources](#sources)
+* `location`: Location where is located this work. See [Thesaurus/Locations](#locations)
+* `authors`: Authors of this work. See [Thesaurus/Authors](#authors)
+* `afters`: Authors that inspired this work. See [Thesaurus/Authors](#authors)
+* `authorship_details`: Authors who have been awarded this work. See [Thesaurus/Authors](#authors)
+* `collections`: Collections in which this work appears. See [Thesaurus/Collections](#collections)
+* `geographies`: Places related to this work. See [Thesaurus/Geographies](#geographies)
+* `keywords`: Keywords related to this work. See [Thesaurus/Keywords](#keywords)
+* `periods`: Period in which this work was created. Creation .See [Thesaurus/Periods](#periods)
+* `styles`: Artistic styles related to tis work. See [Thesaurus/Styles](#styles)
+* `techniques`: Techniques used to create this work. See [Thesaurus/Techniques](#techniques)
+* `schools`: Artistic school related to this work. See [Thesaurus/Schools](#schools)
+* `picture_notes`: Kind of cliche, only for photographies. See [Thesaurus/PictureNotes](#picture-notes)
+
+TODO: remove? only used in images:
+
+* `packagings`: See [Thesaurus/Packagings](#packagings)
+* `printers`: See [Thesaurus/Printers](#printers)
+
+
 ## Get All Works
 
 ```shell
@@ -11,531 +56,286 @@ curl -H "ApiKey: secret" \
 
 ```json
 {
-  "took": 4,
+  "took": 2,
   "timed_out": false,
-  "_shards": {
-    "total": 5,
-    "successful": 5,
-    "failed": 0
-  },
   "hits": {
-    "total": 11845,
-    "max_score": 1,
+    "total": 2,
+    "max_score": null,
     "hits": [
       {
-        "_index": "rmn-dev-works",
+        "_index": "rmn-development-works-admin",
         "_type": "work",
-        "_id": "13",
-        "_score": 1,
+        "_id": "2",
+        "_score": null,
         "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
+          "id": 2,
+          "popularity": 0,
+          "authors": [
             {
-              "name": "ESTAMPES",
-              "detail": null
+              "name": { "en": "Picasso Pablo", "fr": "Pablo Picasso" },
+              "detail": { "en": "painter", "fr": "peintre" },
+              "birth": { "display": "1881", "estimated_day": "1881-07-02", "estimation_spread": "364" },
+              "death": { "display": "1973", "estimated_day": "1973-07-02", "estimation_spread": "364" },
+              "other_names": [ ],
+              "relation_type": "author"
             }
           ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
+          "title": { "fr": "Le déjeuner sur l'herbe (d'après Manet)" },
+          "detail": { "fr": "13 mars 1962" },
+          "height": 529,
+          "width": 640,
+          "source": { "name": "RMN", "code": "RMN", "copyright": "Photo (C) RMN-Grand Palais" },
+          "location": { "name": { "fr": "Paris, musée Picasso" }, "city": { }, "country_code": "FR" },
+          "images": [
+            {
+              "identifier": "98-022872",
+              "path": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/HT67MF/98-022872.jpg",
+              "photographer": { "name": "Michèle Bellot" },
+              "source": { "name": "RMN", "code": "RMN", "copyright": "Photo (C) RMN-Grand Palais" }
+            }
+          ],
+          "afters": [
+            {
+              "name": { "en": "Manet Edouard", "fr": "Edouard Manet" },
+              "detail": { },
+              "birth": { "display": "1832", "estimated_day": "1832-07-01", "estimation_spread": "365" },
+              "death": { "display": "1883", "estimated_day": "1883-07-02", "estimation_spread": "364" }
+            }
+          ],
+          "authorship_details": [ ],
+          "collections": [{ "path": "Estampes", "name": { "en": "Prints", "fr": "Estampes" }, "detail": { } }],
+          "geographies": [ ],
+          "keywords": [
+            {
+              "path": "partie de campagne",
+              "name": { "en": "country outing", "fr": "partie de campagne" },
+              "detail": { }
+            },
+            {
+              "path": "Le Déjeuner sur l'herbe",
+              "name": { "fr": "Le Déjeuner sur l'herbe" },
+              "detail": { "fr": "Oeuvre peinte par Edouard Manet en 1863" }
+            }
+          ],
+          "packagings": [ ],
+          "periods": [
+            {
+              "path": "période contemporaine de 1914 à nos jours",
+              "name": { "en": "contemporary period of 1914 in our days", "fr": "période contemporaine de 1914 à nos jours" },
+              "detail": { }
+            },
+            { "path": "20e siècle", "name": { "en": "20th century", "fr": "20e siècle" }, "detail": { } }
+          ],
+          "picture_notes": [ ],
+          "printers": [ ],
+          "schools": [ ],
+          "styles": [ ],
+          "techniques": [ ]
+        },
+        "sort": [0]
       },
       {
-        "_index": "rmn-dev-works",
+        "_index": "rmn-development-works-admin",
         "_type": "work",
-        "_id": "18",
-        "_score": 1,
+        "_id": "1",
+        "_score": null,
         "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
+          "id": 1,
+          "popularity": 0,
+          "authors": [
             {
-              "name": "ESTAMPES",
-              "detail": null
+              "name": { "en": "Leonardo da Vinci", "fr": "Léonard de Vinci" },
+              "detail": { "en": "painter, draughtsman", "fr": "peintre, dessinateur" },
+              "birth": { "display": "1452", "estimated_day": "1452-07-01", "estimation_spread": "365" },
+              "death": { "display": "1519", "estimated_day": "1519-07-02", "estimation_spread": "364" },
+              "relation_type": "author"
             }
           ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "20",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
+          "title": {
+            "de": "Mona Lisa",
+            "el": "Μόνα Λίζα",
+            "en": "Mona Lisa",
+            "eo": "La Gioconda",
+            "es": "Mona Lisa",
+            "eu": "Gioconda",
+            "fa": "مونالیزا",
+            "fi": "Mona Lisa",
+            "fr": "La Joconde, portrait de Monna Lisa",
+            "he": "מונה ליזה",
+            "hy": "Մոնա Լիզա",
+            "ja": "モナ・リザ",
+            "ka": "მონა ლიზა",
+            "ru": "Мона Лиза",
+            "zh": "蒙娜丽莎"
+          },
+          "detail": {
+            "de": "Ölgemälde von Leonardo da Vinci",
+            "en": "painting by Leonardo da Vinci",
+            "es": "cuadro de Leonardo da Vinci",
+            "ja": "レオナルド・ダ・ヴィンチによる絵画作品",
+            "zh": "列奥纳多·达·芬奇所繪的麗莎·喬宮多的肖像画。"
+          },
+          "date": {
+            "display": "1504-07-01T00:00:00+00:00",
+            "estimated_day": "1504-07-01T00:00:00+00:00",
+            "estimation_spread": "1095"
+          },
+          "height": 770,
+          "width": 530,
+          "source": {
+            "name": "RMN (musée du Louvre)",
+            "code": "RMNL",
+            "copyright": "Photo (C) RMN-Grand Palais (musée du Louvre)"
+          },
+          "location": { "name": { "fr": "Paris, musée du Louvre" }, "city": { }, "country_code": "FR" },
+          "images": [
             {
-              "name": "ESTAMPES",
-              "detail": null
+              "identifier": "11-564767",
+              "path": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/6V3I0G/11-564767.jpg",
+              "photographer": { "name": "Michel Urtado", "comments": "En CDI depuis 2011 environ" },
+              "source": {
+                "name": "RMN (musée du Louvre)",
+                "code": "RMNL",
+                "copyright": "Photo (C) RMN-Grand Palais (musée du Louvre)"
+              }
+            }          ],
+          "afters": [ ],
+          "authorship_details": [ ],
+          "collections": [{ "path": "Peintures", "name": { "en": "Paintings", "fr": "Peintures" }, "detail": { } }],
+          "geographies": [ ],
+          "keywords": [
+            {
+              "path": "costume (époque renaissance)",
+              "name": { "en": "Renaissance costume", "fr": "costume (époque renaissance)" },
+              "detail": { "fr": "De 1453 à 1610 (mort d'henri IV)" }
+            },
+            {
+              "path": "portrait de femme",
+              "name": { "en": "portrait of a woman", "fr": "portrait de femme" },
+              "detail": { }
+            },
+            {
+              "path": "Renaissance italienne (art)",
+              "name": { "en": "Italian Renaissance", "fr": "Renaissance italienne (art)" },
+              "detail": { "fr": "VA arts décoratifs (Renaissance). VA Manièrisme (art)" }
             }
           ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "25",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
+          "packagings": [ ],
+          "periods": [
+            { "path": "15e siècle", "name": { "en": "15th century", "fr": "15e siècle" }, "detail": { } },
             {
-              "name": "ESTAMPES",
-              "detail": null
+              "path": "Renaissance (période)",
+              "name": { "fr": "Renaissance (période)" },
+              "detail": { "fr": "Fin du Moyen Age à la fin du 16e siècle" }
             }
           ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "32",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "ESTAMPES",
-              "detail": null
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "37",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "ESTAMPES",
-              "detail": null
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "44",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "ESTAMPES",
-              "detail": null
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "49",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "ESTAMPES",
-              "detail": null
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "6",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "ESTAMPES",
-              "detail": null
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "51",
-        "_score": 1,
-        "_source": {
-          "title": null,
-          "description": null,
-          "date": null,
-          "height": null,
-          "width": null,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": null,
-          "location": null,
-          "authors": [],
-          "periods": [],
-          "techniques": [],
-          "geographies": [],
-          "images": [],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "ESTAMPES",
-              "detail": null
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [],
-          "packagings": [],
-          "printers": []
-        }
+          "picture_notes": [ ],
+          "printers": [ ],
+          "schools": [ ],
+          "styles": [ ],
+          "techniques": [
+            { "path": "huile sur bois", "name": { "en": "oil on wood", "fr": "huile sur bois" }, "detail": { } }
+          ]
+        },
+        "sort": [0]
       }
     ]
   },
-  "facets": {
-    "collections": {
-      "_type": "terms",
-      "missing": 11845,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "sources": {
-      "_type": "terms",
-      "missing": 11842,
-      "total": 3,
-      "other": 0,
-      "terms": [
+  "aggregations": {
+    "periods": {
+      "buckets": [
         {
-          "term": "RMN (musée d'Orsay)",
-          "count": 1
+          "key": "15e siècle",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bperiods%5D=15e+si%C3%A8cle"
         },
         {
-          "term": "RMN (MAN)",
-          "count": 1
+          "key": "20e siècle",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bperiods%5D=20e+si%C3%A8cle"
         },
         {
-          "term": "RMN",
-          "count": 1
-        }
-      ]
-    },
-    "locations": {
-      "_type": "terms",
-      "missing": 11842,
-      "total": 3,
-      "other": 0,
-      "terms": [
-        {
-          "term": "Saint-Germain-en-Laye, musée d'Archéologie nationale et Domaine national de Saint-Germain-en-Laye",
-          "count": 1
+          "key": "Renaissance (période)",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bperiods%5D=Renaissance+%28p%C3%A9riode%29"
         },
         {
-          "term": "Paris, musée du Louvre",
-          "count": 1
-        },
-        {
-          "term": "Paris, musée d'Orsay, conservé au musée du Louvre",
-          "count": 1
+          "key": "période contemporaine de 1914 à nos jours",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bperiods%5D=p%C3%A9riode+contemporaine+de+1914+%C3%A0+nos+jours"
         }
       ]
     },
     "authors": {
-      "_type": "terms",
-      "missing": 11843,
-      "total": 4,
-      "other": 0,
-      "terms": [
+      "buckets": [
         {
-          "term": "Vinci Léonard de",
-          "count": 2
+          "key": "Léonard de Vinci",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bauthors%5D=L%C3%A9onard+de+Vinci"
         },
         {
-          "term": "Gaillard Claude-Ferdinand",
-          "count": 1
-        },
-        {
-          "term": "Ferrier Gabriel Joseph Marie Augustin",
-          "count": 1
+          "key": "Pablo Picasso",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bauthors%5D=Pablo+Picasso"
         }
       ]
     },
-    "periods": {
-      "_type": "terms",
-      "missing": 11842,
-      "total": 11,
-      "other": 0,
-      "terms": [
+    "geographies": { "buckets": [ ] },
+    "schools": { "buckets": [ ] },
+    "locations": {
+      "buckets": [
         {
-          "term": "période contemporaine de 1789 à 1914",
-          "count": 2
+          "key": "Paris, musée Picasso",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Blocations%5D=Paris%2C+mus%C3%A9e+Picasso"
         },
         {
-          "term": "20e siècle",
-          "count": 2
-        },
-        {
-          "term": "19e siècle",
-          "count": 2
-        },
-        {
-          "term": "période Chancay (1100-1400)",
-          "count": 1
-        },
-        {
-          "term": "15e siècle",
-          "count": 1
-        },
-        {
-          "term": "14e siècle",
-          "count": 1
-        },
-        {
-          "term": "13e siècle",
-          "count": 1
-        },
-        {
-          "term": "12e siècle",
-          "count": 1
+          "key": "Paris, musée du Louvre",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Blocations%5D=Paris%2C+mus%C3%A9e+du+Louvre"
         }
       ]
     },
+    "picture_notes": { "buckets": [ ] },
+    "styles": { "buckets": [ ] },
+    "printers": { "buckets": [ ] },
+    "packagings": { "buckets": [ ] },
     "techniques": {
-      "_type": "terms",
-      "missing": 11842,
-      "total": 3,
-      "other": 0,
-      "terms": [
+      "buckets": [
         {
-          "term": "terre cuite",
-          "count": 1
-        },
-        {
-          "term": "huile sur toile",
-          "count": 1
-        },
-        {
-          "term": "crayon (dessin)",
-          "count": 1
+          "key": "huile sur bois",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Btechniques%5D=huile+sur+bois"
         }
       ]
     },
-    "styles": {
-      "_type": "terms",
-      "missing": 11845,
-      "total": 0,
-      "other": 0,
-      "terms": []
+    "sources": {
+      "buckets": [
+        {
+          "key": "RMN",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=RMN"
+        },
+        {
+          "key": "RMN (musée du Louvre)",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
+        }
+      ]
     },
-    "schools": {
-      "_type": "terms",
-      "missing": 11845,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "picture_notes": {
-      "_type": "terms",
-      "missing": 11845,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "packagings": {
-      "_type": "terms",
-      "missing": 11845,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "printers": {
-      "_type": "terms",
-      "missing": 11845,
-      "total": 0,
-      "other": 0,
-      "terms": []
+    "collections": {
+      "buckets": [
+        {
+          "key": "Estampes",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bcollections%5D=Estampes"
+        },
+        {
+          "key": "Peintures",
+          "doc_count": 1,
+          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bcollections%5D=Peintures"
+        }
+      ]
     }
   }
 }
