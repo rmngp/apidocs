@@ -13,10 +13,10 @@
   * `estimated_day`: Estimated date
   * `estimation_spread`: Precision of the estimated date
 * `copyright`: copyright details
-* `height`: Height in mm
-* `width`: Width in mm
-* `depth`: Depth in mm
-* `diameter`: Diameter in mm
+* `height`: Height in millimeters
+* `width`: Width in millimeters
+* `depth`: Depth in millimeters
+* `diameter`: Diameter in millimeters
 * `images`: Images availables for this work, structured like this:
   * `identifier`: RMN identifier
   * `path`: Url
