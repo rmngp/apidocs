@@ -43,7 +43,7 @@ This documentation should help you discover our API, and includes some examples
 using the Ruby programming language, on the right-most pane. You can also
 explore the API live using our [Javascript console][console].
 
-## Versionning
+## Versioning
 
 All Api calls must specify the API version to use. This version identifier
 ensures that API will not introduce major changes for the given version.
