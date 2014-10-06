@@ -349,10 +349,27 @@ This endpoint retrieves all artworks.
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-q         | ""      | If set, results are filtered to match this String
-page      | 1       | Paginate through results
+Parameter              | Default  | Description
+---------              | -------  | -----------
+q                      |          | Filter results matching this query
+sort                   |          | Field used to sort results
+order                  | desc     | Sorting order, desc or asc.
+page                   | 1        | Results page offset
+per                    | 10       | Number of results per page
+facet_page             | 1        | Facet page offset
+facet_per              | 10       | Number of facets per page
+facets[collections]    |          | Filter on a collection facet
+facets[sources]        |          | Filter on a source facet
+facets[locations]      |          | Filter on a location facet
+facets[authors]        |          | Filter on a author facet
+facets[periods]        |          | Filter on a period facet
+facets[techniques]     |          | Filter on a technique facet
+facets[styles]         |          | Filter on a style facet
+facets[schoolss]       |          | Filter on a schools facet
+facets[picture_notes]  |          | Filter on a picture_note facet
+facets[packagings]     |          | Filter on a packaging facet
+facets[geographies]    |          | Filter on a geography facet
+facets[printers]       |          | Filter on a printer facet
 
 
 For more specific research see [Search](/?shell#search)
