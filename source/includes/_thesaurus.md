@@ -4,40 +4,52 @@
 
 ```shell
 curl -H "ApiKey: secret" \
-     "http://api.dev.rmn.af83.com/v1/thesaurus/sources"
+     "http://api.dev.rmn.af83.com/v1/thesaurus/collections"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-    "hits": {
-        "total": 42,
-            "hits": [
-            {
-                "_source": {
-                    "id": 3,
-                    "code": "RMN",
-                    "copyright": "Photo (C) RMN-Grand Palais",
-                    "disabled": false,
-                    "name": "RMN",
-                    "created_at": "2014-08-06T14:45:30.218Z",
-                    "updated_at": "2014-08-06T14:45:30.245Z"
-                }
-            },
-            {
-                "_source": {
-                    "id": 4,
-                    "code": "RMNO",
-                    "copyright": "Photo (C) RMN-Grand Palais (musée d'Orsay)",
-                    "disabled": false,
-                    "name": "RMN (musée d'Orsay)",
-                    "created_at": "2014-08-06T14:47:16.613Z",
-                    "updated_at": "2014-08-06T14:47:16.670Z"
-                }
-            }
-        ]
-    }
+  "took": 1,
+  "timed_out": false,
+  "hits": {
+    "total": 31,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "rmn-development-collections",
+        "_type": "collection",
+        "_id": "1",
+        "_score": 1,
+        "_source": { "path": "Peintures", "name": { "en": "Paintings", "fr": "Peintures" }, "detail": { }, "level": 0 }
+      },
+      {
+        "_index": "rmn-development-collections",
+        "_type": "collection",
+        "_id": "6",
+        "_score": 1,
+        "_source": {
+          "path": "Antiquités grecques, étrusques et romaines",
+          "name": { "en": "Greek, Etruscan and Roman antiquities ", "fr": "Antiquités grecques, étrusques et romaines" },
+          "detail": { },
+          "level": 0
+        }
+      },
+      {
+        "_index": "rmn-development-collections",
+        "_type": "collection",
+        "_id": "13",
+        "_score": 1,
+        "_source": {
+          "path": "Arts de l'Islam",
+          "name": { "en": "Islamic art", "fr": "Arts de l'Islam" },
+          "detail": { },
+          "level": 0
+        }
+      }
+    ]
+  }
 }
 ```
 
@@ -65,10 +77,11 @@ Where ```$resource_type``` is one of:
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-q         | ""      | If set, results are filtered to match this String
-page      | 1       | Paginate through results
+Parameter              | Default  | Description
+---------              | -------  | -----------
+q                      |          | Filter results matching this query
+page                   | 1        | Results page offset
+per                    | 10       | Number of results per page
 
 For more specific research see [Search](/?shell#search)
 
