@@ -90,6 +90,37 @@ Error Code | Meaning
 
 # Search
 
+## Response
+
+The response consists of 2 sections :
+
+### Hits
+
+This section contains the results of your search. Check the [Elastic Search
+documentation]
+(http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/empty-search.html#_literal_hits_literal)
+for more informations.
+
+In short, this section is structured like this:
+
+* `total`: Total hits of your search
+* `max_score`:  Maximum score of a hit in your search
+* `hits`: The results
+
+
+### Aggregations
+
+This section contains the aggregations (facets) related to your search.
+Each aggregation is defined by a key, and contains many buckets. Buckets are
+the available facets for the current search.
+
+Aggregation structure looks like this:
+
+* `buckets`
+  * `key`: Facet name
+  * `doc_count`: Total hits for this facet
+  * `link`: The api url to filter your current search on this facet
+
 
 ## Pagination
 
@@ -97,7 +128,7 @@ When listing or searching documents, the API always returns paginated results.
 The default is to return `10` results per page.
 
 The total number of results matching a Query is indicated by the `total` key,
-immediately under the hits key.
+immediately under the `hits` key.
 
 
 
@@ -124,16 +155,13 @@ curl -H "ApiKey: secret" \
 ```
 
 
-
-
-
 ##  Full text
 
-When you want to search for a work somme spécial work, you can use full text with the q parameter: for exemple if I want to search the work "la joconde" you pass
+When you want to search for a work somme spécial work, you can use full text
+with the q parameter.
 
-`"joconde"`
-
- in the q parameter
+For exemple if I want to search the work "la joconde" you pass `"joconde"` in
+the q parameter:
 
 ```shell
 curl -H "ApiKey: secret" \
@@ -508,22 +536,12 @@ curl -H "ApiKey: secret" \
 }
 ```
 
-There is two part in the reasult :
- 
-1. Hits
-
-This is where you can find the number of result, and the list of the result
-
-2. Facets
-
-This is where you can find the facets associated to the research you did
-
 
 ##  Multi-criteria research
 
 The full text research is good but sometime you want something more precise when you do a research in an API :  it's possible.
 
-For exemple, you want to search "la joconde" but you only want to have result that are drawed :  you can pass 
+For exemple, you want to search "la joconde" but you only want to have result that are drawed :  you can pass
 
  `"joconde AND techniques=dessin" `
 
