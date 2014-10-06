@@ -90,6 +90,7 @@ Error Code | Meaning
 
 # Search
 
+
 ## Response
 
 The response consists of 2 sections :
@@ -108,19 +109,18 @@ In short, this section is structured like this:
 * `hits`: The results
 
 
-### Aggregations
+### Facets
 
-This section contains the aggregations (facets) related to your search.
+This section contains the facets related to your search.
 Each aggregation is defined by a key, and contains many buckets. Buckets are
 the available facets for the current search.
 
-Aggregation structure looks like this:
+Facet structure looks like this:
 
 * `buckets`
   * `key`: Facet name
   * `doc_count`: Total hits for this facet
   * `link`: The api url to filter your current search on this facet
-
 
 ## Pagination
 
@@ -130,6 +130,10 @@ The default is to return `10` results per page.
 The total number of results matching a Query is indicated by the `total` key,
 immediately under the `hits` key.
 
+To get another results page, just add these parameters:
+
+* `page`: Results page offset
+* `per`: Number of results per page
 
 
 <aside class="warning">
@@ -154,406 +158,45 @@ curl -H "ApiKey: secret" \
 }
 ```
 
+## Full text
 
-##  Full text
+When you want to search for documents, you can perform a full text using the `q`
+parameter.
 
-When you want to search for a work somme spécial work, you can use full text
-with the q parameter.
+This parameter uses the
+[Query String Query]
+(http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html)
+format of Elastic search API.
 
-For exemple if I want to search the work "la joconde" you pass `"joconde"` in
-the q parameter:
+Here are some examples.
+
+If you want to search on all fields, just provide a string: `la joconde`.
 
 ```shell
 curl -H "ApiKey: secret" \
-     "http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde"
+     'http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde'
+
+curl -H "ApiKey: secret" \
+     "http://api.dev.rmn.af83.com:80/v1/works.json?q=title:"la%20joconde""
 ```
 
-> The above command returns JSON structured like this:
-
-```json
-{
-  "took": 10,
-  "timed_out": false,
-  "_shards": {
-    "total": 5,
-    "successful": 5,
-    "failed": 0
-  },
-  "hits": {
-    "total": 2,
-    "max_score": 1.7724321,
-    "hits": [
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "1",
-        "_score": 1.7724321,
-        "_source": {
-          "title": "La 'Joconde' d'après Léonard de Vinci",
-          "description": "Dessin pour la gravure de la chalcographie : 'La Joconde' d'après Léonard de Vinci. Dessin annexé à la gravure.",
-          "date": null,
-          "height": 0,
-          "width": 0,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": {
-            "name": "RMN (musée d'Orsay)",
-            "code": "RMNO",
-            "copyright": "Photo (C) RMN-Grand Palais (musée d'Orsay)"
-          },
-          "location": {
-            "name": "Paris, musée d'Orsay, conservé au musée du Louvre",
-            "city": "",
-            "country_code": "FR"
-          },
-          "authors": [
-            {
-              "name": "Gaillard Claude-Ferdinand",
-              "detail": "",
-              "birth": {
-                "year": "1834"
-              },
-              "death": {
-                "year": "1887"
-              }
-            },
-            {
-              "name": "Vinci Léonard de",
-              "detail": "",
-              "birth": {
-                "year": "1452"
-              },
-              "death": {
-                "year": "1519"
-              }
-            }
-          ],
-          "periods": [
-            {
-              "name": "période contemporaine de 1789 à 1914",
-              "detail": ""
-            },
-            {
-              "name": "20e siècle",
-              "detail": ""
-            },
-            {
-              "name": "19e siècle",
-              "detail": ""
-            }
-          ],
-          "techniques": [
-            {
-              "name": "crayon (dessin)",
-              "detail": ""
-            }
-          ],
-          "geographies": [],
-          "images": [
-            {
-              "identifier": "00-031315",
-              "path": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/AENWFJ/00-031315.jpg"
-            }
-          ],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "Dessins",
-              "detail": ""
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [
-            {
-              "name": "bras croisés",
-              "detail": ""
-            },
-            {
-              "name": "portrait en buste",
-              "detail": ""
-            },
-            {
-              "name": "fond de paysage",
-              "detail": ""
-            },
-            {
-              "name": "main",
-              "detail": ""
-            },
-            {
-              "name": "La Joconde",
-              "detail": "Peinture (Portrait de Monna Lisa) peint par Léonard de Vinci (conservé au musée du Louvre, INV779)"
-            },
-            {
-              "name": "oeuvre d'art (influence)",
-              "detail": "TA copie d'oeuvre, pastiche"
-            },
-            {
-              "name": "sourire",
-              "detail": ""
-            },
-            {
-              "name": "portrait de femme",
-              "detail": ""
-            }
-          ],
-          "packagings": [],
-          "printers": []
-        }
-      },
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "2",
-        "_score": 1.5156351,
-        "_source": {
-          "title": "Copie de la Joconde de Leonard de Vinci",
-          "description": "",
-          "date": null,
-          "height": 0,
-          "width": 0,
-          "depth": 0,
-          "diameter": 0,
-          "copyright": null,
-          "source": {
-            "name": "RMN",
-            "code": "RMN",
-            "copyright": "Photo (C) RMN-Grand Palais"
-          },
-          "location": {
-            "name": "Paris, musée du Louvre",
-            "city": "",
-            "country_code": "FR"
-          },
-          "authors": [
-            {
-              "name": "Vinci Léonard de",
-              "detail": "",
-              "birth": {
-                "year": "1452"
-              },
-              "death": {
-                "year": "1519"
-              }
-            },
-            {
-              "name": "Ferrier Gabriel Joseph Marie Augustin",
-              "detail": "",
-              "birth": {
-                "year": "1847"
-              },
-              "death": {
-                "year": "1914"
-              }
-            }
-          ],
-          "periods": [
-            {
-              "name": "période contemporaine de 1789 à 1914",
-              "detail": ""
-            },
-            {
-              "name": "20e siècle",
-              "detail": ""
-            },
-            {
-              "name": "19e siècle",
-              "detail": ""
-            }
-          ],
-          "techniques": [
-            {
-              "name": "huile sur toile",
-              "detail": ""
-            }
-          ],
-          "geographies": [],
-          "images": [
-            {
-              "identifier": "05-529033",
-              "path": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/55NWFJ/05-529033.jpg"
-            }
-          ],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "Peintures",
-              "detail": ""
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [
-            {
-              "name": "La Joconde",
-              "detail": "Peinture (Portrait de Monna Lisa) peint par Léonard de Vinci (conservé au musée du Louvre, INV779)"
-            },
-            {
-              "name": "copie d'oeuvre",
-              "detail": "VA pastiche, oeuvre d'art (inspiration)"
-            }
-          ],
-          "packagings": [],
-          "printers": []
-        }
-      }
-    ]
-  },
-  "facets": {
-    "collections": {
-      "_type": "terms",
-      "missing": 2,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "sources": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 2,
-      "other": 0,
-      "terms": [
-        {
-          "term": "RMN (musée d'Orsay)",
-          "count": 1
-        },
-        {
-          "term": "RMN",
-          "count": 1
-        }
-      ]
-    },
-    "locations": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 2,
-      "other": 0,
-      "terms": [
-        {
-          "term": "Paris, musée du Louvre",
-          "count": 1
-        },
-        {
-          "term": "Paris, musée d'Orsay, conservé au musée du Louvre",
-          "count": 1
-        }
-      ]
-    },
-    "authors": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 4,
-      "other": 0,
-      "terms": [
-        {
-          "term": "Vinci Léonard de",
-          "count": 2
-        },
-        {
-          "term": "Gaillard Claude-Ferdinand",
-          "count": 1
-        },
-        {
-          "term": "Ferrier Gabriel Joseph Marie Augustin",
-          "count": 1
-        }
-      ]
-    },
-    "periods": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 6,
-      "other": 0,
-      "terms": [
-        {
-          "term": "période contemporaine de 1789 à 1914",
-          "count": 2
-        },
-        {
-          "term": "20e siècle",
-          "count": 2
-        },
-        {
-          "term": "19e siècle",
-          "count": 2
-        }
-      ]
-    },
-    "techniques": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 2,
-      "other": 0,
-      "terms": [
-        {
-          "term": "huile sur toile",
-          "count": 1
-        },
-        {
-          "term": "crayon (dessin)",
-          "count": 1
-        }
-      ]
-    },
-    "styles": {
-      "_type": "terms",
-      "missing": 2,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "schools": {
-      "_type": "terms",
-      "missing": 2,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "picture_notes": {
-      "_type": "terms",
-      "missing": 2,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "packagings": {
-      "_type": "terms",
-      "missing": 2,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "printers": {
-      "_type": "terms",
-      "missing": 2,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    }
-  }
-}
-```
+Alternatively, you can select a field to search for, if you want to search only
+in the title, use `title:"la joconde"`.
 
 
 ##  Multi-criteria research
 
-The full text research is good but sometime you want something more precise when you do a research in an API :  it's possible.
+The full text research is good but sometime you want something more precise when
+you do a research in an API : it's possible.
 
-For exemple, you want to search "la joconde" but you only want to have result that are drawed :  you can pass
+For exemple, you want to search `la joconde` but you only want to have result
+that are drawed : you can pass `"joconde AND techniques.name=dessin"` in the `q`
+parameter.
 
- `"joconde AND techniques=dessin" `
+You can do that with every terms of the works like periods, keywords, authors,…
 
-in the q parameter.
-
-You can do that with every terms of the works like periods, keywords, authors, ...
-
-You can also use the operand OR
-
-For exemple you can use
-
- `"joconde OR collection=estampes" `
+You can also use the operand `OR` For exemple you can use
+`"joconde OR collection=estampes"`
 
 
 ```shell
@@ -561,281 +204,25 @@ curl -H "ApiKey: secret" \
      "http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde%20AND%20techniques%3Ddessin"
 ```
 
-> The above command returns JSON structured like this:
-
-```json
-
-{
-  "took": 3,
-  "timed_out": false,
-  "_shards": {
-    "total": 5,
-    "successful": 5,
-    "failed": 0
-  },
-  "hits": {
-    "total": 1,
-    "max_score": 1.4579737,
-    "hits": [
-      {
-        "_index": "rmn-dev-works",
-        "_type": "work",
-        "_id": "1",
-        "_score": 1.4579737,
-        "_source": {
-          "title": "La 'Joconde' d'après Léonard de Vinci",
-          "description": "Dessin pour la gravure de la chalcographie : 'La Joconde' d'après Léonard de Vinci. Dessin annexé à la gravure.",
-          "date": null,
-          "height": 0,
-          "width": 0,
-          "depth": null,
-          "diameter": null,
-          "copyright": null,
-          "source": {
-            "name": "RMN (musée d'Orsay)",
-            "code": "RMNO",
-            "copyright": "Photo (C) RMN-Grand Palais (musée d'Orsay)"
-          },
-          "location": {
-            "name": "Paris, musée d'Orsay, conservé au musée du Louvre",
-            "city": "",
-            "country_code": "FR"
-          },
-          "authors": [
-            {
-              "name": "Gaillard Claude-Ferdinand",
-              "detail": "",
-              "birth": {
-                "year": "1834"
-              },
-              "death": {
-                "year": "1887"
-              }
-            },
-            {
-              "name": "Vinci Léonard de",
-              "detail": "",
-              "birth": {
-                "year": "1452"
-              },
-              "death": {
-                "year": "1519"
-              }
-            }
-          ],
-          "periods": [
-            {
-              "name": "période contemporaine de 1789 à 1914",
-              "detail": ""
-            },
-            {
-              "name": "20e siècle",
-              "detail": ""
-            },
-            {
-              "name": "19e siècle",
-              "detail": ""
-            }
-          ],
-          "techniques": [
-            {
-              "name": "crayon (dessin)",
-              "detail": ""
-            }
-          ],
-          "geographies": [],
-          "images": [
-            {
-              "identifier": "00-031315",
-              "path": "http://www.photo.rmn.fr/CorexDoc/RMN/Media/TR1/AENWFJ/00-031315.jpg"
-            }
-          ],
-          "styles": [],
-          "schools": [],
-          "collections": [
-            {
-              "name": "Dessins",
-              "detail": ""
-            }
-          ],
-          "picture_notes": [],
-          "keywords": [
-            {
-              "name": "bras croisés",
-              "detail": ""
-            },
-            {
-              "name": "portrait en buste",
-              "detail": ""
-            },
-            {
-              "name": "fond de paysage",
-              "detail": ""
-            },
-            {
-              "name": "main",
-              "detail": ""
-            },
-            {
-              "name": "La Joconde",
-              "detail": "Peinture (Portrait de Monna Lisa) peint par Léonard de Vinci (conservé au musée du Louvre, INV779)"
-            },
-            {
-              "name": "oeuvre d'art (influence)",
-              "detail": "TA copie d'oeuvre, pastiche"
-            },
-            {
-              "name": "sourire",
-              "detail": ""
-            },
-            {
-              "name": "portrait de femme",
-              "detail": ""
-            }
-          ],
-          "packagings": [],
-          "printers": []
-        }
-      }
-    ]
-  },
-  "facets": {
-    "collections": {
-      "_type": "terms",
-      "missing": 1,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "sources": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 1,
-      "other": 0,
-      "terms": [
-        {
-          "term": "RMN (musée d'Orsay)",
-          "count": 1
-        }
-      ]
-    },
-    "locations": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 1,
-      "other": 0,
-      "terms": [
-        {
-          "term": "Paris, musée d'Orsay, conservé au musée du Louvre",
-          "count": 1
-        }
-      ]
-    },
-    "authors": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 2,
-      "other": 0,
-      "terms": [
-        {
-          "term": "Vinci Léonard de",
-          "count": 1
-        },
-        {
-          "term": "Gaillard Claude-Ferdinand",
-          "count": 1
-        }
-      ]
-    },
-    "periods": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 3,
-      "other": 0,
-      "terms": [
-        {
-          "term": "période contemporaine de 1789 à 1914",
-          "count": 1
-        },
-        {
-          "term": "20e siècle",
-          "count": 1
-        },
-        {
-          "term": "19e siècle",
-          "count": 1
-        }
-      ]
-    },
-    "techniques": {
-      "_type": "terms",
-      "missing": 0,
-      "total": 1,
-      "other": 0,
-      "terms": [
-        {
-          "term": "crayon (dessin)",
-          "count": 1
-        }
-      ]
-    },
-    "styles": {
-      "_type": "terms",
-      "missing": 1,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "schools": {
-      "_type": "terms",
-      "missing": 1,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "picture_notes": {
-      "_type": "terms",
-      "missing": 1,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "packagings": {
-      "_type": "terms",
-      "missing": 1,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    },
-    "printers": {
-      "_type": "terms",
-      "missing": 1,
-      "total": 0,
-      "other": 0,
-      "terms": []
-    }
-  }
-}
-
-```
-
-
-
-
-[console]: http://doc.dev.rmn.af83.com/console/
-[partners]: http://dev.rmn.af83.com/partners
-
 
 ##  Filtering facets
 
-On works, authors and selections endpoints, facets are availables.
+On works, authors and selections endpoints facets are availables.
 
 To filter on a facet, just add a `facets[facet_name]=facet_value` params to the
 query string.
 
+By default, only 10 facets are returned by the api. If you want more, use the
+facet pagination.
+
+* `facet_page`: Facet page offset
+* `facet_per`: Number of facets to return
+
+
 > For example, we have the following facet returned by the works endpoint:
 
 ```json
+  {
     "sources": {
       "buckets": [
         {
@@ -865,7 +252,12 @@ query string.
         }
       ]
     }
+  }
 ```
 
-> To filter works on the «RMN» source, add this params to
-the query string: `facets[sources]=RMN`
+> To filter works on the «RMN» source, add this params to the query string:
+`facets[sources]=RMN`
+
+
+[console]: http://doc.dev.rmn.af83.com/console/
+[partners]: http://dev.rmn.af83.com/partners
