@@ -78,6 +78,8 @@ curl -H "ApiKey: secret" \
               "detail": { "en": "painter", "fr": "peintre" },
               "birth": { "display": "1881", "estimated_day": "1881-07-02", "estimation_spread": "364" },
               "death": { "display": "1973", "estimated_day": "1973-07-02", "estimation_spread": "364" },
+              "birth_place": { "display": "Málaga", "latitude": "36.716666666667", "longitude": "-4.4166666666667" },
+              "death_place": { "display": "Mougins", "latitude": "43.6", "longitude": "7" },
               "other_names": [ ],
               "relation_type": "author"
             }
@@ -150,6 +152,8 @@ curl -H "ApiKey: secret" \
               "detail": { "en": "painter, draughtsman", "fr": "peintre, dessinateur" },
               "birth": { "display": "1452", "estimated_day": "1452-07-01", "estimation_spread": "365" },
               "death": { "display": "1519", "estimated_day": "1519-07-02", "estimation_spread": "364" },
+              "birth_place": { "display": "Anchiano", "latitude": "43.799166666667", "longitude": "10.938133333333" },
+              "death_place": { "display": "Château du Clos Lucé", "latitude": "47.41", "longitude": "0.99138888888889" },
               "relation_type": "author"
             }
           ],
@@ -355,7 +359,7 @@ Parameter              | Default  | Description
 ---------              | -------  | -----------
 q                      |          | Filter results matching this query
 sort                   |          | Field used to sort results
-order                  | desc     | Sorting order, desc or asc.
+order                  | asc      | Sorting order, desc or asc.
 page                   | 1        | Results page offset
 per                    | 10       | Number of results per page
 facet_page             | 1        | Facet page offset
@@ -367,7 +371,7 @@ facets[authors]        |          | Filter on a author facet
 facets[periods]        |          | Filter on a period facet
 facets[techniques]     |          | Filter on a technique facet
 facets[styles]         |          | Filter on a style facet
-facets[schoolss]       |          | Filter on a schools facet
+facets[schools]        |          | Filter on a schools facet
 facets[picture_notes]  |          | Filter on a picture_note facet
 facets[packagings]     |          | Filter on a packaging facet
 facets[geographies]    |          | Filter on a geography facet
