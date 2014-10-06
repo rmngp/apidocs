@@ -25,7 +25,7 @@
 
 ### Associations
 
-* `source`: Museum or institution where this work commes from. See [Thesaurus/Sources](#sources)
+* `source`: Museum or institution where this work comes from. See [Thesaurus/Sources](#sources)
 * `location`: Location where is located this work. See [Thesaurus/Locations](#locations)
 * `authors`: Authors of this work. See [Thesaurus/Authors](#authors)
 * `afters`: Authors that inspired this work. See [Thesaurus/Authors](#authors)
@@ -39,10 +39,12 @@
 * `schools`: Artistic school related to this work. See [Thesaurus/Schools](#schools)
 * `picture_notes`: Kind of cliche, only for photographies. See [Thesaurus/PictureNotes](#picture-notes)
 
+<aside class="warning">
 TODO: remove? only used in images:
 
 * `packagings`: See [Thesaurus/Packagings](#packagings)
 * `printers`: See [Thesaurus/Printers](#printers)
+</aside>
 
 
 ## Get All Works
