@@ -52,13 +52,6 @@ curl -H "ApiKey: secret" \
 
 Locations are the differents museeum where the works are.
 
-Examples:
-
-- Paris, musée national d'Art moderne - Centre Georges Pompidou
-- Paris, musée du Louvre
-- Versailles, châteaux de Versailles et de Trianon
-- Royaume-Uni, Londres, British Museum
-
 ### Definition
 
 #### Attributes
@@ -75,3 +68,13 @@ This endpoint retrieves all know locations.
 #### HTTP Request
 
 `GET http://api.dev.rmn.af83.com/v1/thesaurus/locations`
+
+#### Query Parameters
+
+Parameter              | Default  | Description
+---------              | -------  | -----------
+q                      |          | Filter results matching this query
+page                   | 1        | Results page offset
+per                    | 10       | Number of results per page
+
+For more specific research see [Search](/?shell#search)

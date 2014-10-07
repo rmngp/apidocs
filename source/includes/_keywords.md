@@ -53,20 +53,13 @@ curl -H "ApiKey: secret" \
 
 Keywords contain all the keyword that has'nt a special type.
 
-Examples:
-
-- portrait d'homme
-- étude de figure
-- carnet de croquis
-- nu féminin
-
 ### Definition
 
 #### Attributes
 
 * `name`: name in several languages
 * `detail`: detail in several languages
-* `path`: path in the thesaurus hierarchy, example: Femme/nu féminin
+* `path`: path in the thesaurus hierarchy
 * `level`: level in the thesaurus hierarchy, 0 for root nodes
 
 ### Get All keywords
@@ -76,3 +69,14 @@ This endpoint retrieves all keywords.
 #### HTTP Request
 
 `GET http://api.dev.rmn.af83.com/v1/thesaurus/keywords`
+
+#### Query Parameters
+
+Parameter              | Default  | Description
+---------              | -------  | -----------
+q                      |          | Filter results matching this query
+filters[level]         |          | Filter on a specific level of the thesaurus hierarchy
+page                   | 1        | Results page offset
+per                    | 10       | Number of results per page
+
+For more specific research see [Search](/?shell#search)

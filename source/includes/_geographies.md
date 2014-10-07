@@ -62,20 +62,13 @@ curl -H "ApiKey: secret" \
 
 Geographies are places in the world where the works was done or founded.
 
-Examples:
-
-- Paris (origine)
-- France (origine)
-- Chine (République populaire de Chine) (origine)
-- manufacture de Sèvres (fondée en 1756)
-
 ### Definition
 
 #### Attributes
 
 * `name`: name in several languages
 * `detail`: detail in several languages
-* `path`: path in the thesaurus hierarchy, example: Europe/France
+* `path`: path in the thesaurus hierarchy
 * `level`: level in the thesaurus hierarchy, 0 for root nodes
 
 ### Get All Geographies
@@ -85,3 +78,14 @@ This endpoint retrieves all know geographies.
 #### HTTP Request
 
 `GET http://api.dev.rmn.af83.com/v1/thesaurus/periods`
+
+#### Query Parameters
+
+Parameter              | Default  | Description
+---------              | -------  | -----------
+q                      |          | Filter results matching this query
+filters[level]         |          | Filter on a specific level of the thesaurus hierarchy
+page                   | 1        | Results page offset
+per                    | 10       | Number of results per page
+
+For more specific research see [Search](/?shell#search)
