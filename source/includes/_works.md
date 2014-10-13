@@ -39,13 +39,6 @@
 * `schools`: Artistic school related to this work. See [Thesaurus/Schools](#schools)
 * `picture_notes`: Kind of cliche, only for photographies. See [Thesaurus/PictureNotes](#picture-notes)
 
-<aside class="warning">
-TODO: remove? only used in images:
-
-* `packagings`: See [Thesaurus/Packagings](#packagings)
-* `printers`: See [Thesaurus/Printers](#printers)
-</aside>
-
 
 ## Get All Works
 

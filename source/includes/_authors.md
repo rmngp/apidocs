@@ -1,6 +1,6 @@
 # Authors
 
-List all authors present in the API.
+List all authors present on the API.
 
 ## Definition
 
@@ -8,7 +8,7 @@ List all authors present in the API.
 
 * `name`: name in several languages
 * `detail`: detail in several languages
-* `other_names`: other names used to describe this author
+* `other_names`: other known names for this author
 * `birth`: date of birth, structured like this:
   * `display`: Text representation, example: 15th century, renaissance, …
   * `estimated_day`: Estimated date
@@ -38,7 +38,6 @@ List all authors present in the API.
 
 
 ## Get All Authors
-
 
 ```shell
 curl -H "ApiKey: secret" \

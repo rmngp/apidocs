@@ -36,20 +36,20 @@ search: true
 # Introduction
 
 Welcome to the RMN-GP API! You can use our API to access RMN-GP API endpoints,
-to retrieve information in the JSON format on various artworks, artists, and
+and retrieve information in the JSON format on various artworks, artists, and
 related pictures in our database.
 
-This documentation should help you discover our API, and includes some examples
-using the Ruby programming language, on the right-most pane. You can also
-explore the API live using our [Javascript console][console].
+This documentation should help you discover our API, and includes some
+examples using curl, on the right-most pane. You can also explore the API live
+using our [Javascript console][console].
 
 ## Versioning
 
-All Api calls must specify the API version to use. This version identifier
+All API calls must specify which API version to use. This version identifier
 ensures that API will not introduce major changes for the given version.
 
 You can get the last API version by requesting the root API endpoint:
-`http://api.rmn.dev/`
+http://api.rmn.dev/
 
 Then prefix all paths with this version number, for example:
 `http://api.rmn.dev/v1/api_endpoint_here`.
@@ -74,7 +74,7 @@ curl -H "ApiKey: secret" \
 
 ## Authentication
 
-> To authorize, you will need to include the key in HTTP request headers:
+> To be authorized, you will need to include the key in HTTP request headers:
 
 ```shell
 curl -H "ApiKey: secret" \
@@ -116,12 +116,12 @@ Error Code | Meaning
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily off-line for maintenance. Please try again later.
 
-# Search
 
+# Search
 
 ## Response
 
-The response consists of 2 sections :
+The response consists of 2 sections:
 
 ### Hits
 
@@ -135,7 +135,6 @@ In short, this section is structured like this:
 * `total`: Total hits of your search
 * `max_score`:  Maximum score of a hit in your search
 * `hits`: The results
-
 
 ### Facets
 
@@ -235,19 +234,19 @@ curl -H "ApiKey: secret" \
 
 ##  Filtering facets
 
-On works, authors and selections endpoints facets are availables.
+On works, authors and selections endpoints, facets are availables.
 
 To filter on a facet, just add a `facets[facet_name]=facet_value` params to the
 query string.
 
-By default, only 10 facets are returned by the api. If you want more, use the
-facet pagination.
+By default, only 10 items per facet are returned by the api. If you want more,
+use the facet pagination.
 
 * `facet_page`: Facet page offset
 * `facet_per`: Number of facets to return
 
 
-> For example, we have the following facet returned by the works endpoint:
+> For example, we have the following facets returned by the works endpoint:
 
 ```json
   {
@@ -283,7 +282,7 @@ facet pagination.
   }
 ```
 
-> To filter works on the «RMN» source, add this params to the query string:
+> To filter works on the "RMN" source, add this params to the query string:
 `facets[sources]=RMN`
 
 

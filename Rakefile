@@ -12,6 +12,7 @@ namespace :deploy do
   desc "Deploy to preprod environment"
   task preprod: [:build] do
     puts "Deploying to preprod environment..."
+    `sed -i -e 's/api.dev.rmn.af83.com/preprod-apiphoto.api.rmngp.fr/g;s/dev.rmn.af83.com/preprod-apiphoto.rmngp.fr/g' build/index.html`
     `rsync -avz build/ rmngpuser@preprod.rmn.fr:/home/vsftpd/rmngpuser/htdocs/API/apidocs`
   end
 

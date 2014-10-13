@@ -51,7 +51,7 @@ curl -H "ApiKey: secret" \
 }
 ```
 
-Keywords contain all the keyword that has'nt a special type.
+Keywords contain all the keyword that has no special type.
 
 ### Definition
 
