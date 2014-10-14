@@ -95,3 +95,45 @@ curl -H'ApiKey: secret' \
     "created_at": "2014-09-01T00:00:00.42Z",
     "updated_at": "2014-09-01T00:00:00.42Z"
 }
+```
+
+## Authenticate a user account
+
+Partners with an API access are allowed to authenticate user accounts.
+
+### HTTP Request
+
+`POST http://api.dev.rmn.af83.com/v1/users/authenticate`
+
+### Parameters
+
+Parameter | Default | Description
+--------- | ------- | ------------
+email     | ""      | user's email (mandatory).
+password  | ""      | user's password (mandatory).
+
+### HTTP Response
+
+Upon successful authentication, the server replies with a `200` HTTP status code,
+and returns the corresponding user in JSON format. Any other status code indicate a
+failure to authenticate the user.
+
+```shell
+curl -H'ApiKey: secret' \
+     'http://api.dev.rmn.af83.com/v1/users/authenticate' -XPOST \
+     -d'email=user@example.com&password=password'
+```
+
+> On success, the above command results in a `200` HTTP code, and returns JSON
+> structured like this:
+
+```json
+{
+    "id":         1,
+    "name":       "User name",
+    "partner_id": 1,
+    "email":      "user@example.com",
+    "created_at": "2014-09-01T00:00:00.42Z",
+    "updated_at": "2014-09-01T00:00:00.42Z"
+}
+```
