@@ -160,7 +160,7 @@ curl -H'ApiKey: secret' \
 Parameter | Default | Description
 --------- | ------- | ------------
 work_id   |         | work's ID on the API (mandatory).
-order     |         | unsigned integer to choose the entry's position (mandatory).
+position  |         | unsigned integer to choose the entry's position (mandatory).
 
 
 ### HTTP Response
@@ -173,7 +173,7 @@ Any other status code indicate a failure to create the selection.
 ```shell
 curl -H'ApiKey: secret' \
   'http://api.dev.rmn.af83.com/v1/selections/1/works' \
-  -XPOST -d'work_id=42&order=1'
+  -XPOST -d'work_id=42&position=1'
 ```
 
 > On success, the above command results in a `201` HTTP status code, and
@@ -185,7 +185,7 @@ curl -H'ApiKey: secret' \
     "selection_id": 1,
     "work_id":      42,
     "version_id":   1,
-    "order":        1
+    "position":     1
 }
 ```
 
@@ -219,6 +219,6 @@ curl -H'ApiKey: secret' \
     "selection_id": 1,
     "work_id":      42,
     "version_id":   1,
-    "order":        1
+    "position":     1
 }
 ```
