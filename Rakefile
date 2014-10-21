@@ -20,6 +20,6 @@ namespace :deploy do
   task production: [:build] do
     puts "I don't know how to do that!"
     `sed -i -e 's/api.dev.rmn.af83.com/api.lablabrmngp.fr/g;s/dev.rmn.af83.com/labrmngp.fr/g' build/index.html`
-    `rsync -avz build/ rmngpuser@labrmngp.fr:/home/vsftpd/rmngpuser/htdocs/API/apidocs`
+    `rsync -avz build/ rmngpuser@labrmngp.fr:/home/rmngpuser/htdocs/API/apidocs`
   end
 end
