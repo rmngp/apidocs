@@ -40,7 +40,7 @@ List all authors present on the API.
 ## Get All Authors
 
 ```shell
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/authors"
 ```
 
@@ -189,22 +189,22 @@ curl -H "ApiKey: secret" \
         {
           "key": "20e siècle",
           "doc_count": 2,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Bperiods%5D=20e+si%C3%A8cle"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Bperiods%5D=20e+si%C3%A8cle"
         },
         {
           "key": "période contemporaine de 1914 à nos jours",
           "doc_count": 2,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Bperiods%5D=p%C3%A9riode+contemporaine+de+1914+%C3%A0+nos+jours"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Bperiods%5D=p%C3%A9riode+contemporaine+de+1914+%C3%A0+nos+jours"
         },
         {
           "key": "15e siècle",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Bperiods%5D=15e+si%C3%A8cle"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Bperiods%5D=15e+si%C3%A8cle"
         },
         {
           "key": "Renaissance (période)",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Bperiods%5D=Renaissance+%28p%C3%A9riode%29"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Bperiods%5D=Renaissance+%28p%C3%A9riode%29"
         }
       ]
     },
@@ -214,12 +214,12 @@ curl -H "ApiKey: secret" \
         {
           "key": "Paris, musée Picasso",
           "doc_count": 2,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Blocations%5D=Paris%2C+mus%C3%A9e+Picasso"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Blocations%5D=Paris%2C+mus%C3%A9e+Picasso"
         },
         {
           "key": "Paris, musée du Louvre",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Blocations%5D=Paris%2C+mus%C3%A9e+du+Louvre"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Blocations%5D=Paris%2C+mus%C3%A9e+du+Louvre"
         }
       ]
     },
@@ -228,7 +228,7 @@ curl -H "ApiKey: secret" \
         {
           "key": "huile sur bois",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Btechniques%5D=huile+sur+bois"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Btechniques%5D=huile+sur+bois"
         }
       ]
     },
@@ -237,12 +237,12 @@ curl -H "ApiKey: secret" \
         {
           "key": "RMN",
           "doc_count": 2,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Bsources%5D=RMN"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Bsources%5D=RMN"
         },
         {
           "key": "RMN (musée du Louvre)",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/authors?api_key=secret&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
+          "link": "http://api.rmn.dev/v1/authors?api_key=demo&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
         }
       ]
     },

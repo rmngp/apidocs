@@ -29,7 +29,7 @@ failure to create the user.
 API, as they lack an API key to start with.</aside>
 
 ```shell
-curl -H'ApiKey: secret' \
+curl -H'ApiKey: demo' \
      'http://api.dev.rmn.af83.com/v1/users' -XPOST \
      -d'name=User%20name&email=user@example.com&password=password'
 ```
@@ -79,7 +79,7 @@ successfully destroyed.
    code.
 
 ```shell
-curl -H'ApiKey: secret' \
+curl -H'ApiKey: demo' \
      'http://api.dev.rmn.af83.com/v1/users/1' -XDELETE
 ```
 
@@ -119,7 +119,7 @@ and returns the corresponding user in JSON format. Any other status code indicat
 failure to authenticate the user.
 
 ```shell
-curl -H'ApiKey: secret' \
+curl -H'ApiKey: demo' \
      'http://api.dev.rmn.af83.com/v1/users/authenticate' -XPOST \
      -d'email=user@example.com&password=password'
 ```

@@ -30,7 +30,7 @@ On success, the server replies with a `200` HTTP status code, and returns a
 list of the user's selections in JSON.
 
 ```shell
-curl -H'ApiKey: secret' 'http://api.dev.rmn.af83.com/v1/selections?user_id=1'
+curl -H'ApiKey: demo' 'http://api.dev.rmn.af83.com/v1/selections?user_id=1'
 ```
 
 > On success, the above command should yield a JSON array, structured as
@@ -101,7 +101,7 @@ returns the newly created selection in JSON format. Any other status code
 indicate a failure to create the selection.
 
 ```shell
-curl -H'ApiKey: secret' \
+curl -H'ApiKey: demo' \
   'http://api.dev.rmn.af83.com/v1/selections' -XPOST -d'name=example&user_id=1'
 ```
 
@@ -131,7 +131,7 @@ The server *should* reply with a `200` HTTP status code, when the selection is
 successfully destroyed.
 
 ```shell
-curl -H'ApiKey: secret' \
+curl -H'ApiKey: demo' \
      'http://api.dev.rmn.af83.com/v1/selections/1' -XDELETE
 ```
 
@@ -171,7 +171,7 @@ returns a JSON object with the selected work ID, and its version number.
 Any other status code indicate a failure to create the selection.
 
 ```shell
-curl -H'ApiKey: secret' \
+curl -H'ApiKey: demo' \
   'http://api.dev.rmn.af83.com/v1/selections/1/works' \
   -XPOST -d'work_id=42&position=1'
 ```
@@ -206,7 +206,7 @@ that is not part of the selection, then the server replies with a `404` HTTP
 error code.
 
 ```shell
-curl -H'ApiKey: secret' \
+curl -H'ApiKey: demo' \
      'http://api.dev.rmn.af83.com/v1/selections/1/works/42' -XDELETE
 ```
 

@@ -55,7 +55,7 @@ Then prefix all paths with this version number, for example:
 `http://api.rmn.dev/v1/api_endpoint_here`.
 
 ```shell
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com"
 ```
 
@@ -77,7 +77,7 @@ curl -H "ApiKey: secret" \
 > To be authorized, you will need to include the key in HTTP request headers:
 
 ```shell
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      "http://api_endpoint_here"
 ```
 
@@ -89,7 +89,7 @@ RMN-GP uses API keys to allow access to the API. You can register on our
 RMN-GP expects the API key to be included in all API requests to the server in a
 HTTP header that looks like the following:
 
-`ApiKey: secret`
+`ApiKey: demo`
 
 <aside class="notice">
 You must replace `secret` with your personal API key.
@@ -170,7 +170,7 @@ Invalid page numbers merely results in an empty results list.
 > To change page, simply pass a `page` parameter to your request URL.
 
 ```shell
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/works?page=2"
 ```
 
@@ -200,10 +200,10 @@ Here are some examples.
 If you want to search on all fields, just provide a string: `la joconde`.
 
 ```shell
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      'http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde'
 
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com:80/v1/works.json?q=title:"la%20joconde""
 ```
 
@@ -227,7 +227,7 @@ You can also use the operand `OR` For exemple you can use
 
 
 ```shell
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde%20AND%20techniques%3Ddessin"
 ```
 
@@ -255,27 +255,27 @@ use the facet pagination.
         {
           "key": "INHA",
           "doc_count": 5977,
-          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=INHA"
+          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=INHA"
         },
         {
           "key": "BPK",
           "doc_count": 2,
-          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=BPK"
+          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=BPK"
         },
         {
           "key": "NATIONAL GALLERY OF LONDON",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=NATIONAL+GALLERY+OF+LONDON"
+          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=NATIONAL+GALLERY+OF+LONDON"
         },
         {
           "key": "RMN",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=RMN"
+          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=RMN"
         },
         {
           "key": "RMN (musée du Louvre)",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/works?api_key=secret&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
+          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
         }
       ]
     }

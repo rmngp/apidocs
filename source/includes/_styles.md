@@ -1,7 +1,7 @@
 ## Styles
 
 ```shell
-curl -H "ApiKey: secret" \
+curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/styles"
 ```
 
