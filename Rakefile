@@ -19,6 +19,7 @@ namespace :deploy do
   desc "Deploy to production environment"
   task production: [:build] do
     puts "I don't know how to do that!"
-    # FIXME `rsync -avz build/ rmn@production-server:apidocs`
+    `sed -i -e 's/api.dev.rmn.af83.com/api.lablabrmngp.fr/g;s/dev.rmn.af83.com/labrmngp.fr/g' build/index.html`
+    `rsync -avz build/ rmngpuser@labrmngp.fr:/home/vsftpd/rmngpuser/htdocs/API/apidocs`
   end
 end
