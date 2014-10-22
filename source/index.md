@@ -49,10 +49,10 @@ All API calls must specify which API version to use. This version identifier
 ensures that API will not introduce major changes for the given version.
 
 You can get the last API version by requesting the root API endpoint:
-http://api.rmn.dev/
+http://api.dev.rmn.af83.com/
 
 Then prefix all paths with this version number, for example:
-`http://api.rmn.dev/v1/api_endpoint_here`.
+`http://api.dev.rmn.af83.com/v1/api_endpoint_here`.
 
 ```shell
 curl -H "ApiKey: demo" \
@@ -64,7 +64,7 @@ curl -H "ApiKey: demo" \
   "versions": [
     {
       "status": "current",
-      "links": [{ "href": "http://api.rmn.dev/v1/swagger_doc", "templated": false, "rel": "swagger" }],
+      "links": [{ "href": "http://api.dev.rmn.af83.com/v1/swagger_doc", "templated": false, "rel": "swagger" }],
       "description": "Current version of the api",
       "value": "v1"
     }
@@ -201,10 +201,10 @@ If you want to search on all fields, just provide a string: `la joconde`.
 
 ```shell
 curl -H "ApiKey: demo" \
-     'http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde'
+     'http://api.dev.rmn.af83.com/v1/works.json?q=la%20joconde'
 
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com:80/v1/works.json?q=title:"la%20joconde""
+     "http://api.dev.rmn.af83.com/v1/works.json?q=title:"la%20joconde""
 ```
 
 Alternatively, you can select a field to search for, if you want to search only
@@ -228,7 +228,7 @@ You can also use the operand `OR` For exemple you can use
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com:80/v1/works.json?q=la%20joconde%20AND%20techniques%3Ddessin"
+     "http://api.dev.rmn.af83.com/v1/works.json?q=la%20joconde%20AND%20techniques%3Ddessin"
 ```
 
 
@@ -255,27 +255,27 @@ use the facet pagination.
         {
           "key": "INHA",
           "doc_count": 5977,
-          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=INHA"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=INHA"
         },
         {
           "key": "BPK",
           "doc_count": 2,
-          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=BPK"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=BPK"
         },
         {
           "key": "NATIONAL GALLERY OF LONDON",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=NATIONAL+GALLERY+OF+LONDON"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=NATIONAL+GALLERY+OF+LONDON"
         },
         {
           "key": "RMN",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=RMN"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=RMN"
         },
         {
           "key": "RMN (musée du Louvre)",
           "doc_count": 1,
-          "link": "http://api.rmn.dev/v1/works?api_key=demo&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
         }
       ]
     }
@@ -287,4 +287,4 @@ use the facet pagination.
 
 
 [console]: /console/
-[partners]: http://dev.rmn.af83.com/partners
+[partners]: http://dev.rmn.af83.com/partner
