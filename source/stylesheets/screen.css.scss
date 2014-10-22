@@ -77,7 +77,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
 
   // language selector for mobile devices
@@ -96,11 +96,11 @@ html, body {
 
   &>.search {
     position: relative;
+    border-bottom: 1px solid $search-box-border-color;
 
     input {
       background: $nav-bg;
-      border-width: 0 0 1px 0;
-      border-color: $search-box-border-color;
+	  border: 0px;
       padding: 6px 0 6px 20px;
       @include box-sizing(border-box);
       margin: $nav-v-padding $nav-padding;
@@ -182,9 +182,10 @@ html, body {
 
   // This is the currently selected ToC entry
   .tocify-focus {
-    @include box-shadow(0px 1px 0px $nav-active-shadow);
+    // @include box-shadow(0px 1px 0px $nav-active-shadow);
     background-color: $nav-active-bg;
     color: $nav-active-text;
+	font-weight: bold;
   }
 
   // Subheaders are the submenus that slide open
@@ -195,11 +196,11 @@ html, body {
     font-weight: 500;
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
-      font-size: 12px;
+      font-size: 13px;
     }
 
     // for embossed look:
-    @include embossed-bg;
+    // @include embossed-bg;
     &>li:last-child {
       box-shadow: none; // otherwise it'll overflow out of the subheader
     }
@@ -208,7 +209,7 @@ html, body {
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid $nav-footer-border-color;
 
     li,a {
       color: $nav-text;
@@ -274,6 +275,8 @@ html, body {
   min-height: 100%;
 
   padding-bottom: 1px; // prevent margin overflow
+
+  a { color: $link-color; }
 
   // The dark box is what gives the code samples their dark background.
   // It sits essentially under the actual content block, which has a
@@ -347,7 +350,7 @@ html, body {
     padding: 0 $main-padding;
     @include box-sizing(border-box);
     display: block;
-    @include text-shadow($main-embossed-text-shadow);
+    // @include text-shadow($main-embossed-text-shadow);
 
     @extend %left-col;
   }
@@ -370,9 +373,9 @@ html, body {
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-top: 1px solid #ddd;
-    @include background-image(
-      linear-gradient(top, #fff, #f9f9f9)
-    );
+    // @include background-image(
+    //   linear-gradient(top, #fff, #f9f9f9)
+    // );
   }
 
   h1:first-child, div:first-child + h1 {
@@ -385,7 +388,7 @@ html, body {
     font-size: 20px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #bfbfbf;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     @include background-image(
@@ -478,7 +481,7 @@ html, body {
   aside {
     padding-top: 1em;
     padding-bottom: 1em;
-    text-shadow: 0 1px 0 lighten($aside-notice-bg, 15%);
+    // text-shadow: 0 1px 0 lighten($aside-notice-bg, 15%);
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
@@ -486,12 +489,12 @@ html, body {
 
     &.warning {
       background-color: $aside-warning-bg;
-      text-shadow: 0 1px 0 lighten($aside-warning-bg, 15%);
+      // text-shadow: 0 1px 0 lighten($aside-warning-bg, 15%);
     }
 
     &.success {
       background-color: $aside-success-bg;
-      text-shadow: 0 1px 0 lighten($aside-success-bg, 15%);
+      // text-shadow: 0 1px 0 lighten($aside-success-bg, 15%);
     }
   }
 
@@ -518,7 +521,7 @@ html, body {
     margin: -2px;
     border-radius: 4px;
     border: 1px solid #F7E633;
-    text-shadow: 1px 1px 0 #666;
+    // text-shadow: 1px 1px 0 #666;
     @include background(linear-gradient(bottom right, #F7E633 0%, #F1D32F 100%));
   }
 }
