@@ -37,7 +37,7 @@
 * `styles`: Artistic styles related to tis work. See [Thesaurus/Styles](#styles)
 * `techniques`: Techniques used to create this work. See [Thesaurus/Techniques](#techniques)
 * `schools`: Artistic school related to this work. See [Thesaurus/Schools](#schools)
-* `picture_notes`: Kind of cliche, only for photographies. See [Thesaurus/PictureNotes](#picture-notes)
+* `picture_notes`: Kind of cliche, only for photographies.
 
 
 ## Get All Works
