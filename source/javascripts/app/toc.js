@@ -1,47 +1,45 @@
-(function (global) {
+$(function() {
+  window.toc = gajus.contents({
+    contents: $('#toc').get(0),
+    articles: $('h1, h2'),
+    link: function(guide, article){
 
-  var closeToc = function() {
-    $(".tocify-wrapper").removeClass('open');
-    $("#nav-button").removeClass('open');
-  };
 
-  var makeToc = function() {
-    global.toc = $("#toc").tocify({
-      selectors: 'h1, h2',
-      extendPage: false,
-      theme: 'none',
-      smoothScroll: false,
-      showEffectSpeed: 0,
-      hideEffectSpeed: 180,
-      ignoreSelector: '.toc-ignore',
-      highlightOffset: 60,
-      scrollTo: -1,
-      scrollHistory: true,
-      hashGenerator: function (text, element) {
-        return element.prop('id');
+      var guideLink = document.createElement('a'),
+      articleLink = document.createElement('a'),
+        articleName = article.innerText,
+        articleId = article.id || gajus.contents.id(articleName);
+
+      articleLink.href = '#' + articleId;
+
+      while (article.childNodes.length) {
+        articleLink.appendChild(article.childNodes[0], articleLink);
       }
-    }).data('toc-tocify');
 
-    $("#nav-button").click(function() {
-      $(".tocify-wrapper").toggleClass('open');
-      $("#nav-button").toggleClass('open');
-      return false;
-    });
+      article.appendChild(articleLink);
 
-    $(".page-wrapper").click(closeToc);
-    $(".tocify-item").click(closeToc);
-  };
+      guideLink.appendChild(document.createTextNode(articleName));
+      guideLink.href = '#' + articleId;
+      guide.insertBefore(guideLink, guide.firstChild);
+    }
+  });
 
-  // Hack to make already open sections to start opened,
-  // instead of displaying an ugly animation
-  function animate () {
-    setTimeout(function() {
-      toc.setOption('showEffectSpeed', 180);
-    }, 50);
-  }
+  toc.eventProxy.on('change', function (data) {
+    if (data.previous) {
+      $(data.previous.guide)
+        .removeClass('active')
+        .parents('li')
+        .removeClass('active-child');
+    }
 
-  $(makeToc);
-  $(animate);
+    $(data.current.guide)
+      .addClass('active')
+      .parents('li')
+      .addClass('active-child');
+  });
 
-})(window);
-
+  $('#toc > ol > li > a').click(function(e){
+    $('#toc > ol > li').removeClass('active-child');
+    $(e.currentTarget).closest('li').addClass('active-child');
+  });
+});

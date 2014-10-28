@@ -19,6 +19,7 @@ $(function() {
     }).success(function(resp) {
       $(e).text( JSON.stringify(resp, null, "  ") );
       hljs.highlightBlock(e);
+      toc.eventProxy.trigger('resize');
     });
   }
 
