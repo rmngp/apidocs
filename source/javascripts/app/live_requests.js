@@ -17,8 +17,7 @@ $(function() {
       data: { api_key: config.api_key },
       xhrFields: { withCredentials: true }
     }).success(function(resp) {
-      $(e).text( JSON.stringify(resp, null, "  ") );
-      hljs.highlightBlock(e);
+      $(e).JSONView(resp, {collapsed: true});
       toc.eventProxy.trigger('resize');
     });
   }
