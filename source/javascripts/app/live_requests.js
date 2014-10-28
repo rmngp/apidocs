@@ -25,6 +25,7 @@ $(function() {
   }
 
   $('.live_requests').waypoint(function() {
+    $(this).html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div></div>');
     makeRequest(this);
   }, {
     offset: function() { return $(window).height(); }
