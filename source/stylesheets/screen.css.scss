@@ -558,6 +558,15 @@ html, body {
       text-decoration: none;
       border-bottom: dashed 1px #ccc;
     }
+
+    &.warning {
+      p:before {
+        @extend %icon-exclamation-sign;
+        vertical-align: middle;
+        padding-right: 0.5em;
+        font-size: 14px;
+      }
+    }
   }
 
   pre {

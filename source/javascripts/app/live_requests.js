@@ -21,6 +21,8 @@ $(function() {
       if ((c = $(e).data('collapsed')) != undefined){ collapsed = c; }
       $(e).JSONView(resp, {collapsed: collapsed});
       toc.eventProxy.trigger('resize');
+    }).error(function(resp){
+      $(e).replaceWith("<blockquote class='warning'><p>Cannot load API response. Sorry.</p></blockquote>");
     });
   }
 
