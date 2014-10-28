@@ -56,18 +56,10 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com"
 ```
 
-```json
-{
-  "versions": [
-    {
-      "status": "current",
-      "links": [{ "href": "http://api.dev.rmn.af83.com/v1/swagger_doc", "templated": false, "rel": "swagger" }],
-      "description": "Current version of the api",
-      "value": "v1"
-    }
-  ]
-}
-```
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/" data-collapsed="false">
+</pre>
 
 ## Authentication
 
