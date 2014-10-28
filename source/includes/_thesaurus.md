@@ -9,7 +9,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/thesaurus/sources">
+<pre class="live_requests" data-path="/v1/thesaurus/collections">
 </pre>
 
 Thesaurus consists of several types of resources that are searchable in the same way.

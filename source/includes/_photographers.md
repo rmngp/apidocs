@@ -5,39 +5,10 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/photographers"
 ```
 
-```json
-{
-  "took": 6,
-  "timed_out": false,
-  "hits": {
-    "total": 1491,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "rmn-development-photographers",
-        "_type": "photographer",
-        "_id": "11",
-        "_score": 1,
-        "_source": {
-          "name": "Annie Thomasset",
-          "city": "Versailles",
-          "comments": "photographe, à la restauration de Versailles (reversement suite à l'agression de Franck Raux par un gardien)"
-        }
-      },
-      {
-        "_index": "rmn-development-photographers",
-        "_type": "photographer",
-        "_id": "47",
-        "_score": 1,
-        "_source": {
-          "name": "Christian Larrieu",
-          "comments": "Photographe ayant travaillé au sein de la société La Licorne, notamment  pour les départements antiques du Louvre (1998-1999). CM"
-        }
-      }
-    ]
-  }
-}
-```
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/thesaurus/photographers">
+</pre>
 
 Authors of the many images available through the API.
 

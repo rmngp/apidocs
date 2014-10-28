@@ -7,49 +7,8 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-```json
-{
-  "took": 1,
-  "timed_out": false,
-  "hits": {
-    "total": 31,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "rmn-development-collections",
-        "_type": "collection",
-        "_id": "1",
-        "_score": 1,
-        "_source": { "path": "Peintures", "name": { "en": "Paintings", "fr": "Peintures" }, "detail": { }, "level": 0 }
-      },
-      {
-        "_index": "rmn-development-collections",
-        "_type": "collection",
-        "_id": "6",
-        "_score": 1,
-        "_source": {
-          "path": "Antiquités grecques, étrusques et romaines",
-          "name": { "en": "Greek, Etruscan and Roman antiquities ", "fr": "Antiquités grecques, étrusques et romaines" },
-          "detail": { },
-          "level": 0
-        }
-      },
-      {
-        "_index": "rmn-development-collections",
-        "_type": "collection",
-        "_id": "13",
-        "_score": 1,
-        "_source": {
-          "path": "Arts de l'Islam",
-          "name": { "en": "Islamic art", "fr": "Arts de l'Islam" },
-          "detail": { },
-          "level": 0
-        }
-      }
-    ]
-  }
-}
-```
+<pre class="live_requests" data-path="/v1/thesaurus/collections">
+</pre>
 
 Collections are arbitrary groups of works.
 

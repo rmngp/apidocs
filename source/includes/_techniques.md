@@ -5,51 +5,10 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/techniques"
 ```
 
-```json
-{
-  "took": 6,
-  "timed_out": false,
-  "hits": {
-    "total": 1512,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "rmn-development-techniques",
-        "_type": "technique",
-        "_id": "250",
-        "_score": 1,
-        "_source": {
-          "path": "polychromie (technique)",
-          "name": { "en": "polychromy (technique)", "fr": "polychromie (technique)" },
-          "detail": { "fr": "Mot-outil" }
-        }
-      },
-      {
-        "_index": "rmn-development-techniques",
-        "_type": "technique",
-        "_id": "255",
-        "_score": 1,
-        "_source": {
-          "path": "décor sous couverte",
-          "name": { "en": "under covering decoration", "fr": "décor sous couverte" },
-          "detail": { }
-        }
-      },
-      {
-        "_index": "rmn-development-techniques",
-        "_type": "technique",
-        "_id": "281",
-        "_score": 1,
-        "_source": {
-          "path": "lithophanie",
-          "name": { "en": "lithophany", "fr": "lithophanie" },
-          "detail": { "fr": "biscuit de porcelaine translucide" }
-        }
-      }
-    ]
-  }
-}
-```
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/thesaurus/techniques">
+</pre>
 
 Techniques used by many works available through the API.
 

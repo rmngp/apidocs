@@ -5,51 +5,10 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/keywords"
 ```
 
-```json
-{
-  "took": 1,
-  "timed_out": false,
-  "hits": {
-    "total": 9,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "rmn-development-keywords",
-        "_type": "keyword",
-        "_id": "7",
-        "_score": 1,
-        "_source": {
-          "path": "fond de paysage",
-          "name": { "en": "landscape background", "fr": "fond de paysage" },
-          "detail": { }
-        }
-      },
-      {
-        "_index": "rmn-development-keywords",
-        "_type": "keyword",
-        "_id": "6",
-        "_score": 1,
-        "_source": {
-          "path": "Renaissance italienne (art)",
-          "name": { "en": "Italian Renaissance", "fr": "Renaissance italienne (art)" },
-          "detail": { "fr": "VA arts décoratifs (Renaissance). VA Manièrisme (art)" }
-        }
-      },
-      {
-        "_index": "rmn-development-keywords",
-        "_type": "keyword",
-        "_id": "5",
-        "_score": 1,
-        "_source": {
-          "path": "portrait de femme",
-          "name": { "en": "portrait of a woman", "fr": "portrait de femme" },
-          "detail": { }
-        }
-      }
-    ]
-  }
-}
-```
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/thesaurus/keywords">
+</pre>
 
 Keywords contain all the keyword that has no special type.
 

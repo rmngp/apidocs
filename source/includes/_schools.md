@@ -5,36 +5,10 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/schools"
 ```
 
-```json
-{
-  "took": 4,
-  "timed_out": false,
-  "hits": {
-    "total": 61,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "rmn-development-schools",
-        "_type": "school",
-        "_id": "39",
-        "_score": 1,
-        "_source": { "path": "Ecole belge", "name": { "fr": "Ecole belge" }, "detail": { } }
-      },
-      {
-        "_index": "rmn-development-schools",
-        "_type": "school",
-        "_id": "41",
-        "_score": 1,
-        "_source": {
-          "path": "Ecole napolitaine",
-          "name": { "fr": "Ecole napolitaine" },
-          "detail": { "fr": "VA Naples" }
-        }
-      }
-    ]
-  }
-}
-```
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/thesaurus/schools">
+</pre>
 
 Schools are artistic schools.
 

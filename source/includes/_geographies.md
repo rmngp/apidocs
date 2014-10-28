@@ -5,60 +5,10 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/thesaurus/geographies"
 ```
 
-```json
-{
-  "took": 1,
-  "timed_out": false,
-  "hits": {
-    "total": 11160,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "rmn-development-geographies",
-        "_type": "geography",
-        "_id": "5",
-        "_score": 1,
-        "_source": { "path": "Ankara (représentation)", "name": { "fr": "Ankara (représentation)" }, "detail": { } }
-      },
-      {
-        "_index": "rmn-development-geographies",
-        "_type": "geography",
-        "_id": "17",
-        "_score": 1,
-        "_source": {
-          "path": "Tepe Sialk (site) (origine)",
-          "name": { "fr": "Tepe Sialk (site) (origine)" },
-          "detail": {
-            "fr": "Site situé dans la banlieue de Kashan ; du Ve au IIIe millénaire av JC, avec une phase plus tardive au IIe av JC"
-          }
-        }
-      },
-      {
-        "_index": "rmn-development-geographies",
-        "_type": "geography",
-        "_id": "36",
-        "_score": 1,
-        "_source": {
-          "path": "France (origine)",
-          "name": { "fr": "France (origine)" },
-          "detail": { "fr": "VA école française. République française" }
-        }
-      },
-      {
-        "_index": "rmn-development-geographies",
-        "_type": "geography",
-        "_id": "50",
-        "_score": 1,
-        "_source": {
-          "path": "Polynésie orientale (origine)",
-          "name": { "fr": "Polynésie orientale (origine)" },
-          "detail": { }
-        }
-      }
-    ]
-  }
-}
-```
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/thesaurus/geographies">
+</pre>
 
 Geographies are places in the world where the works was done or founded.
 
