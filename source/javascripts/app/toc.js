@@ -4,10 +4,9 @@ $(function() {
     articles: $('h1, h2'),
     link: function(guide, article){
 
-
       var guideLink = document.createElement('a'),
       articleLink = document.createElement('a'),
-        articleName = article.innerText,
+        articleName = article.textContent,
         articleId = article.id || gajus.contents.id(articleName);
 
       articleLink.href = '#' + articleId;
