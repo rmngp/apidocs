@@ -20,8 +20,8 @@ You're going to need:
 
  1. Clone this repository on Github.
  2. `cd apidocs`
- 4. Install all dependencies: `bundle install`
- 5. Start the test server: `bundle exec middleman server`
+ 3. Install all dependencies: `bundle install`
+ 4. Start the test server: `bundle exec middleman server`
 
 You can now see the docs at <http://localhost:4567>. And as you edit
 `source/index.md`, your server should automatically update!

@@ -379,6 +379,7 @@ html, body {
     // @include background-image(
     //   linear-gradient(top, #fff, #f9f9f9)
     // );
+    a { color: #000; text-decoration: none; }
   }
 
   h1:first-child, div:first-child + h1 {
@@ -397,6 +398,7 @@ html, body {
     @include background-image(
       linear-gradient(top, rgba(#fff,0.4), rgba(#fff, 0))
     );
+    a { color: #000; text-decoration: none; }
   }
 
   // h2s right after h1s should bump right up

@@ -25,7 +25,6 @@
 
 ### Associations
 
-* `source`: Museum or institution where this work comes from. See [Thesaurus/Sources](#sources)
 * `location`: Location where is located this work. See [Thesaurus/Locations](#locations)
 * `authors`: Authors of this work. See [Thesaurus/Authors](#authors)
 * `afters`: Authors that inspired this work. See [Thesaurus/Authors](#authors)
@@ -37,7 +36,6 @@
 * `styles`: Artistic styles related to tis work. See [Thesaurus/Styles](#styles)
 * `techniques`: Techniques used to create this work. See [Thesaurus/Techniques](#techniques)
 * `schools`: Artistic school related to this work. See [Thesaurus/Schools](#schools)
-* `picture_notes`: Kind of cliche, only for photographies.
 
 
 ## Get All Works
@@ -70,17 +68,13 @@ per                    | 10       | Number of results per page
 facet_page             | 1        | Facet page offset
 facet_per              | 10       | Number of facets per page
 facets[collections]    |          | Filter on a collection facet
-facets[sources]        |          | Filter on a source facet
 facets[locations]      |          | Filter on a location facet
 facets[authors]        |          | Filter on a author facet
 facets[periods]        |          | Filter on a period facet
 facets[techniques]     |          | Filter on a technique facet
 facets[styles]         |          | Filter on a style facet
 facets[schools]        |          | Filter on a schools facet
-facets[picture_notes]  |          | Filter on a picture_note facet
-facets[packagings]     |          | Filter on a packaging facet
 facets[geographies]    |          | Filter on a geography facet
-facets[printers]       |          | Filter on a printer facet
 
 
 For more specific research see [Search](/?shell#search)
