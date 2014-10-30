@@ -30,7 +30,6 @@ List all authors present on the API.
 
 * `data_inferred_from_works`: Represents data related to author's works
   * `collections`: Collections in which author's works appears. See [Thesaurus/Collections](#collections)
-  * `sources`: Museum or institution where author's works come from. See [Thesaurus/Sources](#sources)
   * `locations`: Location where are located author's works. See [Thesaurus/Locations](#locations)
   * `techniques`: Techniques used to create author's works. See [Thesaurus/Techniques](#techniques)
   * `periods`: Period in which author's work were created. Creation .See [Thesaurus/Periods](#periods)
@@ -67,7 +66,6 @@ per                    | 10       | Number of results per page
 facet_page             | 1        | Facet page offset
 facet_per              | 10       | Number of facets per page
 facets[collections]    |          | Filter on a collection facet
-facets[sources]        |          | Filter on a source facet
 facets[locations]      |          | Filter on a location facet
 facets[periods]        |          | Filter on a period facet
 facets[techniques]     |          | Filter on a technique facet
