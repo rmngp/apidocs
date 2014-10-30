@@ -82,3 +82,57 @@ For more specific research see [Search](/?shell#search)
 <aside class="success">
 Remember — don't forget to use your API key!
 </aside>
+
+
+## Aggregations
+
+The works endpoint can also decorate the response with some aggregation
+computations. For example, you can have some stats on the dimensions of the
+works painted by Picasso:
+
+```shell
+curl -H "ApiKey: demo" \
+     "http://api.dev.rmn.af83.com/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height"
+```
+
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height">
+</pre>
+
+### Parameters
+
+To add an aggregation, you have to give 3 parameters:
+
+- `name`: it's the key in `aggregations` in the JSON response
+- `type`: the type of aggregation to compute
+- `field`: the field used as data to aggregate.
+
+Type              | Description
+----              |------------
+min               | Returns the minimum value among the numeric values extracted from the aggregated documents
+max               | Returns the maximum value among numeric values
+sum               | Sums up numeric values
+avg               | Computes the average of numeric values
+stats             | Computes stats over numeric values (min, max, sum, avg and count)
+extended_stats    | An extended version of the stats aggregation, where additional metrics are added such as `sum_of_squares`, `variance` and `std_deviation`
+cardinality       | Calculates an approximate count of distinct values
+value_count       | Counts the number of values that are extracted from the aggregated documents
+missing           | Counts all documents in the current document set context that are missing a field value
+percentiles       | Calculates percentiles over numeric values (1%, 5%, 25%, 50%, 75%, 95%, 99%)
+terms             | A multi-bucket value source based aggregation where buckets are dynamically built - one per unique value
+significant_terms | Returns interesting or unusual occurrences of terms in a set (experimental!)
+histogram         | Dynamically builds fixed size (a.k.a. interval) buckets over the values
+date_histogram    | Same as histogram, but can use interval with not a fixed size (a month or a year for example)
+
+For histograms, a fourth parameter, `interval`, will be given.
+
+```shell
+curl -H "ApiKey: demo" \
+     "http://api.dev.rmn.af83.com/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month"
+```
+
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month">
+</pre>
