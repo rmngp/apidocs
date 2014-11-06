@@ -87,8 +87,11 @@ Remember — don't forget to use your API key!
 ## Aggregations
 
 The works endpoint can also decorate the response with some aggregation
-computations. For example, you can have some stats on the dimensions of the
-works painted by Picasso:
+computations. It works with the [aggregation framework from
+Elasticsearch](http://www.elasticsearch.org/guide/en/elasticsearch/reference/1.3/search-aggregations.html).
+
+> For example, you can have some stats on the dimensions of the works painted
+by Picasso:
 
 ```shell
 curl -H "ApiKey: demo" \
