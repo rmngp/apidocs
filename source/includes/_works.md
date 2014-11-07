@@ -98,9 +98,22 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height"
 ```
 
-> The above command returns JSON structured like this:
-
 <pre class="live_requests" data-path="/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height">
+</pre>
+
+Most fields are tokenized and stemmed for a better full-text search. It can
+give weird results for aggregation. In that case, you can try to append `.raw`
+to the field name.
+
+
+> The birth place of the authors for the 19th century:
+
+```shell
+curl -H "ApiKey: demo" \
+     "http://api.dev.rmn.af83.com/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle"
+```
+
+<pre class="live_requests" data-path="/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle">
 </pre>
 
 ### Parameters
