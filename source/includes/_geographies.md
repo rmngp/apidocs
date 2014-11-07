@@ -36,6 +36,6 @@ Parameter              | Default  | Description
 q                      |          | Filter results matching this query
 filters[level]         |          | Filter on a specific level of the thesaurus hierarchy
 page                   | 1        | Results page offset
-per                    | 10       | Number of results per page
+per_page               | 10       | Number of results per page
 
 For more specific research see [Search](/?shell#search)

@@ -62,7 +62,7 @@ q                      |          | Filter results matching this query
 sort                   |          | Field used to sort results
 order                  | asc      | Sorting order, desc or asc.
 page                   | 1        | Results page offset
-per                    | 10       | Number of results per page
+per_page               | 10       | Number of results per page
 facet_page             | 1        | Facet page offset
 facet_per              | 10       | Number of facets per page
 facets[collections]    |          | Filter on a collection facet
