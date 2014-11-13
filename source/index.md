@@ -193,18 +193,27 @@ curl -H "ApiKey: demo" \
      'http://api.dev.rmn.af83.com/v1/works.json?q=la%20joconde'
 
 curl -H "ApiKey: demo" \
-     'http://api.dev.rmn.af83.com/v1/works.json?q=title:"la%20joconde"'
-
-curl -H "ApiKey: demo" \
      'http://api.dev.rmn.af83.com/v1/works.json?q=la%20joconde&lang=fr'
 ```
-
-Alternatively, you can select a field to search for, if you want to search only
-in the title, use `title:"la joconde"`.
 
 By default, the search is made on all tha available languages. You can limit
 the search to a specific language by using the `lang` parameter. It can
 improve the relevancy of results by using a more precise analyzer.
+
+
+## Matching a field
+
+Alternatively, you can select a field to search for, if you want to match an
+exact value on only the title, use `title:"la joconde"`. You can use this to
+limit the results to a work with a specific id, like this: `id:36238`.
+
+```shell
+curl -H "ApiKey: demo" \
+     'http://api.dev.rmn.af83.com/v1/works.json?q=title:"la%20joconde"'
+
+curl -H "ApiKey: demo" \
+     'http://api.dev.rmn.af83.com/v1/works.json?q=id:36238'
+```
 
 
 ##  Multi-criteria search
