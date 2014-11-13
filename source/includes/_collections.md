@@ -39,4 +39,4 @@ filters[level]         |          | Filter on a specific level of the thesaurus 
 page                   | 1        | Results page offset
 per_page               | 10       | Number of results per page
 
-For more specific research see [Search](/?shell#search)
+For more specific search see [Search](/?shell#search)

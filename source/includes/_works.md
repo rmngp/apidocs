@@ -77,7 +77,7 @@ facets[schools]        |          | Filter on a schools facet
 facets[geographies]    |          | Filter on a geography facet
 
 
-For more specific research see [Search](/?shell#search)
+For more specific search see [Search](/?shell#search)
 
 <aside class="success">
 Remember — don't forget to use your API key!

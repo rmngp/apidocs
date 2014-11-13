@@ -207,10 +207,10 @@ the search to a specific language by using the `lang` parameter. It can
 improve the relevancy of results by using a more precise analyzer.
 
 
-##  Multi-criteria research
+##  Multi-criteria search
 
-The full text research is good but sometime you want something more precise when
-you do a research in an API : it's possible.
+The full text search is good but sometime you want something more precise when
+you do a search in an API : it's possible.
 
 For exemple, you want to search `la joconde` but you only want to have result
 that are drawed : you can pass `"joconde AND techniques.name=dessin"` in the `q`

@@ -39,7 +39,7 @@ q                      |          | Filter results matching this query
 page                   | 1        | Results page offset
 per_page               | 10       | Number of results per page
 
-For more specific research see [Search](/?shell#search)
+For more specific search see [Search](/?shell#search)
 
 <aside class="success">
 Remember — don't forget to use your API key!
