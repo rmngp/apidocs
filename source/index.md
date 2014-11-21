@@ -70,7 +70,7 @@ curl -H "ApiKey: demo" \
      "http://api_endpoint_here"
 ```
 
-> Make sure to replace `secret` with your API key.
+> Make sure to replace `demo` with your API key.
 
 RMN-GP uses API keys to allow access to the API. You can register on our
 [partners' site][partners] to request one.
@@ -81,7 +81,7 @@ HTTP header that looks like the following:
 `ApiKey: demo`
 
 <aside class="notice">
-You must replace `secret` with your personal API key.
+You must replace `demo` with your personal API key.
 </aside>
 
 ## Errors
