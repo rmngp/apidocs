@@ -148,8 +148,8 @@ immediately under the `hits` key.
 
 To get another results page, just add these parameters:
 
-* `page`: Results page offset
-* `per_page`: Number of results per page
+* `page`: Results page offset, default 1
+* `per_page`: Number of results per page, default 10
 
 
 <aside class="warning">

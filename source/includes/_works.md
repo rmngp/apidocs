@@ -83,6 +83,53 @@ For more specific search see [Search](/?shell#search)
 Remember — don't forget to use your API key!
 </aside>
 
+## Get a specific work by its slug
+
+```shell
+curl -H "ApiKey: demo" \
+     "http://api.dev.rmn.af83.com/v1/works/:slug"
+```
+
+> The above command returns JSON structured like the `/v1/works` endpoint:
+
+This endpoint retrieves a specific work by its slug.
+
+### HTTP Request
+
+`GET http://api.dev.rmn.af83.com/v1/works/:slug`
+
+### Query Parameters
+
+Parameter              | Default  | Description
+---------              | -------  | -----------
+slug                   |          | A work slug
+
+## Get suggested works
+
+```shell
+curl -H "ApiKey: demo" \
+     "http://api.dev.rmn.af83.com/v1/works/suggested"
+```
+
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/works/suggested">
+</pre>
+
+This endpoint retrieves a list of suggested works. You can provide a work_id to
+get contextual suggestions.
+
+### HTTP Request
+
+`GET http://api.dev.rmn.af83.com/v1/works/suggested
+
+### Query Parameters
+
+Parameter              | Default  | Description
+---------              | -------  | -----------
+work_id                |          | A work id
+per_page               | 10       | Number of results per page
+
 
 ## Aggregations
 
