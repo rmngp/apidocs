@@ -61,6 +61,8 @@ This endpoint retrieves all artworks.
 Parameter              | Default  | Description
 ---------              | -------  | -----------
 q                      |          | Filter results matching this query
+lang                   |          | Limit the research to fields in this language (better relevance)
+exists                 |          | Limit the research to works with these fields
 sort                   |          | Field used to sort results
 order                  | asc      | Sorting order, desc or asc.
 page                   | 1        | Results page offset
@@ -128,6 +130,7 @@ get contextual suggestions.
 Parameter              | Default  | Description
 ---------              | -------  | -----------
 work_id                |          | A work id
+exists                 |          | Limit the research to works with these fields
 per_page               | 10       | Number of results per page
 
 
