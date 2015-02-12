@@ -105,6 +105,30 @@ Error Code | Meaning
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily off-line for maintenance. Please try again later.
 
+## Images
+
+Some endpoints return images, here the stucture:
+
+* `identifier`: RMN identifier
+* `url`: Url
+* `photographer`: Photographer who has taken this picture
+* `source`: Source of this image, can be museum, institution, etc…
+
+The url include a security token `t`.
+
+If you want a resized or cropped version of an images, just append `resize` (or
+`crop`) to the path and the appropriate sizes.
+
+Example:
+
+I want the image `/v1/images/1?t=secret` but resized to 100 pixels:
+
+* `/v1/images/1/resize/100x100?t=secret`
+
+I want the image `/v1/images/1?t=secret` but cropped to 500 pixels:
+
+* `/v1/images/1/crop/500x500?t=secret`
+
 
 # Search
 

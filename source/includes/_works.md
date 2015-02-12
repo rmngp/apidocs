@@ -17,9 +17,10 @@
 * `width`: Width in millimeters
 * `depth`: Depth in millimeters
 * `diameter`: Diameter in millimeters
-* `images`: Images availables for this work, structured like this:
+* image: Representative image for this work, see [Images](#Images)
+* `images`: Images availables for this work, , see [Images](#Images)
   * `identifier`: RMN identifier
-  * `path`: Url
+  * `url`: Url
   * `photographer`: Photographer who has taken this picture
   * `source`: Source of this image, can be museum, institution, etc…
 
