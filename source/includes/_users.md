@@ -13,11 +13,15 @@ Partners with an API access are allowed to create user accounts.
 
 ### Parameters
 
-Parameter | Default | Description
---------- | ------- | ------------
-name      | ""      | user's name (mandatory).
-email     | ""      | user's email which *must* be unique in the whole API (mandatory).
-password  | ""      | user's password: it *must* be at least 8 characters (mandatory).
+Parameter        | Default | Description
+---------------- | ------- | ------------
+name             |         | user's name (mandatory).
+email            |         | user's email which *must* be unique in the whole API (mandatory).
+password         |         | user's password: it *must* be at least 8 characters (mandatory).
+firstname        |         | user's firstname.
+lastname         |         | user's lastname.
+newsletter_optin | false   | Newsletter opt in.
+language         | fr      | user's firstname.
 
 ### HTTP Response
 
@@ -39,12 +43,16 @@ curl -H'ApiKey: demo' \
 
 ```json
 {
-    "id":         1,
-    "name":       "User name",
-    "partner_id": 1,
-    "email":      "user@example.com",
-    "created_at": "2014-09-01T00:00:00.42Z",
-    "updated_at": "2014-09-01T00:00:00.42Z"
+    "id":               1,
+    "email":            "user@example.com",
+    "name":             "User",
+    "firstname":        "Foo",
+    "lastname":         "Bar",
+    "partner_id":       1,
+    "newsletter_optin": true,
+    "language":         "fr",
+    "created_at":       "2014-09-01T00:00:00.42Z",
+    "updated_at":       "2014-09-01T00:00:00.42Z"
 }
 ```
 
@@ -56,6 +64,56 @@ curl -H'ApiKey: demo' \
   ["email",    "is missing"],
   ["password", "is missing"]
 ]
+```
+
+## Update a user account
+
+Partners with an API access are allowed to update user accounts.
+
+### HTTP Request
+
+`PUT http://api.dev.rmn.af83.com/v1/users/:id`
+
+### Parameters
+
+Parameter        | Default | Description
+---------------- | ------- | ------------
+name             |         | user's name (mandatory).
+email            |         | user's email which *must* be unique in the whole API (mandatory).
+password         |         | user's password: it *must* be at least 8 characters (mandatory).
+firstname        |         | user's firstname.
+lastname         |         | user's lastname.
+newsletter_optin | false   | Newsletter opt in.
+language         | fr      | user's firstname.
+
+### HTTP Response
+
+Upon successful update, the server replies with a `20O` HTTP status code, and
+returns the newly updated user in JSON format. Any other status code indicate a
+failure to update the user.
+
+```shell
+curl -H'ApiKey: demo' \
+     'http://api.dev.rmn.af83.com/v1/users/1' -XPUT \
+     -d'name=User%20name&email=user@example.com&password=password'
+```
+
+> On success, the above command results in a `200` HTTP code, and returns JSON
+> structured like this:
+
+```json
+{
+    "id":               1,
+    "email":            "user@example.com",
+    "name":             "User",
+    "firstname":        "Foo",
+    "lastname":         "Bar",
+    "partner_id":       1,
+    "newsletter_optin": true,
+    "language":         "fr",
+    "created_at":       "2014-09-01T00:00:00.42Z",
+    "updated_at":       "2014-09-01T00:00:00.42Z"
+}
 ```
 
 
