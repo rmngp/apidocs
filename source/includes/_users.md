@@ -78,9 +78,9 @@ Partners with an API access are allowed to update user accounts.
 
 Parameter        | Default | Description
 ---------------- | ------- | ------------
-name             |         | user's name (mandatory).
-email            |         | user's email which *must* be unique in the whole API (mandatory).
-password         |         | user's password: it *must* be at least 8 characters (mandatory).
+name             |         | user's name.
+email            |         | user's email which *must* be unique in the whole API.
+password         |         | user's password: it *must* be at least 8 characters.
 firstname        |         | user's firstname.
 lastname         |         | user's lastname.
 newsletter_optin | false   | Newsletter opt in.
