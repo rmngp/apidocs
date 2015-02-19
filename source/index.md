@@ -109,26 +109,51 @@ Error Code | Meaning
 
 Some endpoints return images, here the stucture:
 
+* `id`: API ID of the image.
 * `identifier`: RMN identifier
-* `url`: Url
+* `urls`: Hash of available image versions.
+  * `type`: Manipulation done on the image, resize or crop for now.
+  * `width`: Width of the image.
+  * `height`: height of the image.
+  * `url`: The url.
 * `photographer`: Photographer who has taken this picture
 * `source`: Source of this image, can be museum, institution, etc…
 
-The url include a security token `t`.
+> Example
 
-If you want a resized or cropped version of an images, just append `resize` (or
-`crop`) to the path and the appropriate sizes.
-
-Example:
-
-I want the image `/v1/images/1?t=secret` but resized to 100 pixels:
-
-* `/v1/images/1/resize/100x100?t=secret`
-
-I want the image `/v1/images/1?t=secret` but cropped to 500 pixels:
-
-* `/v1/images/1/crop/500x500?t=secret`
-
+```json
+{
+  "id": 167,
+  "identifier": "06-528589",
+  "urls": {
+    "original": "http://api.dev.rmn.af83.com/v1/images/1/167?t=thisisaprivatetoken",
+    "small": {
+      "width": 95,
+      "height": 95,
+      "type": "resize",
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/s?t=thisisaprivatetoken"
+    },
+    "thumbnail": {
+      "width": 190,
+      "height": 190,
+      "type": "resize",
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/t?t=thisisaprivatetoken"
+    },
+    "medium": {
+      "width": 379,
+      "height": 379,
+      "type": "resize",
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/m?t=thisisaprivatetoken"
+    },
+    "large": {
+      "width": 758,
+      "height": 758,
+      "type": "resize",
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/l?t=thisisaprivatetoken"
+    }
+  }
+}
+```
 
 # Search
 
