@@ -232,6 +232,7 @@ curl -H'ApiKey: demo' \
 
 Parameter     | Default | Description
 ------------- | ------- | ------------
+id            |         | Selection ID (mandatory).
 document_type |         | Type of document to add, `images` or `works` (mandatory).
 document_id   |         | Document's ID on the API (mandatory).
 position      |         | unsigned integer to choose the entry's position (mandatory).
@@ -247,6 +248,48 @@ Any other status code indicate a failure to create the selection.
 ```shell
 curl -H'ApiKey: demo' \
   'http://api.dev.rmn.af83.com/v1/selections/1/works' \
+  -XPOST -d'work_id=42&position=1'
+```
+
+> On success, the above command results in a `201` HTTP status code, and
+> should yield a JSON object, structured as follows:
+
+```json
+{
+    "id":           1,
+    "selection_id": 1,
+    "work_id":      42,
+    "version_id":   1,
+    "position":     1
+}
+```
+
+## Add an work or and image to the user default selection
+
+### HTTP Request
+
+`POST http://api.dev.rmn.af83.com/v1/selections/:user_id/default/:document_type`
+
+### Parameters
+
+Parameter     | Default | Description
+------------- | ------- | ------------
+user_id       |         | User ID (mandatory).
+document_type |         | Type of document to add, `images` or `works` (mandatory).
+document_id   |         | Document's ID on the API (mandatory).
+position      |         | unsigned integer to choose the entry's position (mandatory).
+
+
+### HTTP Response
+
+Upon successful creation, the server replies with a `201` HTTP status code, and
+returns a JSON object with the selected work ID, and its version number.
+
+Any other status code indicate a failure to create the selection.
+
+```shell
+curl -H'ApiKey: demo' \
+  'http://api.dev.rmn.af83.com/v1/selections/42/default/works' \
   -XPOST -d'work_id=42&position=1'
 ```
 
