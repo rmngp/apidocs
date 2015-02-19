@@ -118,6 +118,7 @@ Some endpoints return images, here the stucture:
   * `url`: The url.
 * `photographer`: Photographer who has taken this picture
 * `source`: Source of this image, can be museum, institution, etc…
+* `default`: Boolean, true if this is the main work image.
 
 > Example
 
