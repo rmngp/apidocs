@@ -58,25 +58,26 @@ This endpoint retrieves all artworks.
 
 ### Query Parameters
 
-Parameter              | Default  | Description
----------              | -------  | -----------
-q                      |          | Filter results matching this query
-lang                   |          | Limit the research to fields in this language (better relevance)
-exists                 |          | Limit the research to works with these fields
-sort                   |          | Field used to sort results
-order                  | asc      | Sorting order, desc or asc.
-page                   | 1        | Results page offset
-per_page               | 10       | Number of results per page
-facet_page             | 1        | Facet page offset
-facet_per              | 10       | Number of facets per page
-facets[collections]    |          | Filter on a collection facet
-facets[locations]      |          | Filter on a location facet
-facets[authors]        |          | Filter on a author facet
-facets[periods]        |          | Filter on a period facet
-facets[techniques]     |          | Filter on a technique facet
-facets[styles]         |          | Filter on a style facet
-facets[schools]        |          | Filter on a schools facet
-facets[geographies]    |          | Filter on a geography facet
+Parameter                   | Default  | Description
+---------                   | -------  | -----------
+q                           |          | Filter results matching this query
+lang                        |          | Limit the research to fields in this language (better relevance)
+exists                      |          | Limit the research to works with these fields
+sort                        |          | Field used to sort results
+order                       | asc      | Sorting order, desc or asc.
+page                        | 1        | Results page offset
+per_page                    | 10       | Number of results per page
+facet_page                  | 1        | Facet page offset
+facet_per                   | 10       | Number of facets per page
+facets[collections]         |          | Filter on a collection facet
+facets[locations]           |          | Filter on a location facet
+facets[authors]             |          | Filter on a author facet
+facets[periods]             |          | Filter on a period facet
+facets[techniques]          |          | Filter on a technique facet
+facets[styles]              |          | Filter on a style facet
+facets[schools]             |          | Filter on a schools facet
+facets[geographies]         |          | Filter on a geography facet
+filters[images.identifier]  |          | Filter on an image identifier
 
 
 For more specific search see [Search](/?shell#search)
