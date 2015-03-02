@@ -192,6 +192,34 @@ curl -H'ApiKey: demo' \
 }
 ```
 
+## Get a selection
+
+### HTTP Request
+
+`GET http://api.dev.rmn.af83.com/v1/selections/:id`
+
+### HTTP Response
+
+The server *should* reply with a `200` HTTP status code.
+
+```shell
+curl -H'ApiKey: demo' \
+     'http://api.dev.rmn.af83.com/v1/selections/1' -XGET
+```
+
+> On success, the above command results in a `200` HTTP code, and returns the 
+> JSON representation of this selection folder. For example:
+
+```json
+{
+    "id":         1,
+    "name":       "example",
+    "user_id":    1,
+    "updated_at": "2014-09-01T00:00:00.42Z",
+    "created_at": "2014-09-01T00:00:00.42Z"
+}
+```
+
 ## Destroy a selection
 
 ### HTTP Request
