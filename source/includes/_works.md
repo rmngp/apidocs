@@ -106,6 +106,8 @@ This endpoint retrieves a specific work by its slug.
 Parameter              | Default  | Description
 ---------              | -------  | -----------
 slug                   |          | A work slug
+count_me[user_id]      |          | ID of user visiting the page
+count_me[session_id]   |          | Session ID of user visiting the page
 
 ## Get suggested works
 
