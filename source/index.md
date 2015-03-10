@@ -25,6 +25,7 @@ includes:
   - techniques
   - users
   - selections
+  - suggest
 
 search: true
 ---

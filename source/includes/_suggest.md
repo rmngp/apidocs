@@ -1,0 +1,30 @@
+# Suggestions
+
+Get suggestions for a string pattern, usefull for auto-completions.
+
+```shell
+curl -H "ApiKey: demo" \
+     "http://api.dev.rmn.af83.com/v1/suggest?q=le"
+```
+
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="/v1/suggest?q=le">
+</pre>
+
+### HTTP Request
+
+`GET http://api.dev.rmn.af83.com/v1/suggest`
+
+### Query Parameters
+
+Parameter  | Default      | Description
+---------  | -------      | -----------
+q          |              | Pattern to search
+lang       | fr           | Specific language. `fr`, `en` and `de` available
+types      | work,author  | Specific types of items to search. `work` and `author` available
+
+
+<aside class="success">
+Remember — don't forget to use your API key!
+</aside>
