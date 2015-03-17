@@ -11,7 +11,7 @@ an artwork, and that an artwork stored in a selection folder does not get
 updated automatically.</aside>
 
 
-## List a user's selections
+## List selections
 
 ### HTTP Request
 
@@ -19,97 +19,67 @@ updated automatically.</aside>
 
 ### Query Parameters
 
-Parameter   | Default | Description
------------ | ------- | ------------
-user_id     | ""      | Which user's selections should we show?
-page        | 1       | Results page offset
-include_ids | 0       | Include selected works IDs in the response
+Parameter                    | Default | Description
+-----------------            | ------- | ------------
+user_id                      |         | Which user's selections should we show?
+page                         | 1       | Results page offset
+per_page                     | 10      | Number of results per page
+tags                         |         | comma separated list of tags
+works[include]               |         | Include works in results?
+works[q]                     |         | Search for works
+works[lang]                  | fr      | Return works facets for this language (fr, en, de)
+works[sort]                  |         | Sort works
+works[per_page]              | 1       | Number of works per page
+works[page]                  | 10      | Works page offset
+works[facet_per]             | 1       | Number of works facets per page
+works[facet_page]            | 10      | Works facets page offset
+works[facets][collections]   |         | Filter works on a collection facet
+works[facets][locations]     |         | Filter works on a location facet
+works[facets][authors]       |         | Filter works on a author facet
+works[facets][periods]       |         | Filter works on a period facet
+works[facets][techniques]    |         | Filter works on a technique facet
+works[facets][styles]        |         | Filter works on a style facet
+works[facets][schools]       |         | Filter works on a school facet
+works[facets][geographies]   |         | Filter works on a geography facet
+images[include]              |         | Include images in results?
+images[q]                    |         | Search for images
+images[lang]                 | fr      | Return images facets for this language (fr, en, de)
+images[sort]                 |         | Sort images
+images[per_page]             | 1       | Number of images per page
+images[page]                 | 10      | Works page offset
+images[facet_per]            | 1       | Number of images facets per page
+images[facet_page]           | 10      | Works facets page offset
+images[facets][collections]  |         | Filter images on a collection facet
+images[facets][locations]    |         | Filter images on a location facet
+images[facets][authors]      |         | Filter images on a author facet
+images[facets][periods]      |         | Filter images on a period facet
+images[facets][techniques]   |         | Filter images on a technique facet
+images[facets][styles]       |         | Filter images on a style facet
+images[facets][schools]      |         | Filter images on a school facet
+images[facets][geographies]  |         | Filter images on a geography facet
 
 ### HTTP Response
 
 On success, the server replies with a `200` HTTP status code, and returns a
-list of the user's selections in JSON.
+list of selections in JSON.
 
 ```shell
-curl -H'ApiKey: demo' 'http://api.dev.rmn.af83.com/v1/selections?user_id=1'
+curl -H'ApiKey: demo' 'http://api.dev.rmn.af83.com/v1/selections'
 ```
 
 > On success, the above command should yield a JSON array, structured as
 > follows:
 
-```json
-[
-    {
-        "id":         1,
-        "name":       "example",
-        "user_id":    1,
-        "updated_at": "2014-09-01T00:00:00.42Z",
-        "created_at": "2014-09-01T00:00:00.42Z"
-    },
-    {
-        "id":         2,
-        "name":       "Another example",
-        "user_id":    1,
-        "updated_at": "2014-09-01T00:00:00.42Z",
-        "created_at": "2014-09-01T00:00:00.42Z"
-    }
-]
-```
+<pre class="live_requests" data-path="/v1/selections">
+</pre>
 
-> If you pass the `include_ids` parameter, you should get a JSON array with
-> the following structure (the `work_ids` and `image_ids` keys are added):
+> If you pass the `include[works]=true` (and/or `include[images]=true`)
+parameter, you should get a JSON array with the following structure
+(the `works` and `images` keys are added):
 
-```json
-[
-    {
-        "id":         1,
-        "name":       "example",
-        "user_id":    1,
-        "updated_at": "2014-09-01T00:00:00.42Z",
-        "created_at": "2014-09-01T00:00:00.42Z",
-        "work_ids":   [1, 2, 3],
-        "image_ids":  [1, 2, 3]
-    },
-    {
-        "id":         2,
-        "name":       "Another example",
-        "user_id":    1,
-        "updated_at": "2014-09-01T00:00:00.42Z",
-        "created_at": "2014-09-01T00:00:00.42Z",
-        "work_ids":   []
-    }
-]
-```
-
-## Get content of a user's selections
-
-### HTTP Request
-
-`GET http://api.dev.rmn.af83.com/v1/selections/:id/:document_type`
-
-### Query Parameters
-
-Parameter     | Default | Description
-------------- | ------- | ------------
-id            |         | Selection ID (mandatory).
-document_type |         | Type of document to add, `images` or `works` (mandatory).
-q             |         | Filter results
-lang          |         | Limit the research to fields in this language (better relevance)
-exists        |         | Limit the research to documents with these fields
-sort          |         | Field used to sort results
-page          | 1       | Results page offset
-per_page      | 10      | Number of results per page
-facet_page    | 1       | Facet page offset
-facet_per     | 10      | Number of facets per page
-
-### HTTP Response
-
-On success, the server replies with a `200` HTTP status code, and returns the
-user's selection content in JSON.
-
-```shell
-curl -H'ApiKey: demo' 'http://api.dev.rmn.af83.com/v1/selections/:id/works'
-```
+<pre class="live_requests"
+data-path="/v1/selections?works[include]=true&images[include]=true">
+</pre>
 
 ## Create a selection
 
@@ -144,11 +114,14 @@ curl -H'ApiKey: demo' \
 
 ```json
 {
-    "id":         1,
-    "name":       "example",
-    "user_id":    1,
-    "updated_at": "2014-09-01T00:00:00.42Z",
-    "created_at": "2014-09-01T00:00:00.42Z"
+    "id":           1,
+    "name":         "example",
+    "description":  "Example",
+    "user_id":      1,
+    "default":      true,
+    "updated_at":   "2014-09-01T00:00:00.42Z",
+    "created_at":   "2014-09-01T00:00:00.42Z",
+    "tags":         ["Foo", "Bar"]
 }
 ```
 
@@ -162,8 +135,10 @@ curl -H'ApiKey: demo' \
 
 Parameter   | Default | Description
 ---------   | ------- | ------------
+id          |         | Selection ID (mandatory)
 name        |         | Selection's name
 description |         | Selection's description
+user_id     |         | Selection's owner (mandatory)
 work_ids    |         | Array of work IDs to associate
 image_ids   |         | Array of image IDs to associate
 
@@ -184,39 +159,14 @@ curl -H'ApiKey: demo' \
 
 ```json
 {
-    "id":         1,
-    "name":       "example",
-    "user_id":    1,
-    "updated_at": "2014-09-01T00:00:00.42Z",
-    "created_at": "2014-09-01T00:00:00.42Z"
-}
-```
-
-## Get a selection
-
-### HTTP Request
-
-`GET http://api.dev.rmn.af83.com/v1/selections/:id`
-
-### HTTP Response
-
-The server *should* reply with a `200` HTTP status code.
-
-```shell
-curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/v1/selections/1' -XGET
-```
-
-> On success, the above command results in a `200` HTTP code, and returns the 
-> JSON representation of this selection folder. For example:
-
-```json
-{
-    "id":         1,
-    "name":       "example",
-    "user_id":    1,
-    "updated_at": "2014-09-01T00:00:00.42Z",
-    "created_at": "2014-09-01T00:00:00.42Z"
+    "id":           1,
+    "name":         "example",
+    "description":  "Example",
+    "user_id":      1,
+    "default":      true,
+    "updated_at":   "2014-09-01T00:00:00.42Z",
+    "created_at":   "2014-09-01T00:00:00.42Z",
+    "tags":         ["Foo", "Bar"]
 }
 ```
 
@@ -241,16 +191,79 @@ curl -H'ApiKey: demo' \
 
 ```json
 {
-    "id":         1,
-    "name":       "example",
-    "user_id":    1,
-    "updated_at": "2014-09-01T00:00:00.42Z",
-    "created_at": "2014-09-01T00:00:00.42Z"
+    "id":           1,
+    "name":         "example",
+    "description":  "Example",
+    "user_id":      1,
+    "default":      true,
+    "updated_at":   "2014-09-01T00:00:00.42Z",
+    "created_at":   "2014-09-01T00:00:00.42Z",
+    "tags":         ["Foo", "Bar"]
 }
 ```
 
+## Get a selection
 
-## Add an work or and image to a selection
+### HTTP Request
+
+`GET http://api.dev.rmn.af83.com/v1/selections/:id`
+
+### Query Parameters
+
+Parameter                    | Default | Description
+---------------------------  | ------- | ------------
+id                           |         | Selection ID (mandatory)
+works[include]               |         | Include works in results?
+works[q]                     |         | Search for works
+works[lang]                  | fr      | Return works facets for this language (fr, en, de)
+works[sort]                  |         | Sort works
+works[per_page]              | 1       | Number of works per page
+works[page]                  | 10      | Works page offset
+works[facet_per]             | 1       | Number of works facets per page
+works[facet_page]            | 10      | Works facets page offset
+works[facets][collections]   |         | Filter works on a collection facet
+works[facets][locations]     |         | Filter works on a location facet
+works[facets][authors]       |         | Filter works on a author facet
+works[facets][periods]       |         | Filter works on a period facet
+works[facets][techniques]    |         | Filter works on a technique facet
+works[facets][styles]        |         | Filter works on a style facet
+works[facets][schools]       |         | Filter works on a school facet
+works[facets][geographies]   |         | Filter works on a geography facet
+images[include]              |         | Include images in results?
+images[q]                    |         | Search for images
+images[lang]                 | fr      | Return images facets for this language (fr, en, de)
+images[sort]                 |         | Sort images
+images[per_page]             | 1       | Number of images per page
+images[page]                 | 10      | Works page offset
+images[facet_per]            | 1       | Number of images facets per page
+images[facet_page]           | 10      | Works facets page offset
+images[facets][collections]  |         | Filter images on a collection facet
+images[facets][locations]    |         | Filter images on a location facet
+images[facets][authors]      |         | Filter images on a author facet
+images[facets][periods]      |         | Filter images on a period facet
+images[facets][techniques]   |         | Filter images on a technique facet
+images[facets][styles]       |         | Filter images on a style facet
+images[facets][schools]      |         | Filter images on a school facet
+images[facets][geographies]  |         | Filter images on a geography facet
+
+### HTTP Response
+
+The server *should* reply with a `200` HTTP status code.
+
+```shell
+curl -H'ApiKey: demo' \
+     'http://api.dev.rmn.af83.com/v1/selections/1' -XGET
+```
+
+> On success, the above command results in a `200` HTTP code, and returns the 
+> JSON representation of this selection folder. For example:
+
+<pre class="live_requests"
+data-path="/v1/selections/1?works[include]=true&images[include]=true">
+</pre>
+
+
+## Add a work or an image to a selection
 
 ### HTTP Request
 
@@ -284,11 +297,12 @@ curl -H'ApiKey: demo' \
 
 ```json
 {
-    "id":           1,
-    "selection_id": 1,
-    "work_id":      42,
-    "version_id":   1,
-    "position":     1
+    "id":             1,
+    "selection_id":   1,
+    "document_id":    42,
+    "document_type":  "Work",
+    "version_id":     1,
+    "position":       1
 }
 ```
 
@@ -326,11 +340,12 @@ curl -H'ApiKey: demo' \
 
 ```json
 {
-    "id":           1,
-    "selection_id": 1,
-    "work_id":      42,
-    "version_id":   1,
-    "position":     1
+    "id":             1,
+    "selection_id":   1,
+    "document_id":    42,
+    "document_type":  "Work",
+    "version_id":     1,
+    "position":       1
 }
 ```
 
@@ -367,10 +382,11 @@ curl -H'ApiKey: demo' \
 
 ```json
 {
-    "id":           1,
-    "selection_id": 1,
-    "work_id":      42,
-    "version_id":   1,
-    "position":     1
+    "id":             1,
+    "selection_id":   1,
+    "document_id":    42,
+    "document_type":  "Work",
+    "version_id":     1,
+    "position":       1
 }
 ```
