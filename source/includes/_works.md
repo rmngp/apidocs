@@ -7,12 +7,15 @@
 * `id`: unique identifier
 * `popularity`: popularity based on associated images sales
 * `title`: title in several languages
+* `slug`: slug
 * `detail`: detail in several languages
 * `date`: date of creation, structured like this:
   * `display`: Text representation, example: 15th century, renaissance, …
   * `estimated_day`: Estimated date
   * `estimation_spread`: Precision of the estimated date
+* `inventory_number`: Inventory number
 * `copyright`: copyright details
+* `use`: Additional copyright informations
 * `height`: Height in millimeters
 * `width`: Width in millimeters
 * `depth`: Depth in millimeters
@@ -77,6 +80,7 @@ facets[techniques]          |          | Filter on a technique facet
 facets[styles]              |          | Filter on a style facet
 facets[schools]             |          | Filter on a schools facet
 facets[geographies]         |          | Filter on a geography facet
+facets[colors]              |          | Filter on a color facet
 filters[images.identifier]  |          | Filter on an image identifier
 
 
@@ -134,6 +138,7 @@ Parameter              | Default  | Description
 ---------              | -------  | -----------
 work_id                |          | A work id
 exists                 |          | Limit the research to works with these fields
+page                   | 1        | Results page offset
 per_page               | 10       | Number of results per page
 
 
