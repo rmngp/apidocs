@@ -137,6 +137,7 @@ get contextual suggestions.
 Parameter              | Default  | Description
 ---------              | -------  | -----------
 work_id                |          | A work id
+work_slug              |          | A work slug
 exists                 |          | Limit the research to works with these fields
 page                   | 1        | Results page offset
 per_page               | 10       | Number of results per page
