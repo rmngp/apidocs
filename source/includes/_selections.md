@@ -121,7 +121,7 @@ curl -H'ApiKey: demo' \
     "default":      true,
     "updated_at":   "2014-09-01T00:00:00.42Z",
     "created_at":   "2014-09-01T00:00:00.42Z",
-    "tags":         ["Foo", "Bar"]
+    "tags":         "Foo,Bar"
 }
 ```
 
@@ -166,7 +166,7 @@ curl -H'ApiKey: demo' \
     "default":      true,
     "updated_at":   "2014-09-01T00:00:00.42Z",
     "created_at":   "2014-09-01T00:00:00.42Z",
-    "tags":         ["Foo", "Bar"]
+    "tags":         "Foo,Bar"
 }
 ```
 
@@ -198,7 +198,7 @@ curl -H'ApiKey: demo' \
     "default":      true,
     "updated_at":   "2014-09-01T00:00:00.42Z",
     "created_at":   "2014-09-01T00:00:00.42Z",
-    "tags":         ["Foo", "Bar"]
+    "tags":         "Foo,Bar"
 }
 ```
 
