@@ -90,11 +90,11 @@ For more specific search see [Search](/?shell#search)
 Remember — don't forget to use your API key!
 </aside>
 
-## Get a specific work by its slug
+## Get a specific work by its ID or slug
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works/:slug"
+     "http://api.dev.rmn.af83.com/v1/works/:id"
 ```
 
 > The above command returns JSON structured like the `/v1/works` endpoint:
@@ -103,13 +103,13 @@ This endpoint retrieves a specific work by its slug.
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/works/:slug`
+`GET http://api.dev.rmn.af83.com/v1/works/:id`
 
 ### Query Parameters
 
 Parameter              | Default  | Description
 ---------              | -------  | -----------
-slug                   |          | A work slug
+id                     |          | A work ID or slug
 count_me[user_id]      |          | ID of user visiting the page
 count_me[session_id]   |          | Session ID of user visiting the page
 
