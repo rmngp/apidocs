@@ -15,7 +15,7 @@ updated automatically.</aside>
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/selections`
+`GET http://api.dev.rmn.af83.com/art/v1/selections`
 
 ### Query Parameters
 
@@ -64,13 +64,13 @@ On success, the server replies with a `200` HTTP status code, and returns a
 list of selections in JSON.
 
 ```shell
-curl -H'ApiKey: demo' 'http://api.dev.rmn.af83.com/v1/selections'
+curl -H'ApiKey: demo' 'http://api.dev.rmn.af83.com/art/v1/selections'
 ```
 
 > On success, the above command should yield a JSON array, structured as
 > follows:
 
-<pre class="live_requests" data-path="/v1/selections">
+<pre class="live_requests" data-path="/art/v1/selections">
 </pre>
 
 > If you pass the `include[works]=true` (and/or `include[images]=true`)
@@ -78,14 +78,14 @@ parameter, you should get a JSON array with the following structure
 (the `works` and `images` keys are added):
 
 <pre class="live_requests"
-data-path="/v1/selections?works[include]=true&images[include]=true">
+data-path="/art/v1/selections?works[include]=true&images[include]=true">
 </pre>
 
 ## Create a selection
 
 ### HTTP Request
 
-`POST http://api.dev.rmn.af83.com/v1/selections`
+`POST http://api.dev.rmn.af83.com/art/v1/selections`
 
 ### Parameters
 
@@ -106,7 +106,7 @@ indicate a failure to create the selection.
 
 ```shell
 curl -H'ApiKey: demo' \
-  'http://api.dev.rmn.af83.com/v1/selections' -XPOST -d'name=example&user_id=1'
+  'http://api.dev.rmn.af83.com/art/v1/selections' -XPOST -d'name=example&user_id=1'
 ```
 
 > On success, the above command should yield a JSON object, structured as
@@ -129,7 +129,7 @@ curl -H'ApiKey: demo' \
 
 ### HTTP Request
 
-`PUT http://api.dev.rmn.af83.com/v1/selections/:id`
+`PUT http://api.dev.rmn.af83.com/art/v1/selections/:id`
 
 ### Parameters
 
@@ -151,7 +151,7 @@ failure to update the selection.
 
 ```shell
 curl -H'ApiKey: demo' \
-  'http://api.dev.rmn.af83.com/v1/selections/:id' -XPUT -d'name=example&user_id=1'
+  'http://api.dev.rmn.af83.com/art/v1/selections/:id' -XPUT -d'name=example&user_id=1'
 ```
 
 > On success, the above command should yield a JSON object, structured as
@@ -174,7 +174,7 @@ curl -H'ApiKey: demo' \
 
 ### HTTP Request
 
-`DELETE http://api.dev.rmn.af83.com/v1/selections/:id`
+`DELETE http://api.dev.rmn.af83.com/art/v1/selections/:id`
 
 ### HTTP Response
 
@@ -183,7 +183,7 @@ successfully destroyed.
 
 ```shell
 curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/v1/selections/1' -XDELETE
+     'http://api.dev.rmn.af83.com/art/v1/selections/1' -XDELETE
 ```
 
 > On success, the above command results in a `200` HTTP code, and returns the 
@@ -206,7 +206,7 @@ curl -H'ApiKey: demo' \
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/selections/:id`
+`GET http://api.dev.rmn.af83.com/art/v1/selections/:id`
 
 ### Query Parameters
 
@@ -252,14 +252,14 @@ The server *should* reply with a `200` HTTP status code.
 
 ```shell
 curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/v1/selections/1' -XGET
+     'http://api.dev.rmn.af83.com/art/v1/selections/1' -XGET
 ```
 
 > On success, the above command results in a `200` HTTP code, and returns the 
 > JSON representation of this selection folder. For example:
 
 <pre class="live_requests"
-data-path="/v1/selections/1?works[include]=true&images[include]=true">
+data-path="/art/v1/selections/1?works[include]=true&images[include]=true">
 </pre>
 
 
@@ -267,7 +267,7 @@ data-path="/v1/selections/1?works[include]=true&images[include]=true">
 
 ### HTTP Request
 
-`POST http://api.dev.rmn.af83.com/v1/selections/:id/:document_type`
+`POST http://api.dev.rmn.af83.com/art/v1/selections/:id/:document_type`
 
 ### Parameters
 
@@ -288,7 +288,7 @@ Any other status code indicate a failure to create the selection.
 
 ```shell
 curl -H'ApiKey: demo' \
-  'http://api.dev.rmn.af83.com/v1/selections/1/works' \
+  'http://api.dev.rmn.af83.com/art/v1/selections/1/works' \
   -XPOST -d'work_id=42&position=1'
 ```
 
@@ -310,7 +310,7 @@ curl -H'ApiKey: demo' \
 
 ### HTTP Request
 
-`POST http://api.dev.rmn.af83.com/v1/selections/:user_id/default/:document_type`
+`POST http://api.dev.rmn.af83.com/art/v1/selections/:user_id/default/:document_type`
 
 ### Parameters
 
@@ -331,7 +331,7 @@ Any other status code indicate a failure to create the selection.
 
 ```shell
 curl -H'ApiKey: demo' \
-  'http://api.dev.rmn.af83.com/v1/selections/42/default/works' \
+  'http://api.dev.rmn.af83.com/art/v1/selections/42/default/works' \
   -XPOST -d'work_id=42&position=1'
 ```
 
@@ -354,7 +354,7 @@ curl -H'ApiKey: demo' \
 
 ### HTTP Request
 
-`DELETE http://api.dev.rmn.af83.com/v1/selections/:selection_id/:document_type/:id`
+`DELETE http://api.dev.rmn.af83.com/art/v1/selections/:selection_id/:document_type/:id`
 
 ### Parameters
 
@@ -374,7 +374,7 @@ error code.
 
 ```shell
 curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/v1/selections/1/works/42' -XDELETE
+     'http://api.dev.rmn.af83.com/art/v1/selections/1/works/42' -XDELETE
 ```
 
 > On success, the above command results in a `200` HTTP code, and returns the 

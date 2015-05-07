@@ -1,4 +1,4 @@
-/*! jQuery UI - v1.10.3 - 2013-09-16
+/*! jQuery UI - art/v1.10.3 - 2013-09-16
 * http://jqueryui.com
 * Includes: jquery.ui.widget.js
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */

@@ -40,19 +40,19 @@ List all authors present on the API.
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/authors"
+     "http://api.dev.rmn.af83.com/art/v1/authors"
 ```
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/authors">
+<pre class="live_requests" data-path="/art/v1/authors">
 </pre>
 
 This endpoint retrieves all know authors.
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/authors`
+`GET http://api.dev.rmn.af83.com/art/v1/authors`
 
 ### Query Parameters
 

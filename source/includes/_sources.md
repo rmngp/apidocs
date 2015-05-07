@@ -2,12 +2,12 @@
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/thesaurus/sources"
+     "http://api.dev.rmn.af83.com/art/v1/thesaurus/sources"
 ```
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/thesaurus/sources">
+<pre class="live_requests" data-path="/art/v1/thesaurus/sources">
 </pre>
 
 Sources are the museum where the works come from : you can also find the copyright in that part.
@@ -26,7 +26,7 @@ This endpoint retrieves all know sources.
 
 #### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/thesaurus/sources`
+`GET http://api.dev.rmn.af83.com/art/v1/thesaurus/sources`
 
 #### Query Parameters
 

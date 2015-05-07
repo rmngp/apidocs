@@ -1,5 +1,5 @@
 //= require ./jquery_ui
-/* jquery Tocify - v1.8.0 - 2013-09-16
+/* jquery Tocify - art/v1.8.0 - 2013-09-16
 * http://www.gregfranko.com/jquery.tocify.js/
 * Copyright (c) 2013 Greg Franko; Licensed MIT
 * Modified lightly by Robert Lord to fix a bug I found,

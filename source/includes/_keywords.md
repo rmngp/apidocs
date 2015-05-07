@@ -2,12 +2,12 @@
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/thesaurus/keywords"
+     "http://api.dev.rmn.af83.com/art/v1/thesaurus/keywords"
 ```
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/thesaurus/keywords">
+<pre class="live_requests" data-path="/art/v1/thesaurus/keywords">
 </pre>
 
 Keywords contain all the keyword that has no special type.
@@ -27,7 +27,7 @@ This endpoint retrieves all keywords.
 
 #### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/thesaurus/keywords`
+`GET http://api.dev.rmn.af83.com/art/v1/thesaurus/keywords`
 
 #### Query Parameters
 

@@ -45,19 +45,19 @@
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works"
+     "http://api.dev.rmn.af83.com/art/v1/works"
 ```
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/works">
+<pre class="live_requests" data-path="/art/v1/works">
 </pre>
 
 This endpoint retrieves all artworks.
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/works`
+`GET http://api.dev.rmn.af83.com/art/v1/works`
 
 ### Query Parameters
 
@@ -94,16 +94,16 @@ Remember — don't forget to use your API key!
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works/:id"
+     "http://api.dev.rmn.af83.com/art/v1/works/:id"
 ```
 
-> The above command returns JSON structured like the `/v1/works` endpoint:
+> The above command returns JSON structured like the `/art/v1/works` endpoint:
 
 This endpoint retrieves a specific work by its slug.
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/works/:id`
+`GET http://api.dev.rmn.af83.com/art/v1/works/:id`
 
 ### Query Parameters
 
@@ -117,12 +117,12 @@ count_me[session_id]   |          | Session ID of user visiting the page
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works/suggested"
+     "http://api.dev.rmn.af83.com/art/v1/works/suggested"
 ```
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/works/suggested">
+<pre class="live_requests" data-path="/art/v1/works/suggested">
 </pre>
 
 This endpoint retrieves a list of suggested works. You can provide a work_id to
@@ -130,7 +130,7 @@ get contextual suggestions.
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/v1/works/suggested
+`GET http://api.dev.rmn.af83.com/art/v1/works/suggested
 
 ### Query Parameters
 
@@ -154,10 +154,10 @@ by Picasso:
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height"
+     "http://api.dev.rmn.af83.com/art/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height"
 ```
 
-<pre class="live_requests" data-path="/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height">
+<pre class="live_requests" data-path="/art/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height">
 </pre>
 
 Most fields are tokenized and stemmed for a better full-text search. It can
@@ -169,10 +169,10 @@ to the field name.
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle"
+     "http://api.dev.rmn.af83.com/art/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle"
 ```
 
-<pre class="live_requests" data-path="/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle">
+<pre class="live_requests" data-path="/art/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle">
 </pre>
 
 ### Parameters
@@ -204,10 +204,10 @@ For histograms, a fourth parameter, `interval`, will be given.
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month"
+     "http://api.dev.rmn.af83.com/art/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month"
 ```
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month">
+<pre class="live_requests" data-path="/art/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month">
 </pre>
