@@ -70,7 +70,7 @@ curl -H'ApiKey: demo' 'http://api.dev.rmn.af83.com/art/v1/selections'
 > On success, the above command should yield a JSON array, structured as
 > follows:
 
-<pre class="live_requests" data-path="/art/v1/selections">
+<pre class="live_requests" data-path="/v1/selections">
 </pre>
 
 > If you pass the `include[works]=true` (and/or `include[images]=true`)
@@ -78,7 +78,7 @@ parameter, you should get a JSON array with the following structure
 (the `works` and `images` keys are added):
 
 <pre class="live_requests"
-data-path="/art/v1/selections?works[include]=true&images[include]=true">
+data-path="/v1/selections?works[include]=true&images[include]=true">
 </pre>
 
 ## Create a selection
@@ -259,7 +259,7 @@ curl -H'ApiKey: demo' \
 > JSON representation of this selection folder. For example:
 
 <pre class="live_requests"
-data-path="/art/v1/selections/1?works[include]=true&images[include]=true">
+data-path="/v1/selections/1?works[include]=true&images[include]=true">
 </pre>
 
 

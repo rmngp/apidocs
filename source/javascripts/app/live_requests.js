@@ -1,11 +1,25 @@
 $(function() {
-
-  // Config
   config = {
     api_key: 'demo',
-    host: window.location.protocol + '//' + window.location.host.replace('doc.', 'api.')
+    host: undefined
   }
-  // End Config
+
+  $.get('/urls')
+    .done(init)
+    .fail(function(resp) {
+      console.log('Fail to load urls: ' + resp);
+    });
+
+  function init(urls){
+    config.host = urls.root_api;
+
+    $('.live_requests').waypoint(function() {
+      $(this).html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div></div>');
+      makeRequest(this);
+    }, {
+      offset: function() { return $(window).height(); }
+    });
+  }
 
   function urlWithHost(path) {
     return config.host + path;
@@ -26,10 +40,4 @@ $(function() {
     });
   }
 
-  $('.live_requests').waypoint(function() {
-    $(this).html('<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div></div>');
-    makeRequest(this);
-  }, {
-    offset: function() { return $(window).height(); }
-  });
 });

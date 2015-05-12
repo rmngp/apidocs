@@ -50,7 +50,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/art/v1/works">
+<pre class="live_requests" data-path="/v1/works">
 </pre>
 
 This endpoint retrieves all artworks.
@@ -122,7 +122,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/art/v1/works/suggested">
+<pre class="live_requests" data-path="/v1/works/suggested">
 </pre>
 
 This endpoint retrieves a list of suggested works. You can provide a work_id to
@@ -157,7 +157,7 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/art/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height"
 ```
 
-<pre class="live_requests" data-path="/art/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height">
+<pre class="live_requests" data-path="/v1/works?q=Picasso&aggregates[][name]=width&aggregates[][type]=stats&aggregates[][field]=width&aggregates[][name]=height&aggregates[][type]=stats&aggregates[][field]=height">
 </pre>
 
 Most fields are tokenized and stemmed for a better full-text search. It can
@@ -172,7 +172,7 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/art/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle"
 ```
 
-<pre class="live_requests" data-path="/art/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle">
+<pre class="live_requests" data-path="/v1/works?aggregates[][name]=birth_place&aggregates[][type]=terms&aggregates[][field]=authors.birth_place.display.raw&facets[periods]=19e+siècle">
 </pre>
 
 ### Parameters
@@ -209,5 +209,5 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/art/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month">
+<pre class="live_requests" data-path="/v1/works?aggregates[][name]=histogram&aggregates[][type]=date_histogram&aggregates[][field]=date.estimated_day&aggregates[][interval]=month">
 </pre>

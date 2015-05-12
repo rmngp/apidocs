@@ -7,7 +7,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/art/v1/thesaurus/techniques">
+<pre class="live_requests" data-path="/v1/thesaurus/techniques">
 </pre>
 
 Techniques used by many works available through the API.

@@ -7,7 +7,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/art/v1/thesaurus/sources">
+<pre class="live_requests" data-path="/v1/thesaurus/sources">
 </pre>
 
 Sources are the museum where the works come from : you can also find the copyright in that part.

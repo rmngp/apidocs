@@ -59,7 +59,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/art" data-collapsed="false">
+<pre class="live_requests" data-path="/" data-collapsed="false">
 </pre>
 
 ## Authentication

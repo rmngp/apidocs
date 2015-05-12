@@ -45,7 +45,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/art/v1/authors">
+<pre class="live_requests" data-path="/v1/authors">
 </pre>
 
 This endpoint retrieves all know authors.
