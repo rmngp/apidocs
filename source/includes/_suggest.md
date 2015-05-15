@@ -4,7 +4,7 @@ Get suggestions for a string pattern, usefull for auto-completions.
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art/v1/autocomplete?q=le"
+     "http://api.dev.rmn.af83.com/v1/autocomplete?q=le"
 ```
 
 > The above command returns JSON structured like this:
@@ -14,7 +14,7 @@ curl -H "ApiKey: demo" \
 
 ### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/art/v1/autocomplete`
+`GET http://api.dev.rmn.af83.com/v1/autocomplete`
 
 ### Query Parameters
 

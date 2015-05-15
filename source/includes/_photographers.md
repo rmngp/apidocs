@@ -2,7 +2,7 @@
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art/v1/thesaurus/photographers"
+     "http://api.dev.rmn.af83.com/v1/thesaurus/photographers"
 ```
 
 > The above command returns JSON structured like this:
@@ -27,7 +27,7 @@ This endpoint retrieves all know photographers.
 
 #### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/art/v1/thesaurus/photographers`
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/photographers`
 
 #### Query Parameters
 

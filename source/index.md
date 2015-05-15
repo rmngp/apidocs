@@ -50,11 +50,11 @@ You can get the last API version by requesting the root API endpoint:
 http://api.dev.rmn.af83.com/art
 
 Then prefix all paths with this version number, for example:
-`http://api.dev.rmn.af83.com/art/v1/api_endpoint_here`.
+`http://api.dev.rmn.af83.com/v1/api_endpoint_here`.
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art"
+     "http://api.dev.rmn.af83.com/"
 ```
 
 > The above command returns JSON structured like this:
@@ -128,30 +128,30 @@ Some endpoints return images, here the stucture:
   "id": 167,
   "identifier": "06-528589",
   "urls": {
-    "original": "http://api.dev.rmn.af83.com/art/v1/images/1/167?t=thisisaprivatetoken",
+    "original": "http://api.dev.rmn.af83.com/v1/images/1/167?t=thisisaprivatetoken",
     "small": {
       "width": 95,
       "height": 95,
       "type": "resize",
-      "url": "http://api.dev.rmn.af83.com/art/v1/images/1/167/s?t=thisisaprivatetoken"
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/s?t=thisisaprivatetoken"
     },
     "thumbnail": {
       "width": 190,
       "height": 190,
       "type": "resize",
-      "url": "http://api.dev.rmn.af83.com/art/v1/images/1/167/t?t=thisisaprivatetoken"
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/t?t=thisisaprivatetoken"
     },
     "medium": {
       "width": 379,
       "height": 379,
       "type": "resize",
-      "url": "http://api.dev.rmn.af83.com/art/v1/images/1/167/m?t=thisisaprivatetoken"
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/m?t=thisisaprivatetoken"
     },
     "large": {
       "width": 758,
       "height": 758,
       "type": "resize",
-      "url": "http://api.dev.rmn.af83.com/art/v1/images/1/167/l?t=thisisaprivatetoken"
+      "url": "http://api.dev.rmn.af83.com/v1/images/1/167/l?t=thisisaprivatetoken"
     }
   }
 }
@@ -211,7 +211,7 @@ Invalid page numbers merely results in an empty results list.
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art/v1/works?page=2"
+     "http://api.dev.rmn.af83.com/v1/works?page=2"
 ```
 
 > Sample results, matching a total of 42 documents.
@@ -241,10 +241,10 @@ If you want to search on all fields, just provide a string: `la joconde`.
 
 ```shell
 curl -H "ApiKey: demo" \
-     'http://api.dev.rmn.af83.com/art/v1/works.json?q=la%20joconde'
+     'http://api.dev.rmn.af83.com/v1/works.json?q=la%20joconde'
 
 curl -H "ApiKey: demo" \
-     'http://api.dev.rmn.af83.com/art/v1/works.json?q=la%20joconde&lang=fr'
+     'http://api.dev.rmn.af83.com/v1/works.json?q=la%20joconde&lang=fr'
 ```
 
 By default, the search is made on all tha available languages. You can limit
@@ -260,10 +260,10 @@ limit the results to a work with a specific id, like this: `id:36238`.
 
 ```shell
 curl -H "ApiKey: demo" \
-     'http://api.dev.rmn.af83.com/art/v1/works.json?q=title:"la%20joconde"'
+     'http://api.dev.rmn.af83.com/v1/works.json?q=title:"la%20joconde"'
 
 curl -H "ApiKey: demo" \
-     'http://api.dev.rmn.af83.com/art/v1/works.json?q=id:36238'
+     'http://api.dev.rmn.af83.com/v1/works.json?q=id:36238'
 ```
 
 
@@ -284,7 +284,7 @@ You can also use the operand `OR` For exemple you can use
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art/v1/works.json?q=la%20joconde%20AND%20techniques%3Ddessin"
+     "http://api.dev.rmn.af83.com/v1/works.json?q=la%20joconde%20AND%20techniques%3Ddessin"
 ```
 
 
@@ -311,27 +311,27 @@ use the facet pagination.
         {
           "key": "INHA",
           "doc_count": 5977,
-          "link": "http://api.dev.rmn.af83.com/art/v1/works?api_key=demo&facets%5Bsources%5D=INHA"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=INHA"
         },
         {
           "key": "BPK",
           "doc_count": 2,
-          "link": "http://api.dev.rmn.af83.com/art/v1/works?api_key=demo&facets%5Bsources%5D=BPK"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=BPK"
         },
         {
           "key": "NATIONAL GALLERY OF LONDON",
           "doc_count": 1,
-          "link": "http://api.dev.rmn.af83.com/art/v1/works?api_key=demo&facets%5Bsources%5D=NATIONAL+GALLERY+OF+LONDON"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=NATIONAL+GALLERY+OF+LONDON"
         },
         {
           "key": "RMN",
           "doc_count": 1,
-          "link": "http://api.dev.rmn.af83.com/art/v1/works?api_key=demo&facets%5Bsources%5D=RMN"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=RMN"
         },
         {
           "key": "RMN (musée du Louvre)",
           "doc_count": 1,
-          "link": "http://api.dev.rmn.af83.com/art/v1/works?api_key=demo&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
+          "link": "http://api.dev.rmn.af83.com/v1/works?api_key=demo&facets%5Bsources%5D=RMN+%28mus%C3%A9e+du+Louvre%29"
         }
       ]
     }

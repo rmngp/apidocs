@@ -2,7 +2,7 @@
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art/v1/thesaurus/geographies"
+     "http://api.dev.rmn.af83.com/v1/thesaurus/geographies"
 ```
 
 > The above command returns JSON structured like this:
@@ -27,7 +27,7 @@ This endpoint retrieves all know geographies.
 
 #### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/art/v1/thesaurus/periods`
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/periods`
 
 #### Query Parameters
 

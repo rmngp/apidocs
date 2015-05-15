@@ -9,7 +9,7 @@ Partners with an API access are allowed to create user accounts.
 
 ### HTTP Request
 
-`POST http://api.dev.rmn.af83.com/art/v1/users`
+`POST http://api.dev.rmn.af83.com/v1/users`
 
 ### Parameters
 
@@ -34,7 +34,7 @@ API, as they lack an API key to start with.</aside>
 
 ```shell
 curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/art/v1/users' -XPOST \
+     'http://api.dev.rmn.af83.com/v1/users' -XPOST \
      -d'name=User%20name&email=user@example.com&password=password'
 ```
 
@@ -72,7 +72,7 @@ Partners with an API access are allowed to update user accounts.
 
 ### HTTP Request
 
-`PUT http://api.dev.rmn.af83.com/art/v1/users/:id`
+`PUT http://api.dev.rmn.af83.com/v1/users/:id`
 
 ### Parameters
 
@@ -94,7 +94,7 @@ failure to update the user.
 
 ```shell
 curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/art/v1/users/1' -XPUT \
+     'http://api.dev.rmn.af83.com/v1/users/1' -XPUT \
      -d'name=User%20name&email=user@example.com&password=password'
 ```
 
@@ -124,7 +124,7 @@ identified by their API key.
 
 ### HTTP Request
 
-`DELETE http://api.dev.rmn.af83.com/art/v1/users/:id`
+`DELETE http://api.dev.rmn.af83.com/v1/users/:id`
 
 ### HTTP Response
 
@@ -138,7 +138,7 @@ successfully destroyed.
 
 ```shell
 curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/art/v1/users/1' -XDELETE
+     'http://api.dev.rmn.af83.com/v1/users/1' -XDELETE
 ```
 
 > On success, the above command results in a `200` HTTP code, and returns the 
@@ -161,7 +161,7 @@ Partners with an API access are allowed to authenticate user accounts.
 
 ### HTTP Request
 
-`POST http://api.dev.rmn.af83.com/art/v1/users/authenticate`
+`POST http://api.dev.rmn.af83.com/v1/users/authenticate`
 
 ### Parameters
 
@@ -178,7 +178,7 @@ failure to authenticate the user.
 
 ```shell
 curl -H'ApiKey: demo' \
-     'http://api.dev.rmn.af83.com/art/v1/users/authenticate' -XPOST \
+     'http://api.dev.rmn.af83.com/v1/users/authenticate' -XPOST \
      -d'email=user@example.com&password=password'
 ```
 

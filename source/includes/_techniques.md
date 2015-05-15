@@ -2,7 +2,7 @@
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art/v1/thesaurus/techniques"
+     "http://api.dev.rmn.af83.com/v1/thesaurus/techniques"
 ```
 
 > The above command returns JSON structured like this:
@@ -27,7 +27,7 @@ This endpoint retrieves all know techniques.
 
 #### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/art/v1/thesaurus/techniques`
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/techniques`
 
 #### Query Parameters
 

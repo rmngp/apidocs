@@ -4,7 +4,7 @@
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/art/v1/thesaurus/collections"
+     "http://api.dev.rmn.af83.com/v1/thesaurus/collections"
 ```
 
 > The above command returns JSON structured like this:
@@ -16,7 +16,7 @@ Thesaurus consists of several types of resources that are searchable in the same
 
 #### HTTP Request
 
-`GET http://api.dev.rmn.af83.com/art/v1/thesaurus/$resource_type`
+`GET http://api.dev.rmn.af83.com/v1/thesaurus/$resource_type`
 
 Where ```$resource_type``` is one of:
 
