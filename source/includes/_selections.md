@@ -204,6 +204,11 @@ curl -H'ApiKey: demo' \
 
 ## Get a selection
 
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="_selection_by_id_">
+</pre>
+
 ### HTTP Request
 
 `GET http://api.dev.rmn.af83.com/v1/selections/:id`

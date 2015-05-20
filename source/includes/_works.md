@@ -97,7 +97,10 @@ curl -H "ApiKey: demo" \
      "http://api.dev.rmn.af83.com/v1/works/:id"
 ```
 
-> The above command returns JSON structured like the `/v1/works` endpoint:
+> The above command returns JSON structured like this:
+
+<pre class="live_requests" data-path="_work_by_id_">
+</pre>
 
 This endpoint retrieves a specific work by its slug.
 
