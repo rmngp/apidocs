@@ -33,7 +33,7 @@ search: true
 
 # Introduction
 
-Welcome to the RMN-GP API! You can use our API to access RMN-GP API endpoints,
+Welcome to the RMN-GP API documentation! You will soon be able to use our API to access RMN-GP API endpoints,
 and retrieve information in the JSON format on various artworks, artists, and
 related pictures in our database.
 
@@ -73,8 +73,7 @@ curl -H "ApiKey: demo" \
 
 > Make sure to replace `demo` with your API key.
 
-RMN-GP uses API keys to allow access to the API. You can register on our
-[partners' site][partners] to request one.
+RMN-GP uses API keys to allow access to the API. You will soon be able to request one on our partners' site.
 
 RMN-GP expects the API key to be included in all API requests to the server in a
 HTTP header that looks like the following:
