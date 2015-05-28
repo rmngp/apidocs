@@ -25,6 +25,8 @@ List all authors present on the API.
   * `display`: Text representation, example: Málaga, Paris…
   * `latitude`: Latitude
   * `longitude`: Longitude
+* `wikipedia_url`: Url of corresponding wikipedia article
+* `wikipedia_extract`: Extract from the content of the wikipedia article
 
 ### Associations
 
