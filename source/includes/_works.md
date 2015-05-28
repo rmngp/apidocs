@@ -11,8 +11,8 @@
 * `detail`: detail in several languages
 * `date`: date of creation, structured like this:
   * `display`: Text representation, example: 15th century, renaissance, …
-  * `estimated_day`: Estimated date
-  * `estimation_spread`: Precision of the estimated date
+  * `estimated_day`: Estimated date, this is rough data, should never be displayed, use for sorting / filtering
+  * `estimation_spread`: Precision of the estimated date in days
 * `inventory_number`: Inventory number
 * `copyright`: copyright details
 * `use`: Additional copyright informations
@@ -20,11 +20,13 @@
 * `width`: Width in millimeters
 * `depth`: Depth in millimeters
 * `diameter`: Diameter in millimeters
-* `images`: Images availables for this work, the default image as the boolean `default` to `true`, see [Images](#Images)
+* `images`: Images available for this work, the default image as the boolean `default` to `true`, see [Images](#Images)
   * `identifier`: RMN identifier
   * `urls`: Urls of available versions
   * `photographer`: Photographer who has taken this picture
   * `source`: Source of this image, can be museum, institution, etc…
+* `wikipedia_url`: Url of corresponding wikipedia article if found.
+* `wikipedia_extract`: Extract from the content of the wikipedia article
 
 ### Associations
 
