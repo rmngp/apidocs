@@ -2,7 +2,7 @@ RMN-GP API docs
 ===============
 
 This repository contains the documentation to use RMN-GP's API. It is
-available in HTML form at http://doc.labrmngp.fr/, but if you need to
+available in HTML form at http://api.art.rmngp.fr/, but if you need to
 update the docs, read on. Your pull-requests and suggestions are welcome!
 
 Getting Started
