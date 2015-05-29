@@ -9,7 +9,7 @@ curl -H "ApiKey: demo" \
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/autocomplete?q=jacob">
+<pre class="live_requests" data-collapsed="false" data-path="/v1/autocomplete?q=jacob">
 </pre>
 
 ### HTTP Request
