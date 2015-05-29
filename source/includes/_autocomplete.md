@@ -1,15 +1,15 @@
-# Suggestions
+# Autocomplete
 
 Get suggestions for a string pattern, usefull for auto-completions.
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/autocomplete?q=le"
+     "http://api.dev.rmn.af83.com/v1/autocomplete?q=jacob"
 ```
 
 > The above command returns JSON structured like this:
 
-<pre class="live_requests" data-path="/v1/autocomplete?q=le">
+<pre class="live_requests" data-path="/v1/autocomplete?q=jacob">
 </pre>
 
 ### HTTP Request
@@ -21,7 +21,7 @@ curl -H "ApiKey: demo" \
 Parameter  | Default      | Description
 ---------  | -------      | -----------
 q          |              | Pattern to search
-lang       | fr           | Specific language. `fr`, `en` and `de` available
+lang       | fr           | Specific language. `fr` and `en` are available
 types      | work,author  | Specific types of items to search. `work` and `author` available
 
 
