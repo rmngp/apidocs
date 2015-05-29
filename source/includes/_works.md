@@ -169,10 +169,10 @@ curl -H "ApiKey: demo" \
 
 ```shell
 curl -H "ApiKey: demo" \
-     "http://api.dev.rmn.af83.com/v1/works?aggregates[][name]=authors_citizenship&aggregates[][type]=stats&aggregates[][field]=authors.citizenship.raw&facets[periods]=19e+siècle"
+     "http://api.dev.rmn.af83.com/v1/works?aggregates[][name]=authors_citizenship&aggregates[][type]=terms&aggregates[][field]=authors.citizenship&facets[periods]=19e+siècle"
 ```
 
-<pre class="live_requests" data-path="/v1/works?aggregates[][name]=authors_citizenship&aggregates[][type]=stats&aggregates[][field]=authors.citizenship.raw&facets[periods]=19e+siècle">
+<pre class="live_requests" data-path="/v1/works?aggregates[][name]=authors_citizenship&aggregates[][type]=terms&aggregates[][field]=authors.citizenship&facets[periods]=19e+siècle">
 </pre>
 
 Most fields are tokenized and stemmed for a better full-text search. It can
