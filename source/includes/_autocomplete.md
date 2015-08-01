@@ -22,7 +22,7 @@ Parameter  | Default      | Description
 ---------  | -------      | -----------
 q          |              | Pattern to search
 lang       | fr           | Specific language. `fr` and `en` are available
-types      | work,author  | Specific types of items to search. `work` and `author` available
+types      | work,author,location,period,technique  | Specific types of items to search. `work`, `author`, `period`, `technique`, `location` avalaible
 
 
 <aside class="success">

@@ -22,6 +22,7 @@ firstname        |         | user's firstname.
 lastname         |         | user's lastname.
 newsletter_optin | false   | Newsletter opt in.
 language         | fr      | user's firstname.
+avatar           |         | user avatar file
 
 ### HTTP Response
 
@@ -52,7 +53,12 @@ curl -H'ApiKey: demo' \
     "newsletter_optin": true,
     "language":         "fr",
     "created_at":       "2014-09-01T00:00:00.42Z",
-    "updated_at":       "2014-09-01T00:00:00.42Z"
+    "updated_at":       "2014-09-01T00:00:00.42Z",
+    "avatar": {
+      "thumb": "http://example.com/avatar_thumb.jpg",
+      "medium": "http://example.com/avatar_medium.jpg",
+      "big": "http://example.com/avatar_big.jpg"
+    }
 }
 ```
 
@@ -85,6 +91,7 @@ firstname        |         | user's firstname.
 lastname         |         | user's lastname.
 newsletter_optin | false   | Newsletter opt in.
 language         | fr      | user's firstname.
+avatar           |         | user avatar file
 
 ### HTTP Response
 
@@ -112,7 +119,12 @@ curl -H'ApiKey: demo' \
     "newsletter_optin": true,
     "language":         "fr",
     "created_at":       "2014-09-01T00:00:00.42Z",
-    "updated_at":       "2014-09-01T00:00:00.42Z"
+    "updated_at":       "2014-09-01T00:00:00.42Z",
+    "avatar": {
+      "thumb": "http://example.com/avatar_thumb.jpg",
+      "medium": "http://example.com/avatar_medium.jpg",
+      "big": "http://example.com/avatar_big.jpg"
+    }
 }
 ```
 
@@ -151,7 +163,12 @@ curl -H'ApiKey: demo' \
     "partner_id": 1,
     "email":      "user@example.com",
     "created_at": "2014-09-01T00:00:00.42Z",
-    "updated_at": "2014-09-01T00:00:00.42Z"
+    "updated_at": "2014-09-01T00:00:00.42Z",
+    "avatar": {
+      "thumb": "http://example.com/avatar_thumb.jpg",
+      "medium": "http://example.com/avatar_medium.jpg",
+      "big": "http://example.com/avatar_big.jpg"
+    }
 }
 ```
 
@@ -192,6 +209,11 @@ curl -H'ApiKey: demo' \
     "partner_id": 1,
     "email":      "user@example.com",
     "created_at": "2014-09-01T00:00:00.42Z",
-    "updated_at": "2014-09-01T00:00:00.42Z"
+    "updated_at": "2014-09-01T00:00:00.42Z",
+    "avatar": {
+      "thumb": "http://example.com/avatar_thumb.jpg",
+      "medium": "http://example.com/avatar_medium.jpg",
+      "big": "http://example.com/avatar_big.jpg"
+    }
 }
 ```
