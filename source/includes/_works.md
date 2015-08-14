@@ -27,6 +27,7 @@
   * `source`: Source of this image, can be museum, institution, etc…
 * `wikipedia_url`: Url of corresponding wikipedia article if found.
 * `wikipedia_extract`: Extract from the content of the wikipedia article
+* `external_urls`: List of other external urls.
 
 ### Associations
 
