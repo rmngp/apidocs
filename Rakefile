@@ -20,6 +20,6 @@ namespace :deploy do
   task production: [:build] do
     puts "Deploying to production environment..."
     `sed -i -e 's/api.dev.rmn.af83.com/api.art.rmngp.fr/g;s/dev.rmn.af83.com/rmngp.fr/g' build/index.html`
-    `rsync -avz build/ rmngpuser@labrmngp.fr:/home/rmngpuser/htdocs/API/apidocs`
+    `rsync -avz build/ rmngpuser@api.rmngp.fr:/home/rmngpuser/htdocs/API/apidocs`
   end
 end
