@@ -69,6 +69,7 @@ Parameter                   | Default  | Description
 q                           |          | Filter results matching this query
 lang                        |          | Limit the research to fields in this language (better relevance)
 exists                      |          | Limit the research to works with these fields
+exclude[keywords.name.fr][] |          | Array of keywords to exclude
 sort                        |          | Field used to sort results
 order                       | asc      | Sorting order, desc or asc.
 page                        | 1        | Results page offset
@@ -140,13 +141,14 @@ get contextual suggestions.
 
 ### Query Parameters
 
-Parameter              | Default  | Description
----------              | -------  | -----------
-id                     |          | A work id
-slug                   |          | A work slug
-exists                 |          | Limit the research to works with these fields
-page                   | 1        | Results page offset
-per_page               | 10       | Number of results per page
+Parameter                   | Default  | Description
+---------                   | -------  | -----------
+id                          |          | A work id
+slug                        |          | A work slug
+exists                      |          | Limit the research to works with these fields
+exclude[keywords.name.fr][] |          | Array of keywords to exclude
+page                        | 1        | Results page offset
+per_page                    | 10       | Number of results per page
 
 
 ## Aggregations
