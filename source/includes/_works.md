@@ -64,28 +64,38 @@ This endpoint retrieves all artworks.
 
 ### Query Parameters
 
-Parameter                   | Default  | Description
----------                   | -------  | -----------
-q                           |          | Filter results matching this query
-lang                        |          | Limit the research to fields in this language (better relevance)
-exists                      |          | Limit the research to works with these fields
-exclude[keywords.name.fr][] |          | Array of keywords to exclude
-sort                        |          | Field used to sort results
-order                       | asc      | Sorting order, desc or asc.
-page                        | 1        | Results page offset
-per_page                    | 10       | Number of results per page
-facet_page                  | 1        | Facet page offset
-facet_per                   | 10       | Number of facets per page
-facets[collections]         |          | Filter on a collection facet
-facets[locations]           |          | Filter on a location facet
-facets[authors]             |          | Filter on a author facet
-facets[periods]             |          | Filter on a period facet
-facets[techniques]          |          | Filter on a technique facet
-facets[styles]              |          | Filter on a style facet
-facets[schools]             |          | Filter on a schools facet
-facets[geographies]         |          | Filter on a geography facet
-facets[colors]              |          | Filter on a color facet
-filters[images.identifier]  |          | Filter on an image identifier
+Parameter                           | Default  | Description
+---------                           | -------  | -----------
+q                                   |          | Filter results matching this query
+lang                                |          | Limit the research to fields in this language (better relevance)
+exists                              |          | Limit the research to works with these fields
+exclude[keywords.name.fr][]         |          | Array of keywords to exclude
+exclude[techniques.name.fr][]       |          | Array of techniques to exclude
+exclude[authors.name.fr][]          |          | Array of authors to exclude
+exclude[periods.name.fr][]          |          | Array of periods to exclude
+exclude[collections.name.fr][]      |          | Array of collections to exclude
+exclude[geographies.name.fr][]      |          | Array of geographies to exclude
+exclude[location.name.fr][]         |          | Array of locations to exclude
+exclude[images.photographer.name][] |          | Array of photographer to exclude
+exclude[schools.name.fr][]          |          | Array of schools to exclude
+exclude[images.source.name][]       |          | Array of source to exclude
+exclude[styles.name.fr][]           |          | Array of styles to exclude
+sort                                |          | Field used to sort results
+order                               | asc      | Sorting order, desc or asc.
+page                                | 1        | Results page offset
+per_page                            | 10       | Number of results per page
+facet_page                          | 1        | Facet page offset
+facet_per                           | 10       | Number of facets per page
+facets[collections]                 |          | Filter on a collection facet
+facets[locations]                   |          | Filter on a location facet
+facets[authors]                     |          | Filter on a author facet
+facets[periods]                     |          | Filter on a period facet
+facets[techniques]                  |          | Filter on a technique facet
+facets[styles]                      |          | Filter on a style facet
+facets[schools]                     |          | Filter on a schools facet
+facets[geographies]                 |          | Filter on a geography facet
+facets[colors]                      |          | Filter on a color facet
+filters[images.identifier]          |          | Filter on an image identifier
 
 
 For more specific search see [Search](/?shell#search)
@@ -141,14 +151,24 @@ get contextual suggestions.
 
 ### Query Parameters
 
-Parameter                   | Default  | Description
----------                   | -------  | -----------
-id                          |          | A work id
-slug                        |          | A work slug
-exists                      |          | Limit the research to works with these fields
-exclude[keywords.name.fr][] |          | Array of keywords to exclude
-page                        | 1        | Results page offset
-per_page                    | 10       | Number of results per page
+Parameter                           | Default  | Description
+---------                           | -------  | -----------
+id                                  |          | A work id
+slug                                |          | A work slug
+exists                              |          | Limit the research to works with these fields
+exclude[keywords.name.fr][]         |          | Array of keywords to exclude
+exclude[techniques.name.fr][]       |          | Array of techniques to exclude
+exclude[authors.name.fr][]          |          | Array of authors to exclude
+exclude[periods.name.fr][]          |          | Array of periods to exclude
+exclude[collections.name.fr][]      |          | Array of collections to exclude
+exclude[geographies.name.fr][]      |          | Array of geographies to exclude
+exclude[location.name.fr][]         |          | Array of locations to exclude
+exclude[images.photographer.name][] |          | Array of photographer to exclude
+exclude[schools.name.fr][]          |          | Array of schools to exclude
+exclude[images.source.name][]       |          | Array of source to exclude
+exclude[styles.name.fr][]           |          | Array of styles to exclude
+page                                | 1        | Results page offset
+per_page                            | 10       | Number of results per page
 
 
 ## Aggregations
