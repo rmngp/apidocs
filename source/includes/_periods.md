@@ -10,7 +10,7 @@ curl -H "ApiKey: demo" \
 <pre class="live_requests" data-path="/v1/thesaurus/periods">
 </pre>
 
-Periods can be a century, an age, or a period.
+Periods can be a century, an age or a period.
 
 ### Definition
 
@@ -23,7 +23,7 @@ Periods can be a century, an age, or a period.
 
 ### Get All Periods
 
-This endpoint retrieves all know periods.
+This endpoint retrieves all known periods.
 
 #### HTTP Request
 

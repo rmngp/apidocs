@@ -34,7 +34,7 @@ search: true
 # Introduction
 
 Welcome to the RMN-GP API documentation! You will soon be able to use our API to access RMN-GP API endpoints,
-and retrieve information in the JSON format on various artworks, artists, and
+and retrieve information in the JSON format on various artworks, artists and
 related pictures in our database.
 
 This documentation should help you discover our API, and includes some
@@ -93,7 +93,7 @@ The RMN-GP API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request sucks
+400 | Bad Request -- Your request is wrong
 401 | Unauthorized -- Your API key is wrong
 403 | Forbidden -- The requested resource is not accessible
 404 | Not Found -- The specified resource could not be found
@@ -107,14 +107,14 @@ Error Code | Meaning
 
 ## Images
 
-Some endpoints return images, here the stucture:
+Some endpoints return images, here the structure:
 
 * `id`: API ID of the image.
 * `identifier`: RMN identifier
 * `urls`: Hash of available image versions.
   * `type`: Manipulation done on the image, resize or crop for now.
   * `width`: Width of the image.
-  * `height`: height of the image.
+  * `height`: Height of the image.
   * `url`: The url.
 * `photographer`: Photographer who has taken this picture
 * `source`: Source of this image, can be museum, institution, etc…
@@ -167,7 +167,7 @@ The response consists of 2 sections:
 This section contains the results of your search. Check the [Elastic Search
 documentation]
 (http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/empty-search.html#_literal_hits_literal)
-for more informations.
+for more information.
 
 In short, this section is structured like this:
 
@@ -178,7 +178,7 @@ In short, this section is structured like this:
 ### Facets
 
 This section contains the facets related to your search.
-Each aggregation is defined by a key, and contains many buckets. Buckets are
+Each aggregation is defined by a key and contains many buckets. Buckets are
 the available facets for the current search.
 
 Facet structure looks like this:
@@ -203,7 +203,7 @@ To get another results page, just add these parameters:
 
 
 <aside class="warning">
-Invalid page numbers merely results in an empty results list.
+Invalid page numbers merely result in an empty results list.
 </aside>
 
 > To change page, simply pass a `page` parameter to your request URL.
@@ -253,8 +253,8 @@ improve the relevancy of results by using a more precise analyzer.
 
 ## Matching a field
 
-Alternatively, you can select a field to search for, if you want to match an
-exact value on only the title, use `title:"la joconde"`. You can use this to
+Alternatively, you can select a field to search for. If you want to match an
+exact value only on the title, use `title:"la joconde"`. You can use this to
 limit the results to a work with a specific id, like this: `id:36238`.
 
 ```shell
@@ -268,14 +268,14 @@ curl -H "ApiKey: demo" \
 
 ##  Multi-criteria search
 
-The full text search is good but sometime you want something more precise when
+The full text search is good but sometimes you want something more precise when
 you do a search in an API : it's possible.
 
-For exemple, you want to search `la joconde` but you only want to have result
+For exemple, you want to search `la joconde` but you only want to have results
 that are drawed : you can pass `"joconde AND techniques.name=dessin"` in the `q`
 parameter.
 
-You can do that with every terms of the works like periods, keywords, authors,…
+You can do that with every term of the works like periods, keywords, authors…
 
 You can also use the operand `OR` For exemple you can use
 `"joconde OR collection=estampes"`
@@ -289,7 +289,7 @@ curl -H "ApiKey: demo" \
 
 ##  Filtering facets
 
-On works, authors and selections endpoints, facets are availables.
+On works, authors and selections endpoints facets are availables.
 
 To filter on a facet, just add a `facets[facet_name]=facet_value` params to the
 query string.

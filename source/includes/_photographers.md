@@ -23,7 +23,7 @@ Authors of the many images available through the API.
 
 ### Get All Photographers
 
-This endpoint retrieves all know photographers.
+This endpoint retrieves all known photographers.
 
 #### HTTP Request
 

@@ -1,6 +1,6 @@
 # Autocomplete
 
-Get suggestions for a string pattern, usefull for auto-completions.
+Get suggestions for a string pattern useful for autocomplete.
 
 ```shell
 curl -H "ApiKey: demo" \
@@ -22,8 +22,8 @@ Parameter  | Default      | Description
 ---------  | -------      | -----------
 q          |              | Pattern to search
 lang       | fr           | Specific language. `fr` and `en` are available
-types      | work,author,location,period,technique  | Specific types of items to search. `work`, `author`, `period`, `technique`, `location` avalaible
-per        | 5            | Number of results to return.
+types      | work,author,location,period,technique  | Specific types of items to search. `work`, `author`, `period`, `technique`, `location` available
+per        | 5            | Number of results to return
 
 
 <aside class="success">

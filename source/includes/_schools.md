@@ -23,7 +23,7 @@ Schools are artistic schools.
 
 ### Get All Schools
 
-This endpoint retrieves all know schools.
+This endpoint retrieves all known schools.
 
 #### HTTP Request
 

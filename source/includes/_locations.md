@@ -10,7 +10,7 @@ curl -H "ApiKey: demo" \
 <pre class="live_requests" data-path="/v1/thesaurus/locations">
 </pre>
 
-Locations are the differents museeum where the works are.
+Locations are different museum where the works are.
 
 ### Definition
 
@@ -23,7 +23,7 @@ Locations are the differents museeum where the works are.
 
 ### Get All Locations
 
-This endpoint retrieves all know locations.
+This endpoint retrieves all known locations.
 
 #### HTTP Request
 

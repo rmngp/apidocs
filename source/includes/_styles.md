@@ -23,7 +23,7 @@ Styles of the many works available through the API.
 
 ### Get All Styles
 
-This endpoint retrieves all know collections.
+This endpoint retrieves all known collections.
 
 #### HTTP Request
 

@@ -31,7 +31,7 @@
 
 ### Associations
 
-* `location`: Location where is located this work. See [Thesaurus/Locations](#locations)
+* `location`: Where this work is located. See [Thesaurus/Locations](#locations)
 * `authors`: Authors of this work. See [Thesaurus/Authors](#authors)
 * `afters`: Authors that inspired this work. See [Thesaurus/Authors](#authors)
 * `authorship_details`: Authors who have been awarded this work. See [Thesaurus/Authors](#authors)
@@ -39,7 +39,7 @@
 * `geographies`: Places related to this work. See [Thesaurus/Geographies](#geographies)
 * `keywords`: Keywords related to this work. See [Thesaurus/Keywords](#keywords)
 * `periods`: Period in which this work was created. Creation .See [Thesaurus/Periods](#periods)
-* `styles`: Artistic styles related to tis work. See [Thesaurus/Styles](#styles)
+* `styles`: Artistic styles related to this work. See [Thesaurus/Styles](#styles)
 * `techniques`: Techniques used to create this work. See [Thesaurus/Techniques](#techniques)
 * `schools`: Artistic school related to this work. See [Thesaurus/Schools](#schools)
 
@@ -88,7 +88,7 @@ facet_page                          | 1        | Facet page offset
 facet_per                           | 10       | Number of facets per page
 facets[collections]                 |          | Filter on a collection facet
 facets[locations]                   |          | Filter on a location facet
-facets[authors]                     |          | Filter on a author facet
+facets[authors]                     |          | Filter on an author facet
 facets[periods]                     |          | Filter on a period facet
 facets[techniques]                  |          | Filter on a technique facet
 facets[styles]                      |          | Filter on a style facet
