@@ -10,7 +10,7 @@ curl -H "ApiKey: demo" \
 <pre class="live_requests" data-path="/v1/thesaurus/geographies">
 </pre>
 
-Geographies are places in the world where the works was done or founded.
+Geographies are places in the world where the works were done or found.
 
 ### Definition
 
@@ -23,7 +23,7 @@ Geographies are places in the world where the works was done or founded.
 
 ### Get All Geographies
 
-This endpoint retrieves all know geographies.
+This endpoint retrieves all known geographies.
 
 #### HTTP Request
 

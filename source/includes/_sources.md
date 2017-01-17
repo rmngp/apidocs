@@ -10,7 +10,7 @@ curl -H "ApiKey: demo" \
 <pre class="live_requests" data-path="/v1/thesaurus/sources">
 </pre>
 
-Sources are the museum where the works come from : you can also find the copyright in that part.
+Sources are the museums where the works come from : you can also find the copyright in that part.
 
 ### Definition
 
@@ -22,7 +22,7 @@ Sources are the museum where the works come from : you can also find the copyrig
 
 ### Get All Sources
 
-This endpoint retrieves all know sources.
+This endpoint retrieves all known sources.
 
 #### HTTP Request
 

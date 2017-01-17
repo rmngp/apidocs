@@ -6,22 +6,22 @@ List all authors present on the API.
 
 ### Attributes
 
-* `name`: name in several languages
-* `detail`: detail in several languages
-* `other_names`: other known names for this author
-* `birth`: date of birth, structured like this:
+* `name`: Name in several languages
+* `detail`: Detail in several languages
+* `other_names`: Other known names for this author
+* `birth`: Date of birth, structured like this:
   * `display`: Text representation, example: 15th century, renaissance, …
   * `estimated_day`: Estimated date
   * `estimation_spread`: Precision of the estimated date
-* `death`: date of death, structured like this:
+* `death`: Date of death, structured like this:
   * `display`: Text representation, example: 15th century, renaissance, …
   * `estimated_day`: Estimated date
   * `estimation_spread`: Precision of the estimated date
-* `birth_place`: place of birth, structured like this:
+* `birth_place`: Place of birth, structured like this:
   * `display`: Text representation, example: Málaga, Paris…
   * `latitude`: Latitude
   * `longitude`: Longitude
-* `death_place`: place of death, structured like this:
+* `death_place`: Place of death, structured like this:
   * `display`: Text representation, example: Málaga, Paris…
   * `latitude`: Latitude
   * `longitude`: Longitude
@@ -31,11 +31,11 @@ List all authors present on the API.
 ### Associations
 
 * `data_inferred_from_works`: Represents data related to author's works
-  * `collections`: Collections in which author's works appears. See [Thesaurus/Collections](#collections)
-  * `locations`: Location where are located author's works. See [Thesaurus/Locations](#locations)
+  * `collections`: Collections in which author's works appear. See [Thesaurus/Collections](#collections)
+  * `locations`: Place where are located author's works. See [Thesaurus/Locations](#locations)
   * `techniques`: Techniques used to create author's works. See [Thesaurus/Techniques](#techniques)
-  * `periods`: Period in which author's work were created. Creation .See [Thesaurus/Periods](#periods)
-  * `geographies`: Places related to author's work. See [Thesaurus/Geographies](#geographies)
+  * `periods`: Period in which author's works were created. Creation .See [Thesaurus/Periods](#periods)
+  * `geographies`: Places related to author's works. See [Thesaurus/Geographies](#geographies)
 
 
 ## Get All Authors
@@ -50,7 +50,7 @@ curl -H "ApiKey: demo" \
 <pre class="live_requests" data-path="/v1/authors">
 </pre>
 
-This endpoint retrieves all know authors.
+This endpoint retrieves all known authors.
 
 ### HTTP Request
 

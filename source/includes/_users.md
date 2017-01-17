@@ -1,6 +1,6 @@
 # Users
 
-The users API allows partners to create, and destroy user accounts.
+API allows partners to create and destroy users accounts.
 
 
 ## Create a user account
@@ -15,23 +15,23 @@ Partners with an API access are allowed to create user accounts.
 
 Parameter        | Default | Description
 ---------------- | ------- | ------------
-name             |         | user's name (mandatory).
-email            |         | user's email which *must* be unique in the whole API (mandatory).
-password         |         | user's password: it *must* be at least 8 characters (mandatory).
-firstname        |         | user's firstname.
-lastname         |         | user's lastname.
-newsletter_optin | false   | Newsletter opt in.
-language         | fr      | user's firstname.
+name             |         | user's name (mandatory)
+email            |         | user's email which *must* be unique in the whole API (mandatory)
+password         |         | user's password: it *must* be at least 8 characters (mandatory)
+firstname        |         | user's firstname
+lastname         |         | user's lastname
+newsletter_optin | false   | Newsletter opt in
+language         | fr      | user's firstname
 avatar           |         | user avatar file
 
 ### HTTP Response
 
-Upon successful creation, the server replies with a `201` HTTP status code, and
+Upon successful creation, the server replies with a `201` HTTP status code and
 returns the newly created user in JSON format. Any other status code indicate a
 failure to create the user.
 
 <aside class="notice">Note that user accounts created by a partner can *not* be used to access the
-API, as they lack an API key to start with.</aside>
+API as they lack an API key to start with.</aside>
 
 ```shell
 curl -H'ApiKey: demo' \
@@ -84,13 +84,13 @@ Partners with an API access are allowed to update user accounts.
 
 Parameter        | Default | Description
 ---------------- | ------- | ------------
-name             |         | user's name.
-email            |         | user's email which *must* be unique in the whole API.
-password         |         | user's password: it *must* be at least 8 characters.
-firstname        |         | user's firstname.
-lastname         |         | user's lastname.
-newsletter_optin | false   | Newsletter opt in.
-language         | fr      | user's firstname.
+name             |         | user's name
+email            |         | user's email which *must* be unique in the whole API
+password         |         | user's password: it *must* be at least 8 characters
+firstname        |         | user's firstname
+lastname         |         | user's lastname
+newsletter_optin | false   | Newsletter opt in
+language         | fr      | user's firstname
 avatar           |         | user avatar file
 
 ### HTTP Response
@@ -184,8 +184,8 @@ Partners with an API access are allowed to authenticate user accounts.
 
 Parameter | Default | Description
 --------- | ------- | ------------
-email     | ""      | user's email (mandatory).
-password  | ""      | user's password (mandatory).
+email     | ""      | user's email (mandatory)
+password  | ""      | user's password (mandatory)
 
 ### HTTP Response
 

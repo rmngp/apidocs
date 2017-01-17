@@ -23,7 +23,7 @@ Techniques used by many works available through the API.
 
 ### Get All Techniques
 
-This endpoint retrieves all know techniques.
+This endpoint retrieves all known techniques.
 
 #### HTTP Request
 
