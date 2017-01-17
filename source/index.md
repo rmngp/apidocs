@@ -109,16 +109,16 @@ Error Code | Meaning
 
 Some endpoints return images, here the structure:
 
-* `id`: API ID of the image.
+* `id`: API ID of the image
 * `identifier`: RMN identifier
-* `urls`: Hash of available image versions.
-  * `type`: Manipulation done on the image, resize or crop for now.
-  * `width`: Width of the image.
-  * `height`: Height of the image.
-  * `url`: The url.
+* `urls`: Hash of available image versions
+  * `type`: Manipulation done on the image, resize or crop for now
+  * `width`: Width of the image
+  * `height`: Height of the image
+  * `url`: The url
 * `photographer`: Photographer who has taken this picture
 * `source`: Source of this image, can be museum, institution, etc…
-* `default`: Boolean, true if this is the main work image.
+* `default`: Boolean, true if this is the main work image
 
 > Example
 
