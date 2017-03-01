@@ -95,6 +95,7 @@ facets[styles]                      |          | Filter on a style facet
 facets[schools]                     |          | Filter on a schools facet
 facets[geographies]                 |          | Filter on a geography facet
 facets[colors]                      |          | Filter on a color facet
+facets[keywords]                    |          | Filter on a keyword facet
 filters[images.identifier]          |          | Filter on an image identifier
 
 
